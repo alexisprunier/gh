@@ -1,0 +1,80 @@
+
+@font-face { 	
+	font-family: "font_GH_bold"; 	
+	src: url('font/Neou-Bold.ttf');
+	font-family: "font_GH"; 	
+	src: url('font/Neou-thin.ttf'); 
+}
+/*REINITIALISATION DU BODY*/
+body{
+	margin : 0;
+	padding: 0;
+	background-color: #f1f1f1;
+
+}
+
+
+header{
+	height: 55px;
+	width: 100%;
+	background : url(../images/header_GH.png) repeat-x;
+	box-shadow: 0 0px 12px #000017;
+	border-bottom: 2px solid #800409
+}
+div#logo{
+	font: font_GH_bold;
+	color : #e5dfdf;
+	margin-left: 10px;
+	height : 55px;
+}
+div#content{
+	width: 960px;
+	margin: 10px auto;
+	/*border-left: 2px solid #800409;
+	border-right: 2px solid #ac6500;*/
+	
+	background-color: #e5e5e5;
+
+}
+navigation{
+	width: 1000px;
+	height: 30px;
+}
+navigation ul{
+	display: block;
+	width: 766px;
+	margin: -36px auto 0;
+}
+li{
+	
+	display: inline-block;
+	width: 150px;
+	height: 30px;
+	background-color: #222222;
+
+
+
+}
+footer{
+	height: 165px;
+	width: 100%;
+	background: url(../images/footer_GH.png) repeat-x;
+	border-top: 2px solid #800409;
+	box-shadow: 0 0px 12px #000017;
+}
+img#foot1{
+	float: right;
+
+}
+
+div#prod{
+	width: 169px;
+	
+	border-bottom: 1px solid #555;
+	margin: 140px auto 0;
+	
+}
+img#signature{
+	border-bottom: 1px solid #800409;
+	margin-bottom: -5px;
+}
