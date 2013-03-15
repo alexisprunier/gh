@@ -16,17 +16,7 @@
 	<script type="text/javascript" src="http://code.google.com/p/css3-mediaqueries-js/"></script>
 	<script src="jquery/custom_scrollbar/jquery.mCustomScrollbar.js"></script>
 
-	<script>
-		(function($){
-			$(window).load(function(){
-				$("body,.content").mCustomScrollbar({
-					scrollButtons:{
-						enable:true
-					}
-				});
-			});
-		})(jQuery);
-	</script>
+	
 </script>
 
 </head>
@@ -47,7 +37,11 @@
 		</ul>
 	</navigation>
 	<div class="container">
-		<div id="content">			
+		<div id="content">	
+			<div class="row">
+				<div id="head_pub" style="height:80px; border:1px solid #aaa">
+				</div>
+			</div>		
 			<div class="row">
 				<div class="ninecol">
 					<div id="home_news">
