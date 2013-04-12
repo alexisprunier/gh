@@ -1,1 +1,0 @@
-Les couleur de fond de div se baserons sur des nuance de gris essentiellement.
