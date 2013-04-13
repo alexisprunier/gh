@@ -2,7 +2,10 @@
 from django.shortcuts import render
 from GeekHub.models import Article
 
-def accueil(request, page_number):
+def accueil(request):
+    return render(request, 'accueil.html', locals())
+
+def web(request, page_number):
     
     # recuperation des articles
     all_articles = Article.objects.all().order_by("id")

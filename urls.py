@@ -6,7 +6,8 @@ from django.contrib import admin
 # admin.autodiscover()
 
 urlpatterns = patterns('GeekHub.views',
-    url(r'^accueil/(\d{4})/?$', 'accueil'),
+    url(r'^', 'accueil'),
+    url(r'^web/(\d{4})/?$', 'web'),
     url(r'^facebook/', 'facebook'),
     url(r'^admin/', include(admin.site.urls)),
 )
