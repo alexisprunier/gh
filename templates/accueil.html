@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Geek Hub</title>
+	<!--CSS-->
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/1140.css" type="text/css" media="screen"/>
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/geekhub_style.css"/>
+	<link rel="stylesheet" href="{{ STATIC_URL }}jquery/custom_scrollbar/jquery.mCustomScrollbar.css" type="text/css" />
+<style>
+		/*body custom scrollbar style*/
+		body>.mCustomScrollBox>.mCSB_scrollTools{top:2%; height:96%;}
+	</style>
+	<!--JS-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://code.google.com/p/css3-mediaqueries-js/"></script>
+	<script src="{{ STATIC_URL }}jquery/custom_scrollbar/jquery.mCustomScrollbar.js"></script>
+
+	
+</script>
+
+</head>
+<body>
+	<header>
+		<div id="logo">
+			<a href="GeekHub.html"><img src="{{ STATIC_URL }}image/logo21_GH.png" alt="logo GeekHub"></a>			
+		</div>
+	</header>
+	
+	<navigation>	
+		<ul>
+			<li class="first">Accueil</li>
+			<li>Les News</li>
+			<li>Les posts Facebook</li>
+			<li>Les Tweets</li>
+			<li class="last">Sondages</li>
+		</ul>
+	</navigation>
+	<div class="container">
+		<div id="content">	
+			<div class="row">
+				<div id="head_pub" style="height:80px; border:1px solid #aaa">
+				</div>
+			</div>		
+			<div class="row">
+				<div class="ninecol">
+					<div id="home_news">
+						
+						<fieldset id="last_news">
+							<legend class="home_title">Les dernières news</legend>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis, lacus at rhoncus sagittis, enim mi blandit risus, in blandit magna nibh vestibulum ipsum. Vestibulum eget nibh vitae quam mattis sollicitudin a at eros. Etiam scelerisque, nibh non volutpat condimentum, risus mi eleifend sapien, ut luctus nibh lectus vel augue. Pellentesque tempus, urna vel congue luctus, elit sapien scelerisque lacus, ac tristique augue purus sit amet dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et lacus at felis imperdiet luctus. Duis et aliquam purus. Morbi sed elit erat, ut tincidunt odio. Ut at tortor sit amet libero aliquet tincidunt vulputate et ante. Nullam nisi dui, lobortis vestibulum dapibus quis, iaculis id quam. Nam malesuada, mi eu feugiat fermentum, elit nulla porta ipsum, quis cursus risus do</p>
+						</fieldset>
+					</div>
+					<div id="home_facebook">								
+						<fieldset id="last_news_facebook">
+							<legend class="home_title">Les dernières publications Facebook</legend>	
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis, lacus at rhoncus sagittis, enim mi blandit risus, in blandit magna nibh vestibulum ipsum. Vestibulum eget nibh vitae quam mattis sollicitudin a at eros. Etiam scelerisque, nibh non volutpat condimentum, risus mi eleifend sapien, ut luctus nibh lectus vel augue. Pellentesque tempus, urna vel congue luctus, elit sapien scelerisque lacus, ac tristique augue purus sit amet dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et lacus at felis imperdiet luctus. Duis et aliquam purus. Morbi sed elit erat, ut tincidunt odio. Ut at tortor sit amet libero aliquet tincidunt vulputate et ante. Nullam nisi dui, lobortis vestibulum dapibus quis, iaculis id quam. Nam malesuada, mi eu feugiat fermentum, elit nulla porta ipsum, quis cursus risus do</p>
+						</fieldset>
+					</div>
+					<div id="home_twitter">
+						<fieldset id="last_news_twiter">
+							<legend class="home_title">Les dernières publications Twitter</legend>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis, lacus at rhoncus sagittis, enim mi blandit risus, in blandit magna nibh vestibulum ipsum. Vestibulum eget nibh vitae quam mattis sollicitudin a at eros. Etiam scelerisque, nibh non volutpat condimentum, risus mi eleifend sapien, ut luctus nibh lectus vel augue. Pellentesque tempus, urna vel congue luctus, elit sapien scelerisque lacus, ac tristique augue purus sit amet dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et lacus at felis imperdiet luctus. Duis et aliquam purus. Morbi sed elit erat, ut tincidunt odio. Ut at tortor sit amet libero aliquet tincidunt vulputate et ante. Nullam nisi dui, lobortis vestibulum dapibus quis, iaculis id quam. Nam malesuada, mi eu feugiat fermentum, elit nulla porta ipsum, quis cursus risus do</p>
+						</fieldset>
+					</div>
+				</div>
+
+				<div class="threecol last">
+					<div id="home_site">
+											
+
+						<fieldset id="week_site">
+							<legend class="home_title">Le site de la semaine</legend>	
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis, lacus at rhoncus sagittis, enim mi blandit risus, in blandit magna nibh vestibulum ipsum. Vestibulum eget nibh vitae quam mattis sollicitudin a at eros. Etiam scelerisque, nibh non volutpat </p>
+						</fieldset>
+					</div>
+					<div id="home_pub">
+							
+						<fieldset id="pub">
+							<legend class="home_title">Publicité</legend>		
+							
+						</fieldset>
+					</div>
+
+				</div>
+			</div>
+		</div>	
+	</div>
+	<footer>
+		<img id="foot1" src="{{ STATIC_URL }}image/foot2.png"/>
+	</footer>
+</body>
+</html>
