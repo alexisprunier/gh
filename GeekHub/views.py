@@ -3,6 +3,8 @@ from django.shortcuts import render
 from GeekHub.models import Article
 
 def accueil(request):
+    
+    last_articles = Article.objects.all().order_by("id")[:3]
     return render(request, 'accueil.html', locals())
 
 def web(request, page_number):
@@ -25,7 +27,7 @@ def web(request, page_number):
         if ( 0 <= size-(page_number*30-30+i) < size):
             selected_article.append(all_articles[size-(page_number*30-30+i)])
         
-    return render(request, 'accueil.html', locals())
+    return render(request, 'web.html', locals())
 
 def facebook(request):
     
