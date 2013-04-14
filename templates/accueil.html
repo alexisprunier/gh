@@ -48,7 +48,20 @@
 						
 						<fieldset id="last_news">
 							<legend class="home_title">Les dernières news</legend>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis, lacus at rhoncus sagittis, enim mi blandit risus, in blandit magna nibh vestibulum ipsum. Vestibulum eget nibh vitae quam mattis sollicitudin a at eros. Etiam scelerisque, nibh non volutpat condimentum, risus mi eleifend sapien, ut luctus nibh lectus vel augue. Pellentesque tempus, urna vel congue luctus, elit sapien scelerisque lacus, ac tristique augue purus sit amet dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et lacus at felis imperdiet luctus. Duis et aliquam purus. Morbi sed elit erat, ut tincidunt odio. Ut at tortor sit amet libero aliquet tincidunt vulputate et ante. Nullam nisi dui, lobortis vestibulum dapibus quis, iaculis id quam. Nam malesuada, mi eu feugiat fermentum, elit nulla porta ipsum, quis cursus risus do</p>
+							{% for article in last_articles %}
+					        	<p>
+					        	<a href="{{ article.lien }}">
+						        	<div id="article">
+						        		<img id="img_art" src="{{ article.image }}" />
+						        		<div id="info_art">
+							        		<div id="titre_art"><h4>{{ article.titre }}</h4></div>
+							        		<div id="origine_art"><h6><img src='{{ STATIC_URL }}favicon/{{ article.origine }}.png' align="bottom"></img><b>{{ article.origine }}</b></h6></div>
+							        		<div id="date_art">{{ article.date }}</div>
+						        		</div>
+						        	</div>
+					        	</a>
+					        	</p>
+					        {% endfor %}
 						</fieldset>
 					</div>
 					<div id="home_facebook">								
@@ -70,8 +83,8 @@
 											
 
 						<fieldset id="week_site">
-							<legend class="home_title">Le site de la semaine</legend>	
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis, lacus at rhoncus sagittis, enim mi blandit risus, in blandit magna nibh vestibulum ipsum. Vestibulum eget nibh vitae quam mattis sollicitudin a at eros. Etiam scelerisque, nibh non volutpat </p>
+							<legend class="home_title">Le site de la semaine</legend>
+							<img src="http://lol.net/p/bestofmicro-com-mini.jpg" width="300"/>	
 						</fieldset>
 					</div>
 					<div id="home_pub">
