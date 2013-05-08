@@ -49,18 +49,20 @@
 						<fieldset id="last_news">
 							<legend class="home_title">Les dernières news</legend>
 							{% for article in last_articles %}
-					        	<p>
-					        	<a href="{{ article.lien }}">
+					        	
+					        	
 						        	<div id="article">
+						        	<a href="{{ article.lien }}">
 						        		<img id="img_art" src="{{ article.image }}" />
 						        		<div id="info_art">
 							        		<div id="titre_art"><h4>{{ article.titre }}</h4></div>
 							        		<div id="origine_art"><h6><img src='{{ STATIC_URL }}favicon/{{ article.origine }}.png' align="bottom"></img><b>{{ article.origine }}</b></h6></div>
 							        		<div id="date_art">{{ article.date }}</div>
 						        		</div>
+						        	</a>
 						        	</div>
-					        	</a>
-					        	</p>
+					        	
+					        	
 					        {% endfor %}
 						</fieldset>
 					</div>

@@ -7,7 +7,7 @@ def accueil(request):
     last_articles = Article.objects.all().order_by("id")[:3]
     return render(request, 'accueil.html', locals())
 
-def web(request, page_number):
+def news(request, page_number):
     
     # recuperation des articles
     all_articles = Article.objects.all().order_by("id")
