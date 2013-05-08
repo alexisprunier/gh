@@ -53,18 +53,42 @@ fieldset{
 	margin-top: 20px;
 }
 div#home_news{
-	
+	background-color: #fff;
+padding: 5px;
+box-shadow: 1px 1px 3px #d1d1d1;
+margin-top: 20px;
 
 }
+div#article{
+	margin : 10px 0;
+}
 div#home_facebook{
-	
+		background-color: #3b5998;
+padding: 5px;
+box-shadow: 1px 1px 3px #3b5998;
+margin-top: 20px;
 }
 div#home_twitter{
-	
+		background-color: #019ad2;
+padding: 5px;
+box-shadow: 1px 1px 3px #019ad2;
+margin-top: 20px;
 }
 div#home_site{
 
 }
+
+div#article a{display : block; text-decoration: none;}
+div#article a:hover{background-color : rgba(150,150,150,0.5);}
+div#article #info_art{
+	display: inline-block;
+vertical-align: top;
+}
+div#article #img_art{
+	width : 50px;
+	box-shadow: 0 0 20px 0px #fff;
+}
+
 
 /*****************************************************
 ******************    NAVIGATION   *******************
@@ -85,7 +109,6 @@ li{
 	padding : 18px;
 	display: inline-block;
 	color : #bbb;
-	font-weight: bold;
 	text-shadow: 1px 1px 1px #777;
 	
 	}

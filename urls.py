@@ -7,7 +7,7 @@ from django.contrib import admin
 
 urlpatterns = patterns('GeekHub.views',
     url(r'^', 'accueil'),
-    url(r'^web/(\d{4})/?$', 'web'),
+    url(r'^news/(\d{4})/?$', 'news'),
     url(r'^facebook/', 'facebook'),
     url(r'^admin/', include(admin.site.urls)),
 )

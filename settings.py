@@ -12,9 +12,9 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'GeekHubDatabase',                      # Or path to database file if using sqlite3.
+        'NAME': 'gh',                      # Or path to database file if using sqlite3.
         'USER': 'root',                      # Not used with sqlite3.
-        'PASSWORD': 'ghct2lb',                  # Not used with sqlite3.
+        'PASSWORD': 'anthony',                  # Not used with sqlite3.
         'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '3306',                      # Set to empty string for default. Not used with sqlite3.
     }
@@ -64,11 +64,11 @@ STATIC_ROOT = ''
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/home/alexis/Desktop/workspace/Geekhub/templates/'
+STATIC_URL = '/root/dev/workspace/Geekhub/templates/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    '/home/alexis/Desktop/workspace/Geekhub/templates/',
+    '/root/dev/workspace/Geekhub/templates/',
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -108,7 +108,7 @@ ROOT_URLCONF = 'urls'
 WSGI_APPLICATION = 'wsgi.application'
 
 TEMPLATE_DIRS = (
-    '/home/alexis/Desktop/workspace/Geekhub/templates'
+    '/root/dev/workspace/Geekhub/templates'
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -122,6 +122,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+    'GeekHub'
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
