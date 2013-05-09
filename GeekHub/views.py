@@ -4,7 +4,7 @@ from GeekHub.models import Article
 
 def accueil(request):
     
-    last_articles = Article.objects.all().order_by("id")[:3]
+    last_articles = Article.objects.all().order_by("id")[:6]
     return render(request, 'accueil.html', locals())
 
 def news(request, page_number):

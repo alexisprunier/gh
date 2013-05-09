@@ -11,9 +11,9 @@
 body{
 	margin : 0;
 	padding: 0;
-	background-color: #e5e5e5;
+	background-color: #fefefe;
 	min-width: 320px;
-
+	
 }
 
 /*************************************************************
@@ -32,64 +32,6 @@ div#logo{
 	margin-left: 10px;
 	height : 55px;
 }
-
-/***********************************************************
-**********************   CONTENT   *************************
-************************************************************/
-div#content{
-	margin: 70px auto;
-}
-/*************ACCUEIL***************************/
-legend.home_title{
-	color: #555;
-	font-size: 16px;
-	padding-left: 20px;
-	text-shadow: 0 0px 1px #ddd;
-	font-family: font_GH_bold;
-	margin-bottom: 10px;
-}
-fieldset{
-	border-top: 2px solid rgba(128,4,9,0.6);
-	margin-top: 20px;
-}
-div#home_news{
-	background-color: #fff;
-padding: 5px;
-box-shadow: 1px 1px 3px #d1d1d1;
-margin-top: 20px;
-
-}
-div#article{
-	margin : 10px 0;
-}
-div#home_facebook{
-		background-color: #3b5998;
-padding: 5px;
-box-shadow: 1px 1px 3px #3b5998;
-margin-top: 20px;
-}
-div#home_twitter{
-		background-color: #019ad2;
-padding: 5px;
-box-shadow: 1px 1px 3px #019ad2;
-margin-top: 20px;
-}
-div#home_site{
-
-}
-
-div#article a{display : block; text-decoration: none;}
-div#article a:hover{background-color : rgba(150,150,150,0.5);}
-div#article #info_art{
-	display: inline-block;
-vertical-align: top;
-}
-div#article #img_art{
-	width : 50px;
-	box-shadow: 0 0 20px 0px #fff;
-}
-
-
 /*****************************************************
 ******************    NAVIGATION   *******************
 ******************************************************/
@@ -103,6 +45,7 @@ navigation{
 }
 navigation ul{
 	font-family: "font_GH_bold";	
+	margin : 0;
 
 }
 li{
@@ -125,6 +68,128 @@ li:hover{
 li:active{
 	box-shadow: inset 0px 0px 27px rgba(0,0,0,1);
 }
+/***********************************************************
+**********************   CONTENT   *************************
+************************************************************/
+div#content{
+	margin : 70px auto;
+	width : 100%;
+	max-width : 1140px;
+	
+}
+div#gauche_accueil{
+	display : inline-block;
+	width : 75%;
+	margin : 0 10px 0 0;
+	vertical-align : top;
+}
+div#droite_accueil{
+	display : inline-block;
+	width : 20%;
+	vertical-align : top;
+	
+}
+/*************ACCUEIL***************************/
+legend.home_title{
+	color: #555;
+	font-size: 16px;
+	padding-left: 20px;
+	text-shadow: 0 0px 1px #ddd;
+	font-family: font_GH_bold;
+	margin-bottom: 10px;
+}
+
+div#home_news{
+text-align: center;
+display: inline-block;
+background: url("../image/bloc_news.png") no-repeat 15px, #333;
+padding-left: 47px;
+background-size: 5%;
+
+}
+/*REINIT DES TITRE DANS LA DIV ARTICLE*/
+div#article h4,
+div#article h5,
+div#article h6,
+div#article h3{
+	margin : 0;
+}
+
+div#article{
+margin: 7px 5px;
+display: inline-block;
+width: 240px;
+background-color: #fff;
+box-shadow: 2px 2px 2px #222;
+text-align: center;
+}
+div#article a{
+	display : block; 
+	text-decoration: none; 
+	color : #333;
+	padding: 5px;
+}
+div#titre_art {
+	height : 60px; /*Permet d'avoir les infos des articles aligné avec les autres info d'article...*/
+}
+div#article #info_art{
+	display: inline-block;
+	vertical-align: top;
+}
+div#article #img_art{
+	height : 75px;
+	
+}
+div#origine_art{
+	height : 20px;
+	
+}
+div#origine_art b{
+		vertical-align: top;
+		display: inline-block;
+		padding-top: 3px;
+		margin-left: 5px;
+	}
+div#date_art{
+	font-size : 10px;
+}
+div#plus{
+width: 50%;
+height: 25px;
+margin: 0;
+display: inline-block;
+float: left;
+background-color: #ff0000;
+}
+div#moins{
+width: 50%;
+height: 25px;
+margin: 0;
+display: inline-block;
+float: right;
+background-color: #00ff00;
+}
+div#home_facebook{
+		background-color: #3b5998;
+padding: 5px;
+box-shadow: 1px 1px 3px #3b5998;
+margin-top: 20px;
+}
+div#home_twitter{
+		background-color: #019ad2;
+padding: 5px;
+box-shadow: 1px 1px 3px #019ad2;
+margin-top: 20px;
+}
+div#home_site{
+
+}
+
+
+
+
+
+
 /************************************************************
 **************    FOOTER         ****************************
 *************************************************************/
