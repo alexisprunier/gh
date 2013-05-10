@@ -8,8 +8,8 @@
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/geekhub_style.css"/>
 	<link rel="stylesheet" href="{{ STATIC_URL }}jquery/custom_scrollbar/jquery.mCustomScrollbar.css" type="text/css" />
 <style>
-		/*body custom scrollbar style*/
-		body>.mCustomScrollBox>.mCSB_scrollTools{top:2%; height:96%;}
+		/*body custom scrollbar style
+		body>.mCustomScrollBox>.mCSB_scrollTools{top:2%; height:96%;}*/
 	</style>
 	<!--JS-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -18,6 +18,7 @@
 
 	
 </script>
+
 
 </head>
 <body>
@@ -81,4 +82,12 @@
 		<img id="foot1" src="{{ STATIC_URL }}image/foot2.png"/>
 	</footer>
 </body>
+<!-- JQUERY -->
+<script>
+    (function($){
+        $(window).load(function(){
+            $("html").mCustomScrollbar();
+        });
+    })(jQuery);
+</script>
 </html>
