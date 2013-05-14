@@ -2,7 +2,7 @@
 {% include "theme/header.html" %}
 <div id="content">
 	<div id="home_news">
-		{% for article in last_articles %}			        	
+		{% for article in all_articles %}			        	
 	        	<div id="article">
 		        	<a href="{{ article.lien }}">
 		        		<img id="img_art" src="{{ article.image }}" />
@@ -12,7 +12,6 @@
 				        		<div id="origine_art"><h6><img src='{{ STATIC_URL }}favicon/{{ article.origine }}.png' align="bottom"></img><b>{{ article.origine }}</b></h6></div>
 				        		<div id="date_art">{{ article.date }}</div>
 				        	</div>
-				        	
 		        		</div>
 		        	</a>
 	        	</div>    	
