@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Geek Hub</title>
+	<!--CSS-->
+
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/geekhub_style.css"/>
+	<link rel="stylesheet" href="{{ STATIC_URL }}jquery/custom_scrollbar/jquery.mCustomScrollbar.css" type="text/css" />
+	<style>
+		/*body custom scrollbar style
+		body>.mCustomScrollBox>.mCSB_scrollTools{top:2%; height:96%;}*/
+	</style>
+	<!--JS-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="{{ STATIC_URL }}jquery/custom_scrollbar/jquery.mCustomScrollbar.js"></script>
+
+</head>
+<body>
+	<header>
+		<div id="logo">
+			<a href="GeekHub.html"><img src="{{ STATIC_URL }}image/logo21_GH.png" alt="logo GeekHub"></a>			
+		</div>
+	</header>
+	
+	<navigation>	
+		<ul>
+			<li class="first"><a href="/accueil">Accueil</a></li>
+			<li><a href="/news">Les News</a></li>
+			<li><a href="/facebook">Les posts Facebook</a></li>
+			<li><a href="/twitter">Les Tweets</a></li>
+			<li class="last"><a href="">Sondages</a></li>
+		</ul>
+	</navigation>

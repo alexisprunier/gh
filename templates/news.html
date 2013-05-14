@@ -1,0 +1,22 @@
+
+{% include "theme/header.html" %}
+<div id="content">
+	<div id="home_news">
+		{% for article in last_articles %}			        	
+	        	<div id="article">
+		        	<a href="{{ article.lien }}">
+		        		<img id="img_art" src="{{ article.image }}" />
+		        		<div id="info_art">
+			        		<div id="titre_art"><h4>{{ article.titre }}</h4></div>
+			        		<div id="date_origine">
+				        		<div id="origine_art"><h6><img src='{{ STATIC_URL }}favicon/{{ article.origine }}.png' align="bottom"></img><b>{{ article.origine }}</b></h6></div>
+				        		<div id="date_art">{{ article.date }}</div>
+				        	</div>
+				        	
+		        		</div>
+		        	</a>
+	        	</div>    	
+        {% endfor %}
+	</div>	
+</div>
+{% include "theme/footer.html" %}
