@@ -27,7 +27,7 @@ def news(request, page_number):
         if ( 0 <= size-(page_number*30-30+i) < size):
             selected_article.append(all_articles[size-(page_number*30-30+i)])
         
-    return render(request, 'web.html', locals())
+    return render(request, 'news.html', locals())
 
 def facebook(request):
     
