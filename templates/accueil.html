@@ -1,64 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Geek Hub</title>
-	<!--CSS-->
+{% include "theme/header.html" %}	
 
-	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/geekhub_style.css"/>
-	
-<style>
-		/*body custom scrollbar style
-		body>.mCustomScrollBox>.mCSB_scrollTools{top:2%; height:96%;}*/
-	</style>
-	<!--JQUERY-->
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-	
-	<link rel="stylesheet" href="{{ STATIC_URL }}jquery/fancyapps-fancyBox-0ffc358/source/jquery.fancybox.css?v=2.1.4" type="text/css" media="screen" />
-	<script type="text/javascript" src="{{ STATIC_URL }}jquery/fancyapps-fancyBox-0ffc358/source/jquery.fancybox.js?v=2.1.4"></script>
-	
-	
-
-<script type="text/javascript">
+	<script type="text/javascript">
 	$(document).ready(function(){
-		
-		 $(".iframe").fancybox({
-		        'width'             : '80%',
-		        'height'            : '90%',
-		        'autoScale'         : true,
-		        'transitionIn'      : 'elastic',
-		        'transitionOut'     : 'elastic',
-		        'type'              : 'iframe'
-		    });
+		$(".iframe").fancybox();
+		alert("");
 	});
-</script>
+	</script>
 
-
-</head>
-<body>
-	<header>
-		<div id="logo">
-			<a href="GeekHub.html"><img src="{{ STATIC_URL }}image/logo21_GH.png" alt="logo GeekHub"></a>			
-		</div>
-	</header>
-	
-	<navigation>	
-		<ul>
-			<li class="first">Accueil</li>
-			<li>Les News</li>
-			<li>Les posts Facebook</li>
-			<li>Les Tweets</li>
-			<li class="last">Sondages</li>
-		</ul>
-	</navigation>
-	
 	<div id="content">
 		<div id="gauche_accueil">
 			<div id="home_news">
 			
 					{% for article in last_articles %}			        	
 				        	<div id="article">
-					        	<a class="iframe" href="{{ article.lien }}" rel="superbox[iframe][700x500]">
+					        	<a class="iframe" href="{{ article.lien }}">
 					        		<img id="img_art" src="{{ article.image }}" />
 					        		<div id="info_art">
 						        		<div id="titre_art"><h4>{{ article.titre }}</h4></div>
@@ -69,34 +24,35 @@
 							        	
 					        		</div>
 					        	</a>
-					        	<div id="plus">TOP</div>
-					        	<div id="moins"></div>
+					        	<div id="plus">{{ article.vote_pos }}</div>
+					        	<div id="moins">{{ article.vote_neg }}</div>
 				        	</div>    	
 			        	
 			        {% endfor %}
 				
 			</div>
 					
-			<div id="home_facebook">			
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis, lacus at rhoncus sagittis, enim mi blandit risus, in blandit magna nibh vestibulum ipsum. Vestibulum eget nibh vitae quam mattis sollicitudin a at eros. Etiam scelerisque, nibh non volutpat condimentum, risus mi eleifend sapien, ut luctus nibh lectus vel augue. Pellentesque tempus, urna vel congue luctus, elit sapien scelerisque lacus, ac tristique augue purus sit amet dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et lacus at felis imperdiet luctus. Duis et aliquam purus. Morbi sed elit erat, ut tincidunt odio. Ut at tortor sit amet libero aliquet tincidunt vulputate et ante. Nullam nisi dui, lobortis vestibulum dapibus quis, iaculis id quam. Nam malesuada, mi eu feugiat fermentum, elit nulla porta ipsum, quis cursus risus do</p>
+			<div id="home_facebook">	
+				<div id="publication">		
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis, lacus at rhoncus sagittis, enim mi blandit risus, in blandit magna nibh vestibulum ipsum. Vestibulum eget nibh vitae quam mattis sollicitudin a at eros. Etiam scelerisque, nibh non volutpat condimentum, risus mi eleifend sapien, ut luctus nibh lectus vel augue. Pellentesque tempus, urna vel congue luctus, elit sapien scelerisque lacus, ac tristique augue purus sit amet dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et lacus at felis imperdiet luctus. Duis et aliquam purus. Morbi sed elit erat, ut tincidunt odio. Ut at tortor sit amet libero aliquet tincidunt vulputate et ante. Nullam nisi dui, lobortis vestibulum dapibus quis, iaculis id quam. Nam malesuada, mi eu feugiat fermentum, elit nulla porta ipsum, quis cursus risus do</p>
+				</div>
+				<div id="publication">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis, lacus at rhoncus sagittis, enim mi blandit risus, in blandit magna nibh vestibulum ipsum. Vestibulum eget nibh vitae quam mattis sollicitudin a at eros. Etiam scelerisque, nibh non volutpat condimentum, risus mi eleifend sapien, ut luctus nibh lectus vel augue. Pellentesque tempus, urna vel congue luctus, elit sapien scelerisque lacus, ac tristique augue purus sit amet dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et lacus at felis imperdiet luctus. Duis et aliquam purus. Morbi sed elit erat, ut tincidunt odio. Ut at tortor sit amet libero aliquet tincidunt vulputate et ante. Nullam nisi dui, lobortis vestibulum dapibus quis, iaculis id quam. Nam malesuada, mi eu feugiat fermentum, elit nulla porta ipsum, quis cursus risus do</p>
+				</div>
 			</div>
-			<div id="home_twitter">				
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis, lacus at rhoncus sagittis, enim mi blandit risus, in blandit magna nibh vestibulum ipsum. Vestibulum eget nibh vitae quam mattis sollicitudin a at eros. Etiam scelerisque, nibh non volutpat condimentum, risus mi eleifend sapien, ut luctus nibh lectus vel augue. Pellentesque tempus, urna vel congue luctus, elit sapien scelerisque lacus, ac tristique augue purus sit amet dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et lacus at felis imperdiet luctus. Duis et aliquam purus. Morbi sed elit erat, ut tincidunt odio. Ut at tortor sit amet libero aliquet tincidunt vulputate et ante. Nullam nisi dui, lobortis vestibulum dapibus quis, iaculis id quam. Nam malesuada, mi eu feugiat fermentum, elit nulla porta ipsum, quis cursus risus do</p>
+			<div id="home_twitter">	
+				<div id="publication">		
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis, lacus at rhoncus sagittis, enim mi blandit risus, in blandit magna nibh vestibulum ipsum. Vestibulum eget nibh vitae quam mattis sollicitudin a at eros. Etiam scelerisque, nibh non volutpat condimentum, risus mi eleifend sapien, ut luctus nibh lectus vel augue. Pellentesque tempus, urna vel congue luctus, elit sapien scelerisque lacus, ac tristique augue purus sit amet dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et lacus at felis imperdiet luctus. Duis et aliquam purus. Morbi sed elit erat, ut tincidunt odio. Ut at tortor sit amet libero aliquet tincidunt vulputate et ante. Nullam nisi dui, lobortis vestibulum dapibus quis, iaculis id quam. Nam malesuada, mi eu feugiat fermentum, elit nulla porta ipsum, quis cursus risus do</p>
+				</div>
+				<div id="publication">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis, lacus at rhoncus sagittis, enim mi blandit risus, in blandit magna nibh vestibulum ipsum. Vestibulum eget nibh vitae quam mattis sollicitudin a at eros. Etiam scelerisque, nibh non volutpat condimentum, risus mi eleifend sapien, ut luctus nibh lectus vel augue. Pellentesque tempus, urna vel congue luctus, elit sapien scelerisque lacus, ac tristique augue purus sit amet dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et lacus at felis imperdiet luctus. Duis et aliquam purus. Morbi sed elit erat, ut tincidunt odio. Ut at tortor sit amet libero aliquet tincidunt vulputate et ante. Nullam nisi dui, lobortis vestibulum dapibus quis, iaculis id quam. Nam malesuada, mi eu feugiat fermentum, elit nulla porta ipsum, quis cursus risus do</p>
+				</div>
 			</div>
 		</div>
 		<div id="droite_accueil">
 			<div id="home_site">						
 				<img src="http://lol.net/p/bestofmicro-com-mini.jpg"/>						
 			</div>
-			<div id="home_pub">				
-			</div>	
 		</div>	
-		<iframe id="frame" src="" width="80%" height="90%">
-   		</iframe>
 	</div>
-	<footer>
-		<img id="foot1" src="{{ STATIC_URL }}image/foot2.png"/>
-	</footer>
-</body>
-
-</html>
+{% include "theme/footer.html" %}
