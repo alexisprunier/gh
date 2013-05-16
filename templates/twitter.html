@@ -1,0 +1,16 @@
+{% include "theme/header.html" %}
+<div id="content">
+ <div id="twitter">
+  {% for article in all_articles %}            
+          <div id="article">
+           <a href="{{ article.lien }}">
+            <div id="date_art">{% autoescape off %}{{ article.titre }}{% endautoescape %}</div>
+            <div id="date_art">{% autoescape off %}{{ article.contenu }}{% endautoescape %}</div>
+            <div id="date_art">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
+            <div id="date_art">{% autoescape off %}{{ article.date }}{% endautoescape %}</div>
+           </a>
+          </div>     
+        {% endfor %}
+ </div> 
+</div>
+{% include "theme/footer.html" %}
