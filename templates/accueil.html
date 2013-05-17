@@ -2,8 +2,14 @@
 
 	<script type="text/javascript">
 	$(document).ready(function(){
-		$(".iframe").fancybox();
-		alert("");
+		$("#iframe").fancybox({
+			'width'             : '80%',
+			'height'            : '90%',
+			'autoScale'         : true,
+			'transitionIn'      : 'elastic',
+			'transitionOut'     : 'elastic',
+			'type'              : 'iframe'
+		});
 	});
 	</script>
 
@@ -13,7 +19,7 @@
 			
 					{% for article in last_articles %}			        	
 				        	<div id="article">
-					        	<a class="iframe" href="{{ article.lien }}">
+					        	<a class="iframe" id="iframe" href="{{ article.lien }}">
 					        		<img id="img_art" src="{{ article.image }}" />
 					        		<div id="info_art">
 						        		<div id="titre_art"><h4>{{ article.titre }}</h4></div>
