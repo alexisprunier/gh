@@ -1,16 +1,25 @@
 {% include "theme/header.html" %}
 <div id="content">
+<div id="gauche_accueil">
+
  <div id="twitter">
   {% for article in all_articles %}            
           <div id="article">
            <a href="{{ article.lien }}">
-            <div id="date_art">{% autoescape off %}{{ article.titre }}{% endautoescape %}</div>
-            <div id="date_art">{% autoescape off %}{{ article.contenu }}{% endautoescape %}</div>
-            <div id="date_art">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
-            <div id="date_art">{% autoescape off %}{{ article.date }}{% endautoescape %}</div>
+           <div id="tw_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
+            <div id="tw_contenu">{% autoescape off %}{{ article.contenu }}{% endautoescape %}</div>
+            <div id="tw_date">{% autoescape off %}{{ article.date }}{% endautoescape %}</div>
            </a>
           </div>     
         {% endfor %}
  </div> 
+</div> 
+<div id="droite_accueil">
+	<div id="home_site">						
+		<img src="http://lol.net/p/bestofmicro-com-mini.jpg"/>						
+	</div>
+	<div id="home_pub">				
+	</div>	
+</div>	
 </div>
 {% include "theme/footer.html" %}
