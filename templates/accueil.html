@@ -38,21 +38,28 @@
 				
 			</div>
 					
-			<div id="home_facebook">	
-				<div id="publication">		
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis, lacus at rhoncus sagittis, enim mi blandit risus, in blandit magna nibh vestibulum ipsum. Vestibulum eget nibh vitae quam mattis sollicitudin a at eros. Etiam scelerisque, nibh non volutpat condimentum, risus mi eleifend sapien, ut luctus nibh lectus vel augue. Pellentesque tempus, urna vel congue luctus, elit sapien scelerisque lacus, ac tristique augue purus sit amet dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et lacus at felis imperdiet luctus. Duis et aliquam purus. Morbi sed elit erat, ut tincidunt odio. Ut at tortor sit amet libero aliquet tincidunt vulputate et ante. Nullam nisi dui, lobortis vestibulum dapibus quis, iaculis id quam. Nam malesuada, mi eu feugiat fermentum, elit nulla porta ipsum, quis cursus risus do</p>
-				</div>
-				<div id="publication">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis, lacus at rhoncus sagittis, enim mi blandit risus, in blandit magna nibh vestibulum ipsum. Vestibulum eget nibh vitae quam mattis sollicitudin a at eros. Etiam scelerisque, nibh non volutpat condimentum, risus mi eleifend sapien, ut luctus nibh lectus vel augue. Pellentesque tempus, urna vel congue luctus, elit sapien scelerisque lacus, ac tristique augue purus sit amet dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et lacus at felis imperdiet luctus. Duis et aliquam purus. Morbi sed elit erat, ut tincidunt odio. Ut at tortor sit amet libero aliquet tincidunt vulputate et ante. Nullam nisi dui, lobortis vestibulum dapibus quis, iaculis id quam. Nam malesuada, mi eu feugiat fermentum, elit nulla porta ipsum, quis cursus risus do</p>
-				</div>
+			<div id="home_facebook">
+			  	{% for article in last_facebook %}            
+		          <div id="publication"><p>
+		           <a href="{{ article.lien }}">
+		            <div id="fb_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
+		            <div id="fb_titre">{% autoescape off %}{{ article.titre }}{% endautoescape %}</div>
+		            <div id="fb_contenu">{% autoescape off %}{{ article.contenu }}{% endautoescape %}</div>
+		            <div id="fb_date">{% autoescape off %}{{ article.date }}{% endautoescape %}</div>
+		           </a>
+		          </p></div>		  
+			    {% endfor %}
 			</div>
 			<div id="home_twitter">	
-				<div id="publication">		
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis, lacus at rhoncus sagittis, enim mi blandit risus, in blandit magna nibh vestibulum ipsum. Vestibulum eget nibh vitae quam mattis sollicitudin a at eros. Etiam scelerisque, nibh non volutpat condimentum, risus mi eleifend sapien, ut luctus nibh lectus vel augue. Pellentesque tempus, urna vel congue luctus, elit sapien scelerisque lacus, ac tristique augue purus sit amet dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et lacus at felis imperdiet luctus. Duis et aliquam purus. Morbi sed elit erat, ut tincidunt odio. Ut at tortor sit amet libero aliquet tincidunt vulputate et ante. Nullam nisi dui, lobortis vestibulum dapibus quis, iaculis id quam. Nam malesuada, mi eu feugiat fermentum, elit nulla porta ipsum, quis cursus risus do</p>
-				</div>
-				<div id="publication">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis, lacus at rhoncus sagittis, enim mi blandit risus, in blandit magna nibh vestibulum ipsum. Vestibulum eget nibh vitae quam mattis sollicitudin a at eros. Etiam scelerisque, nibh non volutpat condimentum, risus mi eleifend sapien, ut luctus nibh lectus vel augue. Pellentesque tempus, urna vel congue luctus, elit sapien scelerisque lacus, ac tristique augue purus sit amet dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et lacus at felis imperdiet luctus. Duis et aliquam purus. Morbi sed elit erat, ut tincidunt odio. Ut at tortor sit amet libero aliquet tincidunt vulputate et ante. Nullam nisi dui, lobortis vestibulum dapibus quis, iaculis id quam. Nam malesuada, mi eu feugiat fermentum, elit nulla porta ipsum, quis cursus risus do</p>
-				</div>
+			  	{% for article in last_twitter %}            
+		          <div id="publication"><p>
+		           <a href="{{ article.lien }}">
+		            <div id="tw_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
+		            <div id="tw_contenu">{% autoescape off %}{{ article.contenu }}{% endautoescape %}</div>
+		            <div id="tw_date">{% autoescape off %}{{ article.date }}{% endautoescape %}</div>
+		           </a>
+		          </p></div>		  
+			    {% endfor %}
 			</div>
 		</div>
 		<div id="droite_accueil">

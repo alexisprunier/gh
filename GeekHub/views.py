@@ -5,6 +5,8 @@ from GeekHub.models import Article, Facebook, Twitter
 def accueil(request):
     
     last_articles = Article.objects.all().order_by("id")[:6]
+    last_facebook = Facebook.objects.all().order_by("id")[:2]
+    last_twitter = Twitter.objects.all().order_by("id")[:3]
     return render(request, 'accueil.html', locals())
 
 def news(request, page_number):
