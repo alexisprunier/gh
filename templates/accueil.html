@@ -30,8 +30,8 @@
 							        	
 					        		</div>
 					        	</a>
-					        	<div id="plus">{{ article.vote_pos }}</div>
-					        	<div id="moins">{{ article.vote_neg }}</div>
+					        	<!--<div id="plus">{{ article.vote_pos }}</div>
+					        	<div id="moins">{{ article.vote_neg }}</div>-->
 				        	</div>    	
 			        	
 			        {% endfor %}
@@ -52,7 +52,7 @@
 			</div>
 			<div id="home_twitter">	
 			  	{% for article in last_twitter %}            
-		          <div id="publication"><p>
+		          <div id="publication_tw"><p>
 		           <a href="{{ article.lien }}">
 		            <div id="tw_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
 		            <div id="tw_contenu">{% autoescape off %}{{ article.contenu }}{% endautoescape %}</div>

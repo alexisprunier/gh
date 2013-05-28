@@ -4,9 +4,9 @@
 
  <div id="twitter">
   {% for article in all_articles %}            
-          <div id="article">
+          <div id="publication_tw">
            <a href="{{ article.lien }}">
-           <div id="tw_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
+            <div id="tw_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
             <div id="tw_contenu">{% autoescape off %}{{ article.contenu }}{% endautoescape %}</div>
             <div id="tw_date">{% autoescape off %}{{ article.date }}{% endautoescape %}</div>
            </a>
