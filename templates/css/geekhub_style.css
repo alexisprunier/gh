@@ -14,7 +14,6 @@ body{
 	background-image: url('../image/fontt.jpg');
 	background-attachment:fixed;
 	min-width: 320px;
-	
 }
 /*************************************************************
 *****************    SCROLL BARRE  ***************************
@@ -101,7 +100,6 @@ div#content{
 	margin : 70px auto;
 	width : 100%;
 	max-width : 1140px;
-	
 }
 div#gauche_accueil{
 	display : inline-block;
@@ -112,26 +110,60 @@ div#gauche_accueil{
 div#droite_accueil{
 	display : inline-block;
 	width : 20%;
-	height: 230px;
 	vertical-align : top;
-	background-color: #000018;
 }
 div#droite_accueil #site_semaine{
 	height:170px;
 	margin: 10px 0px 0px 10px;
 }
-div#droite_accueil #int_site_semaine{
+div#droite_accueil #int_site_semaine, #int_pub{
 	margin: 10px 0px 0px 8px;
 	color: white;
 	font-size: 21px;
 	font-family: "font_GH_bold";
 }
-div#home_pub{
+div#home_site{
 	background-color: #000018;
-	margin-top: 20px;
+}
+div#home_pub{
+	margin-top:15px;
+	padding-top:10px;
+	background-color: #000018;
 	width: 100%;
 	height: 600px;
 }
+div#droite_accueil #int_pub{
+	margin: 10px 0px 0px 38px;
+	color: white;
+	font-size: 28px;
+	font-family: "font_GH_bold";
+}
+div#pub{
+	background-color: #fff;
+	margin:0px 0px 0px 10px;
+	width: 90%;
+	height: 550px;
+}
+div#pages{
+	padding: 10px 0px 10px 0px;
+	width : 100%; 
+	margin : auto; 
+}
+div#page{
+	background-color: #000018;
+	width: 30px;
+	height: 30px;
+	display: inline; 
+}
+div#page a{
+	padding-left: 7px;
+	text-align: center;
+	font-family: "font_GH_bold";
+	color: white;
+	text-decoration: none;
+	font-size: 20px;
+}
+
 /*************ACCUEIL***************************/
 
 div#home_news{
@@ -155,6 +187,9 @@ width: 240px;
 background-color: #fff;
 box-shadow: 2px 2px 2px #222;
 text-align: center;
+}
+div#article:hover{
+	background-color: #eee;
 }
 div#article a{
 	display : block; 
@@ -212,9 +247,13 @@ padding-left: 65px;
 background-size: 5%;
 }
 div#home_facebook #publication{
+padding-left: 10px;
 margin: 10px;
 background-color: #FFF;
 width: 95%;
+}
+div#home_facebook #publication:hover{
+background-color: #eee;
 }
 div#home_facebook #publication p{
 margin: 2px 10px 2px 10px;
@@ -228,13 +267,9 @@ padding-left: 65px;
 background-size: 5%;
 width: 91%;
 }
-div#home_twitter #publication_tw{
+div#publication_tw{
 margin: 10px;
 background-color: #FFF;
-
-}
-div#home_twitter #publication_tw a{
-	text-decoration: none;
 }
 div#home_facebook #publication a{
 	text-decoration: none;
@@ -259,13 +294,20 @@ div#facebook{
 	width:91%;
 }
 div#facebook #article{
+	padding-left: 10px;
 	margin: 10px;
 	background-color: #FFF;
 	width: 95%;
 }
+div#facebook #article:hover{
+	background-color: #eee;
+}
 div#facebook #article p{
 	margin: 2px 10px 2px 10px;
 	padding: 5px;
+}
+div#facebook #article img{
+	margin: auto;
 }
 div#fb_origine{
 	font-weight: bold;
@@ -295,14 +337,23 @@ div#twitter{
 	background: url("../image/bloc_news.png") no-repeat 15px 20px, #000021;
 	padding-left: 65px;
 	background-size: 5%;
-	width:91%;
+	width:93%;
 }
-div#twitter #publication_tw{
+div#publications_tw{
 	margin: 10px;
 	background-color: #FFF;
 	width: 95%;
 }
-div#twitter #publication_tw p{
+div#publication_tw{
+	margin-left: 10px;
+	background-color: #FFF;
+	width: 95%;
+	padding: 8px 0px 8px 0px;
+}
+div#publication_tw:hover{
+	background-color: #eee;
+}
+div#publication_tw p{
 	margin: 2px 10px 2px 10px;
 	padding: 5px;
 }
@@ -323,7 +374,7 @@ div#tw_date{
 	color: #666666;
 	margin-top: 5px;
 }
-div#twitter #publication_tw a {
+div#publication_tw a {
     text-decoration: none;
 }
 

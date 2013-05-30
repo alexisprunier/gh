@@ -51,6 +51,7 @@
 			    {% endfor %}
 			</div>
 			<div id="home_twitter">	
+				<div id="publication_tw">
 			  	{% for article in last_twitter %}            
 		          <div id="publication_tw"><p>
 		           <a href="{{ article.lien }}">
@@ -60,6 +61,9 @@
 		           </a>
 		          </p></div>		  
 			    {% endfor %}
+			    </div>
 			</div>
-		</div>
+			<div id="twitter">
+ 		</div>
+	</div>
 {% include "theme/footer.html" %}
