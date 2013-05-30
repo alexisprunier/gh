@@ -6,7 +6,7 @@ def accueil(request):
     
     last_articles = Article.objects.all().order_by("id")[:6]
     last_facebook = Facebook.objects.all().order_by("id")[:2]
-    last_twitter = Twitter.objects.all().order_by("id")[:5]
+    last_twitter = Twitter.objects.all().order_by("id")[:3]
     return render(request, 'accueil.html', locals())
 
 def news(request, page_number):
@@ -62,15 +62,15 @@ def twitter(request, page_number):
     # recuperation des pages
     page_list = []
     i = 1
-    while i <= (size-1)/10+1 :
+    while i <= (size-1)/20+1 :
         page_list.append(i)
         i += 1
     
     # selection des article de la page
     selected_article = []
     page_number = int(page_number.encode('ascii'))
-    for i in [1,2,3,4,5,6,7,8,9,10]:
-        if ( 0 <= size-(page_number*10-10+i) < size):
+    for i in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]:
+        if ( 0 <= size-(page_number*20-20+i) < size):
             selected_article.append(all_articles[size-(page_number*10-10+i)])
     
     return render(request, 'twitter.html', locals())

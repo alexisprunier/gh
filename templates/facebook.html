@@ -1,8 +1,13 @@
 {% include "theme/header.html" %}
 <div id="content">
+<div id="pages">
+{% for page in page_list %}
+	<div id="page"><a href="/facebook/000{{ page }}">{{ page }}</a></div>
+{% endfor %}
+</div>
 <div id="gauche_accueil">
  <div id="facebook">
-  	{% for article in all_articles %}            
+  	{% for article in selected_article %}            
           <div id="article">
            <a href="{{ article.lien }}">
             <div id="fb_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
@@ -13,5 +18,10 @@
           </div>     
     {% endfor %}
  </div> 
+<div id="pages">
+{% for page in page_list %}
+	<div id="page"><a href="/facebook/000{{ page }}">{{ page }}</a></div>
+{% endfor %}
+</div>	
 </div> 
 {% include "theme/footer.html" %}

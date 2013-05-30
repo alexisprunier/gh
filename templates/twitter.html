@@ -1,17 +1,28 @@
 {% include "theme/header.html" %}
 <div id="content">
-<div id="gauche_accueil">
-
- <div id="twitter">
-  {% for article in all_articles %}            
-          <div id="publication_tw">
-           <a href="{{ article.lien }}">
-            <div id="tw_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
-            <div id="tw_contenu">{% autoescape off %}{{ article.contenu }}{% endautoescape %}</div>
-            <div id="tw_date">{% autoescape off %}{{ article.date }}{% endautoescape %}</div>
-           </a>
-          </div>     
-  {% endfor %}
- </div> 
+	<div id="pages">
+	{% for page in page_list %}
+		<div id="page"><a href="/twitter/000{{ page }}">{{ page }}</a></div>
+	{% endfor %}
+	</div>	
+	<div id="gauche_accueil">
+	 <div id="twitter">
+	 	<div id="publications_tw">
+		  {% for article in selected_article %}            
+		          <div id="publication_tw">
+		           <a href="{{ article.lien }}">
+		            <div id="tw_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
+		            <div id="tw_contenu">{% autoescape off %}{{ article.contenu }}{% endautoescape %}</div>
+		            <div id="tw_date">{% autoescape off %}{{ article.date }}{% endautoescape %}</div>
+		           </a>
+		          </div>     
+		  {% endfor %}
+		</div>
+	 </div> 
+	<div id="pages">
+	{% for page in page_list %}
+		<div id="page"><a href="/twitter/000{{ page }}">{{ page }}</a></div>
+	{% endfor %}
+	</div>	
 </div> 
 {% include "theme/footer.html" %}
