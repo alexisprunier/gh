@@ -1,34 +1,40 @@
-
 {% include "theme/header.html" %}
+<script>
+window.setTimeout(function () {
+$(document).ready(function () {
+    var ResizeTarget = $('#titre_news');
+    ResizeTarget.resize(function () {
+        var target = $('#news');
+        target.css('height', ResizeTarget.height());
+    }).trigger('resize');
+}); }, 500);
+</script>
 
+<div id="switch_page">
+	<div id="page" class="change_page">{{ page_number }}</div>
+	<a href="/news/000{{ page_prec }}"><div id="precedent" class="change_page"><</div></a>
+	<a href="/news/000{{ page_suiv }}"><div id="suivant" class="change_page">></div></a>
+</div>
 <div id="content">
-	<div id="pages">
-		{% for page in page_list %}
-			<div id="page"><a href="/news/000{{ page }}">{{ page }}</a></div>
-		{% endfor %}
-	</div>
 	<div id="gauche_accueil">
 	<div id="news">
-		{% for article in selected_article %}			        	
+		<div id="titre_news"><div id="text_titre_news">NEWS</div></div>
+			<div id="articles">
+			{% for article in selected_article %}	
+				<a href="{{article.lien}}">		        	
 	        	<div id="article">
-		        	<a href="{{ article.lien }}">
-		        		<img id="img_art" src="{{ article.image }}" />
-		        		<div id="info_art">
-			        		<div id="titre_art"><h4>{{ article.titre }}</h4></div>
-			        		<div id="date_origine">
-				        		<div id="origine_art"><h6><img src='{{ STATIC_URL }}favicon/{{ article.origine }}.png' align="bottom"></img><b>{{ article.origine }}</b></h6></div>
-				        		<div id="date_art">{{ article.date }}</div>
-				        	</div>
+	        		<img id="img_art" src="{{ article.image }}" />
+	        		<div id="info_art">
+	        			<div id="titre_date">
+			        		<div id="titre_art">{{ article.titre }}</div>
+			        		<div id="date_art">{{ article.date }}</div>
 		        		</div>
-		        	</a>
-	        	</div>    	
-        {% endfor %}
-	</div>
-	<div id="pages">
-	{% for page in page_list %}
-		<div id="page"><a href="/news/000{{ page }}">{{ page }}</a></div>
-	{% endfor %}
+		        		<div id="origine_art"><img id="favicon" src='{{ STATIC_URL }}favicon/{{ article.origine }}.png' align="bottom" alt='{{ STATIC_URL }}image/empty_image.png'></img><div id="text_article">{{ article.origine }}</div></div>
+	        		</div>
+	        	</div>    
+	        	</a>	
+        	{% endfor %}
+        	</div>
+		</div>
 	</div>	
-</div>	
-	
 {% include "theme/footer.html" %}

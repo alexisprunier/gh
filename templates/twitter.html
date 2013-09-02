@@ -1,28 +1,22 @@
 {% include "theme/header.html" %}
+<div id="switch_page">
+	<div id="page" class="change_page">{{ page_number }}</div>
+	<a href="/twitter/000{{ page_prec }}"><div id="precedent" class="change_page"><</div></a>
+	<a href="/twitter/000{{ page_suiv }}"><div id="suivant" class="change_page">></div></a>
+</div>
 <div id="content">
-	<div id="pages">
-	{% for page in page_list %}
-		<div id="page"><a href="/twitter/000{{ page }}">{{ page }}</a></div>
-	{% endfor %}
-	</div>	
 	<div id="gauche_accueil">
 	 <div id="twitter">
+	 	<div id="titre_twit_acc"><div id="text_titre_tw">TWITTER</div></div>
 	 	<div id="publications_tw">
-		  {% for article in selected_article %}            
-		          <div id="publication_tw">
-		           <a href="{{ article.lien }}">
+		  {% for article in selected_article %}
+		          <a href="https://twitter.com/{{article.origine}}"><div id="publication_tw">
 		            <div id="tw_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
-		            <div id="tw_contenu">{% autoescape off %}{{ article.contenu }}{% endautoescape %}</div>
+		            <div id="tw_contenu">{% autoescape off %}{{ article.titre }}{% endautoescape %}</div>
 		            <div id="tw_date">{% autoescape off %}{{ article.date }}{% endautoescape %}</div>
-		           </a>
-		          </div>     
+		          </div></a>
 		  {% endfor %}
 		</div>
 	 </div> 
-	<div id="pages">
-	{% for page in page_list %}
-		<div id="page"><a href="/twitter/000{{ page }}">{{ page }}</a></div>
-	{% endfor %}
-	</div>	
 </div> 
 {% include "theme/footer.html" %}
