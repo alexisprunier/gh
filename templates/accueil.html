@@ -1,69 +1,53 @@
-{% include "theme/header.html" %}	
+{% include "theme/header.html" %}
+<script>
 
-	<script type="text/javascript">
-	$(document).ready(function(){
-		$("#iframe").fancybox({
-			'width'             : '80%',
-			'height'            : '90%',
-			'autoScale'         : true,
-			'transitionIn'      : 'elastic',
-			'transitionOut'     : 'elastic',
-			'type'              : 'iframe'
-		});
-	});
-	</script>
-
-	<div id="content">
-		<div id="gauche_accueil">
-			<div id="home_news">
-			
-					{% for article in last_articles %}			        	
-				        	<div id="article">
-					        	<a class="iframe" id="iframe" href="{{ article.lien }}">
-					        		<img id="img_art" src="{{ article.image }}" />
-					        		<div id="info_art">
-						        		<div id="titre_art"><h4>{{ article.titre }}</h4></div>
-						        		<div id="date_origine">
-							        		<div id="origine_art"><h6><img src='{{ STATIC_URL }}favicon/{{ article.origine }}.png' align="bottom"></img><b>{{ article.origine }}</b></h6></div>
-							        		<div id="date_art">{{ article.date }}</div>
-							        	</div>
-							        	
-					        		</div>
-					        	</a>
-					        	<!--<div id="plus">{{ article.vote_pos }}</div>
-					        	<div id="moins">{{ article.vote_neg }}</div>-->
-				        	</div>    	
-			        	
-			        {% endfor %}
-				
-			</div>
-					
-			<div id="home_facebook">
-			  	{% for article in last_facebook %}            
-		          <div id="publication"><p>
-		           <a href="{{ article.lien }}">
-		            <div id="fb_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
-		            <div id="fb_titre">{% autoescape off %}{{ article.titre }}{% endautoescape %}</div>
-		            <div id="fb_contenu">{% autoescape off %}{{ article.contenu }}{% endautoescape %}</div>
-		            <div id="fb_date">{% autoescape off %}{{ article.date }}{% endautoescape %}</div>
-		           </a>
-		          </p></div>		  
-			    {% endfor %}
-			</div>
-			<div id="home_twitter">	
-				<div id="publication_tw">
-			  	{% for article in last_twitter %}            
-		          <div id="publication_tw"><p>
-		           <a href="{{ article.lien }}">
-		            <div id="tw_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
-		            <div id="tw_contenu">{% autoescape off %}{{ article.contenu }}{% endautoescape %}</div>
-		            <div id="tw_date">{% autoescape off %}{{ article.date }}{% endautoescape %}</div>
-		           </a>
-		          </p></div>		  
-			    {% endfor %}
-			    </div>
-			</div>
-			<div id="twitter">
- 		</div>
+</script>	
+<div id="content">
+	<div id="gauche_accueil">
+		<div id="news">
+			<div id="titre_news_acc"></div><div id="text_titre_news">NEWS</div>
+			<div id="articles">
+			{% for article in last_articles %}
+			<a href="{{article.lien}}">	        	
+	        	<div id="article">
+	        		<img id="img_art" src="{{ article.image }}" />
+	        		<div id="info_art">
+	        			<div id="titre_date">
+			        		<div id="titre_art">{{ article.titre }}</div>
+			        		<div id="date_art">{{ article.date }}</div>
+		        		</div>
+		        		<div id="origine_art"><img id="favicon" src='{{ STATIC_URL }}favicon/{{ article.origine }}.png' align="bottom"></img><div id="text_article">{{ article.origine }}</div></div>
+	        		</div>
+	        	</div>
+	        </a>
+        	{% endfor %}
+        	</div>
+		</div>
+		<div id="facebook">
+			<div id="titre_face_acc"></div><div id="text_titre_fb">FACEBOOK</div>
+			<div id="publications">
+		  	{% for article in last_facebook %}            
+	          <div id="publication">
+	            <div id="fb_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
+	            <div id="fb_titre">{% autoescape off %}{{ article.titre }}{% endautoescape %}</div>
+	            <div id="fb_contenu">{% autoescape off %}{{ article.contenu }}{% endautoescape %}</div>
+	            <div id="fb_date">{% autoescape off %}{{ article.date }}{% endautoescape %}</div>
+	          </p></div>
+		    {% endfor %}
+		    </div>
+		</div>
+		<div id="twitter">
+			<div id="titre_twit_acc"></div><div id="text_titre_tw">TWITTER</div>
+			<div id="publications_tw">
+		  	{% for article in last_twitter %}            
+	          <a href="https://twitter.com/{{article.origine}}"><div id="publication_tw">
+	            <div id="tw_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
+	            <div id="tw_contenu">{% autoescape off %}{{ article.titre }}{% endautoescape %}</div>
+	            <div id="tw_date">{% autoescape off %}{{ article.date }}{% endautoescape %}</div>
+	          </div></a>  
+		    {% endfor %}
+		    </div>
+		</div>
 	</div>
+
 {% include "theme/footer.html" %}

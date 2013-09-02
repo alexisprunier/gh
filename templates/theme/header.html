@@ -14,12 +14,21 @@
 	<!--JS-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script type="text/javascript" src="{{ STATIC_URL }}jquery/fancyapps-fancyBox-0ffc358/source/jquery.fancybox.js?v=2.1.4"></script>
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	
 </head>
 <body>
 	<header>
 		<div id="logo">
-			<a href="GeekHub.html"><img src="{{ STATIC_URL }}image/logo21_GH.png" alt="logo GeekHub"></a>			
+			<a href="/accueil"><img src="{{ STATIC_URL }}image/logo21_GH.png" alt="logo GeekHub"></a>			
 		</div>
 	</header>
 	
@@ -29,6 +38,5 @@
 			<li><a href="/news/0001">Les News</a></li>
 			<li><a href="/facebook/0001">Les posts Facebook</a></li>
 			<li><a href="/twitter/0001">Les Tweets</a></li>
-			<li class="last"><a href="">Sondages</a></li>
 		</ul>
 	</navigation>
