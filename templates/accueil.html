@@ -10,7 +10,9 @@
 			{% for article in last_articles %}
 			<a href="{{article.lien}}">	        	
 	        	<div id="article">
-	        		<img id="img_art" src="{{ article.image }}" />
+	        		<object id="img_art" type="image/jpeg" data="{{ article.image }}">
+	        			<object id="img_art2" type="image/jpeg" data="{{ STATIC_URL }}image/empty_image.png"></object>
+	        		</object>
 	        		<div id="info_art">
 	        			<div id="titre_date">
 			        		<div id="titre_art">{{ article.titre }}</div>
@@ -29,7 +31,6 @@
 		  	{% for article in last_facebook %}            
 	          <div id="publication">
 	            <div id="fb_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
-	            <div id="fb_titre">{% autoescape off %}{{ article.titre }}{% endautoescape %}</div>
 	            <div id="fb_contenu">{% autoescape off %}{{ article.contenu }}{% endautoescape %}</div>
 	            <div id="fb_date">{% autoescape off %}{{ article.date }}{% endautoescape %}</div>
 	          </p></div>

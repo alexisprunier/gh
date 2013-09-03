@@ -23,7 +23,9 @@ $(document).ready(function () {
 			{% for article in selected_article %}	
 				<a href="{{article.lien}}">		        	
 	        	<div id="article">
-	        		<img id="img_art" src="{{ article.image }}" />
+	        		<object id="img_art" type="image/jpeg" data="{{ article.image }}">
+	        			<object id="img_art2" type="image/jpeg" data="{{ STATIC_URL }}image/empty_image.png"></object>
+	        		</object>	        		
 	        		<div id="info_art">
 	        			<div id="titre_date">
 			        		<div id="titre_art">{{ article.titre }}</div>

@@ -180,13 +180,22 @@ div#article{
 	float: top;
 	border:1px solid #999;
 }
-img#img_art{
+object#img_art{
+	display: block;
 	position: absolute;
 	float: left;
 	width: 120px;
 	height: 90px;
 	margin-top: 5px;
 	margin-left: 5px;
+	background-image:url('{{ STATIC_URL }}image/empty_image.png');
+}
+object#img_art2{
+	display: block;
+	position: absolute;
+	float: left;
+	width: 120px;
+	height: 90px;
 	background-image:url('{{ STATIC_URL }}image/empty_image.png');
 }
 div#info_art{
@@ -274,9 +283,6 @@ div#tw_contenu{margin-left: 15px; font-size: 14px; color: black;}
 div#tw_date{font-size: 11px; color: #888; margin: 0 0 10px 15px;}
 
 
-
-/*************SONDAGE***************************/
-
 /*************SOURCES***************************/
 
 div#sources{
@@ -284,8 +290,8 @@ div#sources{
 	margin-bottom: 20px;
 	overflow: auto;
 }
-div#titre_src{background-color: #000021; width: 60px; height: 500px; float:left; overflow:auto;}
-div#source_titre{font-size: 23px; color: #800409; font-weight: bold; text-align: center; margin-top: 10px; margin-bottom: 10px;}
+div#titre_src{background-color: #000021; width: 60px; height: 460px; float:left; overflow:auto;}
+div#source_titre{font-size: 23px; color: #800409; font-weight: bold; text-align: center; margin-top: 10px; margin-bottom: 30px;}
 div#text_titre_src{
 	font-family: "font_GH_bold";
 	color: white;
@@ -297,21 +303,38 @@ div#text_titre_src{
 	-webkit-transform:rotate(270deg);
 	-o-transform:rotate(270deg);
 }
-div#source_name{padding: 0 0 0 20px;}
+div#source_name{padding: 0 0 0 20px; padding-top: 10px; color: black;}
+div#source_name:hover{background-color: #ddd;}
+a.lien_source{text-decoration: none;}
 div#sources_news{
-	width: 30%;
+	width: 28%;
 	float: left;
+	background-color: #fff;
+	margin-left: 2%;
+	margin-top: 15px;
+	height: 400px;
+	font-size: 18px;
+	border:1px solid #999;
 }
 div#sources_fb{
-	width: 30%;
+	width: 28%;
 	float: left;
+	background-color: #fff;
+	margin-left: 2%;
+	margin-top: 15px;
+	height: 400px;
+	font-size: 18px;
+	border:1px solid #999;
 }
 div#sources_twit{
-	width: 30%;
+	width: 28%;
 	float: left;
-}
-div#source_name{
-	display: inline;
+	background-color: #fff;
+	margin-left: 2%;
+	margin-top: 15px;
+	height: 400px;
+	font-size: 18px;
+	border:1px solid #999;
 }
 
 /************************************************************
