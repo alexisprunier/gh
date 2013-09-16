@@ -1,2 +1,6 @@
 eclipse.preferences.version=1
-encoding//GeekHub/views.py=utf-8
+encoding//GeekHub/controllers/Accueil.py=utf-8
+encoding//GeekHub/controllers/Facebook.py=utf-8
+encoding//GeekHub/controllers/News.py=utf-8
+encoding//GeekHub/controllers/Sources.py=utf-8
+encoding//GeekHub/controllers/Twitter.py=utf-8
