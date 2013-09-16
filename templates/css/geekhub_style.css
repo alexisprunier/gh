@@ -78,7 +78,7 @@ li:active{
 **********************   DROITE CONTENT   ******************
 ************************************************************/
 div#content{
-	margin : 70px auto;
+	margin : 60px auto 30px auto;
 	width : 1140px;
 }
 div#gauche_accueil{
@@ -102,7 +102,7 @@ div#droite_accueil #int_site_semaine{
 	padding: 5px 0px 0px 8px;
 	color: white;
 	font-size: 21px;
-	background-color: #000021;
+	background-color: #000010;
 	overflow: auto;
 	font-family: "font_GH_bold";
 }
@@ -115,21 +115,21 @@ div#home_pub{
 	padding-top:10px;
 	background-color: #CCC;
 	width: 100%;
-	height: 600px;
+	height: 650px;
 	overflow: auto;
 }
 div#droite_accueil #int_pub{
 	padding: 5px 0px 0px 38px;
 	color: white;
 	font-size: 28px;
-	background-color: #000021;
+	background-color: #000010;
 	font-family: "font_GH_bold";
 }
 div#pub{
 	background-color: #CCC;
-	padding:0px 0px 6px 10px;
-	width: 90%;
-	height: 555px;
+	padding:0px 0px 6px 33px;
+	width: 80%;
+	height: 605px;
 }
 
 /*************NEWS***************************/
@@ -142,7 +142,7 @@ div#news{
 }
 div#titre_news_acc{
 	display: table-cell;
-	background-color: #000021;
+	background-color: #000010;
     width: 60px !important;
 }
 div#text_titre_news{
@@ -160,7 +160,7 @@ div#text_titre_news{
 }
 div#titre_news{
 	display: table-cell;
-	background-color: #000021;
+	background-color: #000010;
     width: 60px !important;
 }
 div#articles{
@@ -226,10 +226,10 @@ div.change_page{
 
 div#facebook{display: table; margin-bottom: 20px;border-collapse:separate; position: relative; background-color: #CEE3F6; min-height: 300px;}
 div#titre_face_acc{	display: table-cell;
-	background-color: #000021;
+	background-color: #000010;
     width: 60px !important;}
 div#titre_face{	display: table-cell;
-	background-color: #000021;
+	background-color: #000010;
     width: 60px !important;}
 div#text_titre_fb{
 	font-family: "font_GH_bold";
@@ -257,10 +257,10 @@ div#publication img{display:block; width:auto; margin-left:auto; margin-right:au
 
 div#twitter{display: table; background-color: #CEF6EC; margin-bottom: 20px; position: relative;}
 div#titre_twit_acc{display: table-cell;
-	background-color: #000021;
+	background-color: #000010;
     width: 60px !important;}
 div#titre_twit_news{display: table-cell;
-	background-color: #000021;
+	background-color: #000010;
     width: 60px !important;}
 div#text_titre_tw{
 	font-family: "font_GH_bold";
@@ -290,7 +290,7 @@ div#sources{
 	margin-bottom: 20px;
 	overflow: auto;
 }
-div#titre_src{background-color: #000021; width: 60px; height: 460px; float:left; overflow:auto;}
+div#titre_src{background-color: #000010; width: 60px; height: 460px; float:left; overflow:auto;}
 div#source_titre{font-size: 23px; color: #800409; font-weight: bold; text-align: center; margin-top: 10px; margin-bottom: 30px;}
 div#text_titre_src{
 	font-family: "font_GH_bold";
@@ -352,7 +352,8 @@ footer{
 	box-shadow: 0 0px 12px #000017;
 }
 div#footer_links{
-	margin: auto; width: 900px; margin-top: 30px;
+	margin: auto; width: 900px; margin-top: 40px;
+	height: 90px;
 	font-family: "font_GH_bold";
 	font-size: 12px;
 }
@@ -365,6 +366,7 @@ div#footer_links a{
 }
 div#links{
 	width: 350px;
+	height: 70px;
 	display: inline-block;
 }
 img#foot1{
