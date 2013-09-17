@@ -1,4 +1,20 @@
 {% include "theme/header.html" %}
+<script type="text/javascript">
+$(window).bind('focus', function() {
+	$.ajax({
+	    type: "POST",
+	    url: '/facebook/refresh/',
+	    data: { 	    			  
+	    }
+	}).done(function(msg){
+	    location.reload();
+	    $("#gauche_accueil").html(msg);
+	})
+});
+</script>
+
+
+
 <div id="switch_page">
 	<div id="page" class="change_page">{{ page_number }}</div>
 	<a href="/facebook/000{{ page_prec }}"><div id="precedent" class="change_page"><</div></a>

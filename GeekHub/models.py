@@ -7,8 +7,7 @@ class Article(models.Model):
     lien = models.TextField(null=True)
     date = models.DateTimeField(auto_now_add=True, auto_now=False, verbose_name="Date de parution")
     image = models.CharField(max_length=200)
-    vote_pos = models.IntegerField(null=True)
-    vote_neg = models.IntegerField(null=True)
+    visites = models.IntegerField(null=True)
     
     def __unicode__(self):
         return self.titre
