@@ -8,7 +8,22 @@ $(document).ready(function () {
         target.css('height', ResizeTarget.height());
     }).trigger('resize');
 }); }, 500);
+
+$(window).bind('focus', function() {
+	$.ajax({
+	    type: "POST",
+	    url: '/news/refresh/',
+	    data: { 
+	    	page: "{{ page_number }}",
+	    	static_url: "{{ STATIC_URL }}"		  
+	    }
+	}).done(function(msg){
+	    $("#articles").html(msg);
+	})
+});
 </script>
+
+{{csrf_token}}
 
 <div id="switch_page">
 	<div id="page" class="change_page">{{ page_number }}</div>
@@ -20,7 +35,7 @@ $(document).ready(function () {
 	<div id="news">
 		<div id="titre_news"><div id="text_titre_news">NEWS</div></div>
 			<div id="articles">
-			{% for article in selected_article %}	
+			{% for article in selected_articles %}	
 				<a href="{{article.lien}}">		        	
 	        	<div id="article">
 	        		<object id="img_art" type="image/jpeg" data="{{ article.image }}">

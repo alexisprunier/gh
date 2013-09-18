@@ -4,16 +4,16 @@ $(window).bind('focus', function() {
 	$.ajax({
 	    type: "POST",
 	    url: '/facebook/refresh/',
-	    data: { 	    			  
+	    data: { 
+	    	page: "{{ page_number }}"		  
 	    }
 	}).done(function(msg){
-	    location.reload();
-	    $("#gauche_accueil").html(msg);
+	    $("#publications").html(msg);
 	})
 });
 </script>
 
-
+{{csrf_token}}
 
 <div id="switch_page">
 	<div id="page" class="change_page">{{ page_number }}</div>
@@ -25,7 +25,7 @@ $(window).bind('focus', function() {
 	 <div id="facebook">
 	 	<div id="titre_face"><div id="text_titre_fb">FACEBOOK</div></div>
 	 	<div id="publications">
-	  	{% for article in selected_article %}     
+	  	{% for article in selected_articles %}     
 	          <div id="publication">
 	            <div id="fb_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
 	            <div id="fb_contenu">{% autoescape off %}{{ article.contenu }}{% endautoescape %}</div>
