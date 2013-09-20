@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
-
 from bs4 import BeautifulSoup
+#from GeekHub.models import Article
 import urllib
-from GeekHub.models import Article
 
 class LesNumeriques:
     def __init__(self,nb_infos):
@@ -28,5 +27,5 @@ class LesNumeriques:
                 content = BeautifulSoup((article.find("content")).text)
                 photo = content.find("img").get("src")
                 #BDD
-                bdd_article = Article(titre = title, lien = link, origine = self.source, image = photo )
-                bdd_article.save()
+                #bdd_article = Article(titre = title, lien = link, origine = self.source, image = photo )
+                #bdd_article.save()
