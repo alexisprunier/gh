@@ -64,11 +64,11 @@ STATIC_ROOT = ''
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/home/alexis/git/gh/templates/'
+STATIC_URL = '/root/git/gh/templates/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    '/home/alexis/git/gh/templates/',
+    '/root/git/gh/templates/',
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -108,7 +108,7 @@ ROOT_URLCONF = 'urls'
 WSGI_APPLICATION = 'wsgi.application'
 
 TEMPLATE_DIRS = (
-    '/home/alexis/git/gh/templates/'
+    '/root/git/gh/templates/'
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -123,6 +123,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'GeekHub'
+    'GeekHubScripts'
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
