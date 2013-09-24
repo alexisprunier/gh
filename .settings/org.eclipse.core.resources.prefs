@@ -1,12 +1,15 @@
-#Fri Sep 20 15:33:15 CEST 2013
+#Tue Sep 24 10:52:13 CEST 2013
 eclipse.preferences.version=1
 encoding//GeekHub/controllers/Accueil.py=utf-8
 encoding//GeekHub/controllers/Facebook.py=utf-8
 encoding//GeekHub/controllers/News.py=utf-8
 encoding//GeekHub/controllers/Sources.py=utf-8
 encoding//GeekHub/controllers/Twitter.py=utf-8
+encoding//GeekHubScripts/01net.py=utf-8
 encoding//GeekHubScripts/ComptoirDuHardware.py=utf-8
+encoding//GeekHubScripts/Gizmodo.py=utf-8
 encoding//GeekHubScripts/Hardware.py=utf-8
 encoding//GeekHubScripts/LesNumeriques.py=utf-8
+encoding//GeekHubScripts/PresseCitron.py=utf-8
 encoding//GeekHubScripts/TomsGuide.py=utf-8
 encoding//GeekHubScripts/main.py=utf-8
