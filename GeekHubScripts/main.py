@@ -1,11 +1,25 @@
 # -*- coding: utf-8 -*-
-import LesNumeriques
-import ComptoirDuHardware
+import os, sys
 
-GLOBAL_nom_bdd = "GeekHubDatabase"
-GLOBAL_nb_infos = 2
-GLOBAL_user_bdd = "user"
-GLOBAL_pass_bdd = "pass"
+sys.path.append('/root/git/gh')
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
 
-#o_lesnums = LesNumeriques(nb_infos=GLOBAL_nb_infos)
+
+from LesNumeriques import LesNumeriques
+from PresseCitron import PresseCitron
+from TomsGuide import TomsGuide
+from Hardware import Hardware
+from Gizmodo import Gizmodo
+from ComptoirDuHardware import ComptoirDuHardware
+from ZeroUnnet import ZeroUnnet
+
+GLOBAL_nb_infos = 10
+
+
+o_lesnums = LesNumeriques(nb_infos=GLOBAL_nb_infos)
+o_pressecitron = PresseCitron(nb_infos=GLOBAL_nb_infos)
+o_TomsGuide = TomsGuide(nb_infos=GLOBAL_nb_infos)
+o_hardware = Hardware(nb_infos=GLOBAL_nb_infos)
+o_gizmodo = Gizmodo(nb_infos=GLOBAL_nb_infos)
 o_comptoir = ComptoirDuHardware(nb_infos=GLOBAL_nb_infos)
+o_01net = ZeroUnnet(nb_infos=GLOBAL_nb_infos)
