@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os, sys
 
-sys.path.append('/root/git/gh')
+sys.path.append('/home/alexis/Desktop/git/GeekHub')
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
 
 

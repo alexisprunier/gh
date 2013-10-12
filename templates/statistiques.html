@@ -1,0 +1,74 @@
+{% include "theme/header.html" %}
+<div style="visibility:hidden">
+{{csrf_token}}
+</div>
+<div id="content">
+	<div id="gauche_accueil">
+		<div id="stats_art">
+	 		<div id="titre_statistiques"><div id="text_statistiques_news">CLASS. SITES</div></div>
+			<div id="class_sites">
+				{% for article in tabs_class %}	
+					<div id="stats_site_{{ forloop.counter }}">
+						<div class="stats_pos">{{ forloop.counter }}.</div>
+						<img class="stats_site_img" src="{{ STATIC_URL }}/image/site_article/{{ article.0 }}.png">
+						<table id="tab_site">
+							<tr class="tab_site_title">
+								<td>Visites</td>
+								<td>Articles</td>
+								<td>Moyenne</td>
+							</tr>
+							<tr class="tab_site_result">
+								<td>{{ article.2 }}</td>
+								<td>{{ article.3 }}</td>
+								<td>{{ article.4 }}</td>
+							</tr>
+						</table>
+					</div>
+				{% endfor %}
+			</div>
+	 	</div> 
+	 	<div id="stats_fb">
+	 		<div id="titre_statistiques"><div id="text_statistiques_fb">STAT. FB</div></div>
+			<div id="class_sites">
+				<table id="tab_facebook">
+				<tr class="tab_header">
+					<td class="cell_header" style="width: 53%;">Publicateur Facebook</td>
+					<td class="cell_header" style="width: 15%;">Nb visites</td>
+					<td class="cell_header" style="width: 15%;">Nb publications</td>
+					<td class="cell_header" style="width: 15%;">Moyenne</td>
+				</tr>
+				{% for article in tabs_class_fb %}	
+				<tr class="line_tab">
+					<td class="source_text">{{ forloop.counter }}. {{ article.0 }}</td>
+					<td class="center_text">{{ article.2 }}</td>
+					<td class="center_text">{{ article.3 }}</td>
+					<td class="center_text">{{ article.4 }}</td>
+				</tr>
+				{% endfor %}
+				</table>
+			</div>
+	 	</div>
+	 	<div id="stats_tw">
+	 		<div id="titre_statistiques"><div id="text_statistiques_tw">STAT. TWITTER</div></div>
+			<div id="class_sites">
+				<table id="tab_twitter">
+				<tr class="tab_header">
+					<td class="cell_header" style="width: 53%;">Publicateur Twitter</td>
+					<td class="cell_header" style="width: 15%;">Nb visites</td>
+					<td class="cell_header" style="width: 15%;">Nb tweets</td>
+					<td class="cell_header" style="width: 15%;">Moyenne</td>
+				</tr>
+				{% for article in tabs_class_tw %}
+				<tr class="line_tab">
+					<td class="source_text">{{ forloop.counter }}. {{ article.0 }}</td>
+					<td class="center_text">{{ article.1 }}</td>
+					<td class="center_text">{{ article.2 }}</td>
+					<td class="center_text">{{ article.3 }}</td>
+				</tr>
+				{% endfor %}
+				</table>
+			</div>
+	 	</div> 
+	</div> 
+
+{% include "theme/footer.html" %}
