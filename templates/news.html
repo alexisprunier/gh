@@ -1,14 +1,5 @@
 {% include "theme/header.html" %}
 <script>
-window.setTimeout(function () {
-$(document).ready(function () {
-    var ResizeTarget = $('#titre_news');
-    ResizeTarget.resize(function () {
-        var target = $('#news');
-        target.css('height', ResizeTarget.height());
-    }).trigger('resize');
-}); }, 500);
-
 $(window).bind('focus', function() {
 	$.ajax({
 	    type: "POST",

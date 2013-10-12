@@ -12,6 +12,7 @@ urlpatterns = patterns('GeekHub.controllers',
     url(r'^facebook/(\d{4})/?$', 'Facebook.facebook'),
     url(r'^facebook/refresh/?$', 'Facebook.refresh'),
     url(r'^twitter/(\d{4})/?$', 'Twitter.twitter'),
+    url(r'^twitter/refresh/?$', 'Twitter.refresh'),
     url(r'^sources/', 'Sources.sources'),
     url(r'^admin/', include(admin.site.urls)),
 )
