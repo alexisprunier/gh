@@ -60,15 +60,20 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = '/home/alexis/Desktop/GeekHub/templates/'
+STATIC_ROOT = '/home/alexis/Desktop/git/GeekHub/static/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/home/alexis/Desktop/GeekHub/templates/'
+STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    '/home/alexis/Desktop/GeekHub/static',
+    '/home/alexis/Desktop/git/GeekHub/templates/css',
+    '/home/alexis/Desktop/git/GeekHub/templates/font',
+    '/home/alexis/Desktop/git/GeekHub/templates/favicon',
+    '/home/alexis/Desktop/git/GeekHub/templates/theme',
+    '/home/alexis/Desktop/git/GeekHub/templates/image',
+    '/home/alexis/Desktop/git/GeekHub/templates/jquery',
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
