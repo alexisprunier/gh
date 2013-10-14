@@ -1,27 +1,29 @@
 		<div id="droite_accueil">
-			<div id="home_site">						
-				<img id="site_semaine" src="http://lol.net/p/bestofmicro-com-mini.jpg"/>
-				<div id="int_site_semaine">SITE DE LA SEMAINE</div>			
+			<div id="best_site">						
+				<div id="best_site_img"><img id="best_site_img" src='{{ STATIC_URL }}site_img/{{ best_site.0 }}.png'></img></div>
+				<table id="best_site_tab">
+					<tr id="droite_tab_title">
+						<td>Visites</td>
+						<td>Articles</td>
+						<td>Moy / Art.</td>
+					</tr>
+					<tr id="droite_tab_info">
+						<td>{{ best_site.2 }}</td>
+						<td>{{ best_site.3 }}</td>
+						<td>{{ best_site.4 }}</td>
+					</tr>
+				</table>
+				<div id="droite_bottom">SITE DU MOMENT</div>	
 			</div>
-			<div id="home_pub">	
-				<div id="pub">
-				<script type="text/javascript"><!--
-				google_ad_client = "ca-pub-1096088233292030";
-				/* it-reminder 1 */
-				google_ad_slot = "9919106309";
-				google_ad_width = 160;
-				google_ad_height = 600;
-				//-->
-				</script>
-				<script type="text/javascript"
-				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-				</script>
-				</div>
-				<div id="int_pub">PUBLICITE</div>				
+			<div id="best_article">
+			
+			
+				<div id="droite_bottom">ART. DU MOMENT</div>		
+			</div>
+			<div id="google_ads">	
+				<div id="droite_bottom">PUBLICITE</div>		
 			</div>
 		</div>
-
-
 	</div>
 	<footer>
 		<img id="foot1" src="{{ STATIC_URL }}foot2.png"/>

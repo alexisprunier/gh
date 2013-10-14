@@ -1,6 +1,7 @@
 {% include "theme/header.html" %}
 <script>
 $(window).bind('focus', function() {
+	$(document).skylo('start');
 	$.ajax({
 	    type: "POST",
 	    url: '/news/refresh/',
@@ -9,12 +10,17 @@ $(window).bind('focus', function() {
 	    	static_url: "{{ STATIC_URL }}"		  
 	    }
 	}).done(function(msg){
+		$(document).skylo('set',30);
 	    $("#articles").html(msg);
+	    $(document).skylo('set',80);
 	})
+	$(document).skylo('end');
 });
 </script>
 
+<div style="visibility:hidden">
 {{csrf_token}}
+</div>
 
 <div id="switch_page">
 	<div id="page" class="change_page">{{ page_number }}</div>

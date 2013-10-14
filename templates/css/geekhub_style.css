@@ -1,11 +1,11 @@
 
 @font-face { 	
 	font-family: "font_GH_bold"; 	
-	src: url('../font/Neou-Bold.ttf');
+	src: url('../../static/Neou-Bold.ttf');
 }
 @font-face{
 	font-family: "font_GH"; 	
-	src: url('../font/Neou-thin.ttf');
+	src: url('../../static/Neou-thin.ttf');
 } 
 /*REINITIALISATION DU BODY*/
 body{margin : 0; padding: 0; background-attachment:fixed; min-width: 320px; background-color: #F5F5F5; font-family: Lucida grande, Sans-serif;}
@@ -94,11 +94,17 @@ div#droite_accueil{
 	vertical-align : top;
 	margin-top: 30px;
 }
-div#droite_accueil #site_semaine{
-	height:170px;
-	margin: 10px 0px 0px 10px;
+div#droite_accueil #best_site, #best_article, #google_ads{
+	padding-top:10px;
+	background-color: #CCC;
+	width: 100%;
+	height: 210px;
+	overflow: auto;
 }
-div#droite_accueil #int_site_semaine{
+div#droite_accueil #best_article, #google_ads{
+	margin-top:15px;
+}
+div#droite_accueil #droite_bottom{
 	padding: 5px 0px 0px 8px;
 	color: white;
 	font-size: 21px;
@@ -106,32 +112,28 @@ div#droite_accueil #int_site_semaine{
 	overflow: auto;
 	font-family: "font_GH_bold";
 }
-div#home_site{
-	background-color: #CCC;
-	overflow: auto;
+img#best_site_img{
+	width: 150px;
+	height: 120px;
+	margin-left: 38px;
 }
-div#home_pub{
-	margin-top:15px;
-	padding-top:10px;
-	background-color: #CCC;
-	width: 100%;
-	height: 650px;
-	overflow: auto;
+tr#droite_tab_title{
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
 }
-div#droite_accueil #int_pub{
-	padding: 5px 0px 0px 38px;
-	color: white;
-	font-size: 28px;
-	background-color: #000010;
-	font-family: "font_GH_bold";
+tr#droite_tab_title td{
+	width: 70px;
 }
-div#pub{
-	background-color: #CCC;
-	padding:0px 0px 6px 33px;
-	width: 80%;
-	height: 605px;
+tr#droite_tab_info{
+	font-weight: bold;
+	font-size: 16px;
+	text-align: center;
+	color: #800409;
 }
-
+#best_site_tab{
+	margin: 5px 0 5px 0;
+}
 /*************NEWS***************************/
 
 div#news{
