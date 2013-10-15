@@ -1,6 +1,7 @@
 #-*- coding: utf-8 -*-
 from django.shortcuts import render
 from GeekHub.models import Twitter
+from GeekHub.controllers.Proxy import Proxy
 
 
 def twitter(request, page_number):
@@ -26,5 +27,9 @@ def twitter(request, page_number):
     # récuperation page suivante et precedente
     page_prec = page_number-1 if page_number > 1 else page_number
     page_suiv = page_number+1 if page_number < 9 else page_number
+    
+    proxy = Proxy()
+    best_article = proxy.get_most_visited_article()
+    best_site = proxy.get_most_visited_site()
     
     return render(request, 'twitter.html', locals())

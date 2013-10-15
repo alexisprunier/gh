@@ -72,7 +72,7 @@ def statistiques(request):
     tabs_class_tw = reversed(tabs_class_tw)
             
     proxy = Proxy()
-    best_site, best_site_lien, bs_nb_visite, bs_nb_art, bs_moy = proxy.get_most_visited_site()
     best_article = proxy.get_most_visited_article()
+    best_site = proxy.get_most_visited_site()
     
     return render(request, 'statistiques.html', locals())
