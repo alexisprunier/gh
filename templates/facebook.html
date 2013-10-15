@@ -29,7 +29,8 @@ $(window).bind('focus', function() {
 	          <div id="publication">
 	            <div id="fb_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
 	            <div id="fb_contenu">{% autoescape off %}{{ article.contenu }}{% endautoescape %}</div>
-	            <div id="fb_date">{% autoescape off %}{{ article.date }}{% endautoescape %}</div>
+	            <div id="fb_date">{% autoescape off %}{{ article.date|date:"H:i d-m-Y" }}{% endautoescape %}</div>
+	            <div id="fb_visites">{% autoescape off %}{{ article.visites }}{% endautoescape %}</div>
 	          </div> 
 	    {% endfor %}
 	    </div>
