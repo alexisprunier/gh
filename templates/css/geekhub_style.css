@@ -69,7 +69,6 @@ li{
 li:hover{
 	background-color: rgba(255,255,255,0.1);
 	text-shadow: none;
-
 }
 li:active{
 	box-shadow: inset 0px 0px 27px rgba(0,0,0,1);
@@ -93,6 +92,9 @@ div#droite_accueil{
 	width : 20%;
 	vertical-align : top;
 	margin-top: 30px;
+}
+#droite_bottom{
+	text-align: center;
 }
 div#droite_accueil #best_site, #google_ads{
 	padding-top:10px;
@@ -278,6 +280,18 @@ div.change_page{
 	font-size: 35px;
 	padding: 7px 0 0 15px;
 }
+div#visites_art{
+	font-family: "font_GH_bold";
+	color: #CCC;
+	font-weight: bold;
+	font-size: 25px;
+	position: relative;
+	top: -22px;
+	left: 190px;
+	text-align: right;
+	width: 50px;
+	height: 0px;
+}
 
 /*************FACEBOOK***************************/
 
@@ -425,20 +439,72 @@ div#sources_twit{
 	padding-left: 62px;
 }
 #stats_site_1, #stats_site_2, #stats_site_3{
-	width: 32%;
+	width: 252px;
 	height: 250px;
-	background-color: red;
+	background-color: white;
 	display: inline-block;
 	margin-top: 8px;
 	margin-left: 5px;
+	border: #888 solid 1px;
 }
 #stats_site_4, #stats_site_5, #stats_site_6, #stats_site_7{
-	width: 188px;
+	width: 186px;
 	height: 170px;
-	background-color: red;
+	background-color: white;
 	display: inline-block;
 	margin-top: 8px;
 	margin-left: 5px;
+	border: #888 solid 1px;
+}
+#stats_site_1 tr.tab_site_title, #stats_site_2 tr.tab_site_title, #stats_site_3 tr.tab_site_title{
+	color: black;
+	font-weight: bold;
+	font-size: 16px;
+}
+#stats_site_4 tr.tab_site_title, #stats_site_5 tr.tab_site_title, #stats_site_6 tr.tab_site_title, #stats_site_7 tr.tab_site_title{
+	color: black;
+	font-weight: bold;
+	font-size: 12px;
+}
+tr.tab_site_title td{
+	width: 33%;
+	text-align: center;
+}
+#stats_site_1 tr.tab_site_result, #stats_site_2 tr.tab_site_result, #stats_site_3 tr.tab_site_result{
+	color: #800409;
+	font-weight: bold;
+	font-size: 16px;
+}
+#stats_site_4 tr.tab_site_result, #stats_site_5 tr.tab_site_result, #stats_site_6 tr.tab_site_result, #stats_site_7 tr.tab_site_result{
+	color: #800409;
+	font-weight: bold;
+	font-size: 12px;
+}
+tr.tab_site_result td{
+	width: 34%;
+	text-align: center;
+}
+#stats_site_1 .stats_site_img, #stats_site_2 .stats_site_img, #stats_site_3 .stats_site_img{
+	display: block; 
+	width: 150px;
+	height: 120px;
+	margin: 10px auto 15px auto;
+}
+#stats_site_4 .stats_site_img, #stats_site_5 .stats_site_img, #stats_site_6 .stats_site_img, #stats_site_7 .stats_site_img{
+	display: block; 
+	width: 100px;
+	height: 80px;
+	margin: 10px auto 10px auto;
+}
+#stats_site_1 .stats_pos, #stats_site_2 .stats_pos, #stats_site_3 .stats_pos{
+	font-weight: bold;
+	font-size: 22px;
+	margin: 3px 0 0 4px;
+}
+#stats_site_4 .stats_pos, #stats_site_5 .stats_pos, #stats_site_6 .stats_pos, #stats_site_7 .stats_pos{
+	font-weight: bold;
+	font-size: 18px;
+	margin: 3px 0 0 4px;
 }
 
 /************************************************************
