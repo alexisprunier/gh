@@ -5,15 +5,15 @@
 	<title>Geek Hub</title>
 	<!--CSS-->
 
-	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/geekhub_style.css"/>
-	<link rel="stylesheet" href="{{ STATIC_URL }}jquery/fancyapps-fancyBox-0ffc358/source/jquery.fancybox.css?v=2.1.4"  media="screen" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}geekhub_style.css"/>
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}skylo.css"/>
 	<style>
 		/*body custom scrollbar style
 		body>.mCustomScrollBox>.mCSB_scrollTools{top:2%; height:96%;}*/
 	</style>
 	<!--JS-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script type="text/javascript" src="{{ STATIC_URL }}jquery/fancyapps-fancyBox-0ffc358/source/jquery.fancybox.js?v=2.1.4"></script>
+	<script src="{{ STATIC_URL }}skylo/skylo.js"></script>
 	<div id="fb-root"></div>
 	<script>(function(d, s, id) {
 	  var js, fjs = d.getElementsByTagName(s)[0];
@@ -28,15 +28,16 @@
 <body>
 	<header>
 		<div id="logo">
-			<a href="/accueil"><img src="{{ STATIC_URL }}image/logo21_GH.png" alt="logo GeekHub"></a>			
+			<a href="/accueil"><img src="{{ STATIC_URL }}logo21_GH.png" alt="logo GeekHub"></a>			
 		</div>
 	</header>
 	
 	<navigation>	
 		<ul>
 			<a href="/accueil"><li class="first">Accueil</li></a>
-			<a href="/news/0001"><li>Les News</li></a>
-			<a href="/facebook/0001"><li>Les posts Facebook</li></a>
-			<a href="/twitter/0001"><li>Les Tweets</li></a>
+			<a href="/news/0001"><li>News</li></a>
+			<a href="/facebook/0001"><li>Posts Facebook</li></a>
+			<a href="/twitter/0001"><li>Tweets</li></a>
+			<a href="/statistiques"><li>Statistiques</li></a>
 		</ul>
 	</navigation>

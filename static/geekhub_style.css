@@ -1,11 +1,11 @@
 
 @font-face { 	
 	font-family: "font_GH_bold"; 	
-	src: url('../font/Neou-Bold.ttf');
+	src: url('./Neou-Bold.ttf');
 }
 @font-face{
 	font-family: "font_GH"; 	
-	src: url('../font/Neou-thin.ttf');
+	src: url('./Neou-thin.ttf');
 } 
 /*REINITIALISATION DU BODY*/
 body{margin : 0; padding: 0; background-attachment:fixed; min-width: 320px; background-color: #F5F5F5; font-family: Lucida grande, Sans-serif;}
@@ -34,7 +34,7 @@ body ::-webkit-scrollbar {
 /*************************************************************
 *****************      HEADER      ***************************
 **************************************************************/
-header{height: 55px; width: 100%; background : url(../image/header_GH.png) repeat-x; box-shadow: 0 0px 12px #000017; border-bottom: 2px solid #800409;}
+header{height: 55px; width: 100%; background : url(./header_GH.png) repeat-x; box-shadow: 0 0px 12px #000017; border-bottom: 2px solid #800409;}
 div#logo{color : #e5dfdf; margin-left: 10px; height : 55px;}
 
 /*****************************************************
@@ -69,7 +69,6 @@ li{
 li:hover{
 	background-color: rgba(255,255,255,0.1);
 	text-shadow: none;
-
 }
 li:active{
 	box-shadow: inset 0px 0px 27px rgba(0,0,0,1);
@@ -78,7 +77,7 @@ li:active{
 **********************   DROITE CONTENT   ******************
 ************************************************************/
 div#content{
-	margin : 60px auto 30px auto;
+	margin : 45px auto 30px auto;
 	width : 1140px;
 }
 div#gauche_accueil{
@@ -94,11 +93,34 @@ div#droite_accueil{
 	vertical-align : top;
 	margin-top: 30px;
 }
-div#droite_accueil #site_semaine{
-	height:170px;
-	margin: 10px 0px 0px 10px;
+#droite_bottom{
+	text-align: center;
 }
-div#droite_accueil #int_site_semaine{
+div#droite_accueil #best_site, #google_ads{
+	padding-top:10px;
+	background-color: #CCC;
+	width: 100%;
+	height: 210px;
+	overflow: auto;
+}
+div#google_ads{
+	padding-top:10px;
+	background-color: #CCC;
+	width: 100%;
+	height: 235px;
+	overflow: auto;
+}
+div#droite_accueil #best_article{
+	padding-top:10px;
+	background-color: #CCC;
+	width: 100%;
+	height: 230px;
+	overflow: auto;
+}
+div#droite_accueil #best_article, #google_ads{
+	margin-top:15px;
+}
+div#droite_accueil #droite_bottom{
 	padding: 5px 0px 0px 8px;
 	color: white;
 	font-size: 21px;
@@ -106,31 +128,68 @@ div#droite_accueil #int_site_semaine{
 	overflow: auto;
 	font-family: "font_GH_bold";
 }
-div#home_site{
-	background-color: #CCC;
-	overflow: auto;
+img#best_site_img{
+	width: 150px;
+	height: 120px;
+	margin-left: 38px;
 }
-div#home_pub{
-	margin-top:15px;
-	padding-top:10px;
-	background-color: #CCC;
-	width: 100%;
-	height: 650px;
-	overflow: auto;
+tr#droite_tab_title{
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
 }
-div#droite_accueil #int_pub{
-	padding: 5px 0px 0px 38px;
-	color: white;
-	font-size: 28px;
-	background-color: #000010;
-	font-family: "font_GH_bold";
+tr#droite_tab_title td{
+	width: 70px;
 }
-div#pub{
-	background-color: #CCC;
-	padding:0px 0px 6px 33px;
-	width: 80%;
-	height: 605px;
+tr#droite_tab_info{
+	font-weight: bold;
+	font-size: 16px;
+	text-align: center;
+	color: #800409;
 }
+#best_site_tab{
+	margin: 5px 0 5px 0;
+}
+img#best_article_img{
+	width: 150px;
+	height: 120px;
+	margin-left: 38px;
+}
+#best_article_titre{
+	font-weight: bold;
+	font-size: 13px;
+	text-align: center;
+	color: black;
+}
+#best_article_date{
+	font-size: 11px; 
+	color: #888;
+	text-align: center;
+}
+#best_site_orig{
+	display: inline-block;
+	margin-top: 13px;
+	margin-left: 5px;
+}
+#best_article_link{
+	text-decoration: none;
+}
+#best_article_ori{
+	margin-left: 5px;
+	font-size: 14px;
+	margin-bottom: 3px;
+}
+#best_article_vis{
+	position: relative;
+	bottom: 28px;
+	left: 180px;
+	width: 40px;
+	height: 0px;
+	color: #888;
+	font-size: 25px;
+	font-weight: bold;
+}
+
 
 /*************NEWS***************************/
 
@@ -220,6 +279,18 @@ div.change_page{
 	border-left: 0px;
 	font-size: 35px;
 	padding: 7px 0 0 15px;
+}
+div#visites_art{
+	font-family: "font_GH_bold";
+	color: #CCC;
+	font-weight: bold;
+	font-size: 25px;
+	position: relative;
+	top: -22px;
+	left: 190px;
+	text-align: right;
+	width: 50px;
+	height: 0px;
 }
 
 /*************FACEBOOK***************************/
@@ -337,6 +408,105 @@ div#sources_twit{
 	border:1px solid #999;
 }
 
+/*************STATISTIQUES***************************/
+
+#stats_art{
+	background-color: #CCC;
+	margin-bottom: 20px;
+	overflow: auto;
+}
+#titre_statistiques{
+	background-color: #000010; 
+	width: 60px; 
+	height: 450px; 
+	float:left; 
+	overflow:auto;
+}
+#text_statistiques_news{
+	font-family: "font_GH_bold";
+ 	position: absolute;
+	color: white;
+	font-size: 45px;
+	top: 90px;
+	left: -63px;
+	transform:rotate(270deg); 
+	-ms-transform:rotate(270deg);
+	-moz-transform:rotate(270deg);
+	-webkit-transform:rotate(270deg);
+	-o-transform:rotate(270deg);
+}
+#class_sites{
+	padding-left: 62px;
+}
+#stats_site_1, #stats_site_2, #stats_site_3{
+	width: 252px;
+	height: 250px;
+	background-color: white;
+	display: inline-block;
+	margin-top: 8px;
+	margin-left: 5px;
+	border: #888 solid 1px;
+}
+#stats_site_4, #stats_site_5, #stats_site_6, #stats_site_7{
+	width: 186px;
+	height: 170px;
+	background-color: white;
+	display: inline-block;
+	margin-top: 8px;
+	margin-left: 5px;
+	border: #888 solid 1px;
+}
+#stats_site_1 tr.tab_site_title, #stats_site_2 tr.tab_site_title, #stats_site_3 tr.tab_site_title{
+	color: black;
+	font-weight: bold;
+	font-size: 16px;
+}
+#stats_site_4 tr.tab_site_title, #stats_site_5 tr.tab_site_title, #stats_site_6 tr.tab_site_title, #stats_site_7 tr.tab_site_title{
+	color: black;
+	font-weight: bold;
+	font-size: 12px;
+}
+tr.tab_site_title td{
+	width: 33%;
+	text-align: center;
+}
+#stats_site_1 tr.tab_site_result, #stats_site_2 tr.tab_site_result, #stats_site_3 tr.tab_site_result{
+	color: #800409;
+	font-weight: bold;
+	font-size: 16px;
+}
+#stats_site_4 tr.tab_site_result, #stats_site_5 tr.tab_site_result, #stats_site_6 tr.tab_site_result, #stats_site_7 tr.tab_site_result{
+	color: #800409;
+	font-weight: bold;
+	font-size: 12px;
+}
+tr.tab_site_result td{
+	width: 34%;
+	text-align: center;
+}
+#stats_site_1 .stats_site_img, #stats_site_2 .stats_site_img, #stats_site_3 .stats_site_img{
+	display: block; 
+	width: 150px;
+	height: 120px;
+	margin: 10px auto 15px auto;
+}
+#stats_site_4 .stats_site_img, #stats_site_5 .stats_site_img, #stats_site_6 .stats_site_img, #stats_site_7 .stats_site_img{
+	display: block; 
+	width: 100px;
+	height: 80px;
+	margin: 10px auto 10px auto;
+}
+#stats_site_1 .stats_pos, #stats_site_2 .stats_pos, #stats_site_3 .stats_pos{
+	font-weight: bold;
+	font-size: 22px;
+	margin: 3px 0 0 4px;
+}
+#stats_site_4 .stats_pos, #stats_site_5 .stats_pos, #stats_site_6 .stats_pos, #stats_site_7 .stats_pos{
+	font-weight: bold;
+	font-size: 18px;
+	margin: 3px 0 0 4px;
+}
+
 /************************************************************
 **************    FOOTER         ****************************
 *************************************************************/
@@ -347,7 +517,7 @@ div#social_elements{
 footer{
 	height: 165px;
 	width: 100%;
-	background: url(../image/footer_GH.png) repeat-x;
+	background: url(./footer_GH.png) repeat-x;
 	border-top: 2px solid #800409;
 	box-shadow: 0 0px 12px #000017;
 }
