@@ -32,7 +32,8 @@ def refresh(request):
               <div id='publication'>\
                 <div id='fb_origine'>" + article.origine + "</div>\
                 <div id='fb_contenu'>" + article.contenu + "</div>\
-                <div id='fb_date'>" + str(article.date) + "</div>\
+                <div id='fb_date'>" + str(article.date.strftime("%H:%M %d-%m-%Y")) + "</div>\
+                <div id='fb_visites'>" + article.visites + "</div>\
               </div>"
 
     return HttpResponse(content)
