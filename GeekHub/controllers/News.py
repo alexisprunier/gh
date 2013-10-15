@@ -36,7 +36,7 @@ def refresh(request):
                     <div id='info_art'>\
                         <div id='titre_date'>\
                             <div id='titre_art'>" + unicode(article.titre) + "</div>\
-                            <div id='date_art'>" + unicode(article.date) + "</div>\
+                            <div id='date_art'>" + unicode(article.date.strftime("%H:%M %d-%m-%Y")) + "</div>\
                         </div>\
                         <div id='origine_art'><img id='favicon' src='" + str(request.POST.get('static_url', False)) + unicode(article.origine) + ".png' align='bottom' alt='" + unicode(request.POST.get('static_url', False)) + "image/empty_image.png'></img><div id='text_article'>" + unicode(article.origine) + "</div></div>\
                     </div>\

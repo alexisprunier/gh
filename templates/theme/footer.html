@@ -15,12 +15,28 @@
 				</table>
 				<div id="droite_bottom">SITE DU MOMENT</div>	
 			</div>
+			<a id="best_article_link" href="{{ best_article.lien }}">
 			<div id="best_article">
-			
-			
+				<div id="best_article_img"><img id="best_site_img" src='{{ best_article.image }}.png'></img></div>
+				<div id="best_article_titre">{{ best_article.titre }}</div>
+				<div id="best_article_date">{{ best_article.date|date:"H:i d-m-Y" }}</div>
+		        <div id="best_article_ori"><img id="favicon" src='{{ STATIC_URL }}{{ best_article.origine }}.png' align="bottom"></img><div id="best_site_orig">{{ best_article.origine }}</div></div>			
+				<div id="best_article_vis">{{ best_article.visites }}</div>
 				<div id="droite_bottom">ART. DU MOMENT</div>		
 			</div>
+			</a>
 			<div id="google_ads">	
+				<script type="text/javascript"><!--
+				google_ad_client = "ca-pub-1096088233292030";
+				/* GeekHub Carré */
+				google_ad_slot = "2927329106";
+				google_ad_width = 200;
+				google_ad_height = 200;
+				//-->
+				</script>
+				<script type="text/javascript"
+				src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+				</script>
 				<div id="droite_bottom">PUBLICITE</div>		
 			</div>
 		</div>
