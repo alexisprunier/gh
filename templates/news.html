@@ -16,6 +16,17 @@ $(window).bind('focus', function() {
 	})
 	$(document).skylo('end');
 });
+
+function add_visite(id){
+	$.ajax({
+	    type: "POST",
+	    url: '/news/add_visite/',
+	    data: { 
+	    	id: id,
+	    }
+	})
+}
+
 </script>
 
 <div style="visibility:hidden">
@@ -33,7 +44,7 @@ $(window).bind('focus', function() {
 		<div id="titre_news"><div id="text_titre_news">NEWS</div></div>
 			<div id="articles">
 			{% for article in selected_articles %}	
-				<a href="{{article.lien}}">		        	
+				<a href="{{article.lien}}" target="_blank" onclick="add_visite({{article.id}})">		        	
 	        	<div id="article">
 	        		<object id="img_art" type="image/jpeg" data="{{ article.image }}">
 	        			<object id="img_art2" type="image/jpeg" data="{{ STATIC_URL }}empty_image.png"></object>

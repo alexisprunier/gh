@@ -1,19 +1,26 @@
 {% include "theme/header.html" %}
-<script type="text/javascript">
+<script>
 $(window).bind('focus', function() {
+	$(document).skylo('start');
 	$.ajax({
 	    type: "POST",
 	    url: '/facebook/refresh/',
 	    data: { 
-	    	page: "{{ page_number }}"		  
+	    	page: "{{ page_number }}",
+	    	static_url: "{{ STATIC_URL }}"		  
 	    }
 	}).done(function(msg){
+		$(document).skylo('set',30);
 	    $("#publications").html(msg);
+	    $(document).skylo('set',80);
 	})
+	$(document).skylo('end');
 });
 </script>
 
+<div style="visibility:hidden">
 {{csrf_token}}
+</div>
 
 <div id="switch_page">
 	<div id="page" class="change_page">{{ page_number }}</div>
@@ -25,13 +32,15 @@ $(window).bind('focus', function() {
 	 <div id="facebook">
 	 	<div id="titre_face"><div id="text_titre_fb">FACEBOOK</div></div>
 	 	<div id="publications">
-	  	{% for article in selected_articles %}     
+	  	{% for article in selected_articles %}  
+	  		<a href="" target="_blank">
 	          <div id="publication">
 	            <div id="fb_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
 	            <div id="fb_contenu">{% autoescape off %}{{ article.contenu }}{% endautoescape %}</div>
 	            <div id="fb_date">{% autoescape off %}{{ article.date|date:"H:i d-m-Y" }}{% endautoescape %}</div>
 	            <div id="fb_visites">{% autoescape off %}{{ article.visites }}{% endautoescape %}</div>
-	          </div> 
+	          </div>
+	        </a> 
 	    {% endfor %}
 	    </div>
 	 </div> 

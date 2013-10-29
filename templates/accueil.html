@@ -1,14 +1,48 @@
 {% include "theme/header.html" %}
 <script>
+$(window).bind('focus', function() {
+	$(document).skylo('start');
+	$.ajax({
+	    type: "POST",
+	    url: '/refresh_nw/',
+	    data: { 
+	    	static_url: "{{ STATIC_URL }}"		  
+	    }
+	}).done(function(msg){
+	    $("#articles").html(msg);
+	})
+	$.ajax({
+	    type: "POST",
+	    url: '/refresh_fb/',
+	    data: { 
+	    	static_url: "{{ STATIC_URL }}"		  
+	    }
+	}).done(function(msg){
+	    $("#publications").html(msg);
+	})
+	$.ajax({
+	    type: "POST",
+	    url: '/refresh_tw/',
+	    data: { 
+	    	static_url: "{{ STATIC_URL }}"		  
+	    }
+	}).done(function(msg){
+	    $("#publications_tw").html(msg);
+	})
+});
+</script>
 
-</script>	
+<div style="visibility:hidden">
+{{csrf_token}}
+</div>
+	
 <div id="content">
 	<div id="gauche_accueil">
 		<div id="news">
 			<div id="titre_news_acc"></div><div id="text_titre_news">NEWS</div>
 			<div id="articles">
 			{% for article in last_articles %}
-			<a href="{{article.lien}}">	        	
+			<a href="{{article.lien}}" target="_blank">	        	
 	        	<div id="article">
 	        		<object id="img_art" type="image/jpeg" data="{{ article.image }}">
 	        			<object id="img_art2" type="image/jpeg" data="{{ STATIC_URL }}image/empty_image.png"></object>
@@ -28,12 +62,14 @@
 		<div id="facebook">
 			<div id="titre_face_acc"></div><div id="text_titre_fb">FACEBOOK</div>
 			<div id="publications">
-		  	{% for article in last_facebook %}            
+		  	{% for article in last_facebook %}
+		  	<a href="" target="_blank">        
 	          <div id="publication">
 	            <div id="fb_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
 	            <div id="fb_contenu">{% autoescape off %}{{ article.contenu }}{% endautoescape %}</div>
-	            <div id="fb_date">{% autoescape off %}{{ article.date }}{% endautoescape %}</div>
+	            <div id="fb_date">{% autoescape off %}{{ article.date|date:"H:i d-m-Y" }}{% endautoescape %}</div>
 	          </p></div>
+	        </a>
 		    {% endfor %}
 		    </div>
 		</div>
@@ -41,10 +77,10 @@
 			<div id="titre_twit_acc"></div><div id="text_titre_tw">TWITTER</div>
 			<div id="publications_tw">
 		  	{% for article in last_twitter %}            
-	          <a href="https://twitter.com/{{article.origine}}"><div id="publication_tw">
+	          <a href="https://twitter.com/{{article.origine}}" target="_blank"><div id="publication_tw">
 	            <div id="tw_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
 	            <div id="tw_contenu">{% autoescape off %}{{ article.titre }}{% endautoescape %}</div>
-	            <div id="tw_date">{% autoescape off %}{{ article.date }}{% endautoescape %}</div>
+	            <div id="tw_date">{% autoescape off %}{{ article.date|date:"H:i d-m-Y" }}{% endautoescape %}</div>
 	          </div></a>  
 		    {% endfor %}
 		    </div>

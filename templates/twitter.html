@@ -1,4 +1,27 @@
 {% include "theme/header.html" %}
+<script>
+$(window).bind('focus', function() {
+	$(document).skylo('start');
+	$.ajax({
+	    type: "POST",
+	    url: '/twitter/refresh/',
+	    data: { 
+	    	page: "{{ page_number }}",
+	    	static_url: "{{ STATIC_URL }}"		  
+	    }
+	}).done(function(msg){
+		$(document).skylo('set',30);
+	    $("#pyblications_tw").html(msg);
+	    $(document).skylo('set',80);
+	})
+	$(document).skylo('end');
+});
+</script>
+
+<div style="visibility:hidden">
+{{csrf_token}}
+</div>
+
 <div id="switch_page">
 	<div id="page" class="change_page">{{ page_number }}</div>
 	<a href="/twitter/000{{ page_prec }}"><div id="precedent" class="change_page"><</div></a>
@@ -10,10 +33,10 @@
 	 	<div id="titre_twit_acc"><div id="text_titre_tw">TWITTER</div></div>
 	 	<div id="publications_tw">
 		  {% for article in selected_article %}
-		          <a href="https://twitter.com/{{article.origine}}"><div id="publication_tw">
+		          <a href="https://twitter.com/{{article.origine}}" target="_blank"><div id="publication_tw">
 		            <div id="tw_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
 		            <div id="tw_contenu">{% autoescape off %}{{ article.titre }}{% endautoescape %}</div>
-		            <div id="tw_date">{% autoescape off %}{{ article.date }}{% endautoescape %}</div>
+		            <div id="tw_date">{% autoescape off %}{{ article.date|date:"H:i d-m-Y" }}{% endautoescape %}</div>
 		          </div></a>
 		  {% endfor %}
 		</div>
