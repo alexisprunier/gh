@@ -11,7 +11,7 @@ def facebook(request, page_number):
     page_number = int(page_number.encode('ascii'))
     selected_articles = get_targeted_articles(page_number)
             
-    page_prec = page_number-1 if page_number > 1 else page_number
+    page_prec = page_number-1 if page_number > 0 else page_number
     page_suiv = page_number+1 if page_number < 9 else page_number
     
     proxy = Proxy()

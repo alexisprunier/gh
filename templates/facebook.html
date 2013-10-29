@@ -12,9 +12,9 @@ $(window).bind('focus', function() {
 	}).done(function(msg){
 		$(document).skylo('set',30);
 	    $("#publications").html(msg);
-	    $(document).skylo('set',80);
+	    $(document).skylo('end');
 	})
-	$(document).skylo('end');
+	
 });
 </script>
 
@@ -24,8 +24,8 @@ $(window).bind('focus', function() {
 
 <div id="switch_page">
 	<div id="page" class="change_page">{{ page_number }}</div>
-	<a href="/facebook/000{{ page_prec }}"><div id="precedent" class="change_page"><</div></a>
-	<a href="/facebook/000{{ page_suiv }}"><div id="suivant" class="change_page">></div></a>
+	<a href="/facebook/{{ page_prec }}"><div id="precedent" class="change_page"><</div></a>
+	<a href="/facebook/{{ page_suiv }}"><div id="suivant" class="change_page">></div></a>
 </div>
 <div id="content">
 	<div id="gauche_accueil">
