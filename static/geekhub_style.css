@@ -110,6 +110,9 @@ div#google_ads{
 	height: 235px;
 	overflow: auto;
 }
+div#google_ads_cont{
+	padding-left:14px;
+}
 div#droite_accueil #best_article{
 	padding-top:10px;
 	background-color: #CCC;
@@ -320,9 +323,24 @@ div#publications{display: table-cell;}
 div#publication{margin: 10px 12px 15px 10px; border:1px solid #819FF7; background-color: white; width: 768px;}
 div#fb_origine{color: #3b5998; font-size: 19px; font-weight: bold; margin: 10px 0 0 15px;}
 div#fb_titre{margin: 0 15px 5px 0; }
-div#fb_contenu{margin-left: 15px; padding-right: 5px; font-size: 14px;}
+div#fb_contenu{margin-left: 15px; padding-right: 5px; font-size: 14px; color: black;}
 div#fb_date{font-size: 11px; color: #888; margin: 0 5px 10px 15px;}
 div#publication img{display:block; width:auto; margin-left:auto; margin-right:auto;}
+div#fb_visites{
+	font-family: "font_GH_bold";
+	position: relative;
+	bottom: 25px;
+	right: -710px;
+	width: 50px;
+	height: 0px;
+	text-align: right;
+	color: #CEE3F6;
+	font-size: 25px;
+	font-weight: bold;
+}
+div#publications a{
+	text-decoration: none;
+}
 
 /*************TWITTER***************************/
 
@@ -352,6 +370,7 @@ img.img_twit{margin: 20px 0 0 5px;}
 div#tw_origine{font-weight: bold; font-size: 19px; margin: 10px 0 0 15px; color: black;}
 div#tw_contenu{margin-left: 15px; font-size: 14px; color: black;}
 div#tw_date{font-size: 11px; color: #888; margin: 0 0 10px 15px;}
+div#publications_tw a{text-decoration:none;}
 
 
 /*************SOURCES***************************/

@@ -12,9 +12,8 @@ $(window).bind('focus', function() {
 	}).done(function(msg){
 		$(document).skylo('set',30);
 	    $("#articles").html(msg);
-	    $(document).skylo('set',80);
+	    $(document).skylo('end');
 	})
-	$(document).skylo('end');
 });
 
 function add_visite(id){
@@ -35,8 +34,8 @@ function add_visite(id){
 
 <div id="switch_page">
 	<div id="page" class="change_page">{{ page_number }}</div>
-	<a href="/news/000{{ page_prec }}"><div id="precedent" class="change_page"><</div></a>
-	<a href="/news/000{{ page_suiv }}"><div id="suivant" class="change_page">></div></a>
+	<a href="/news/{{ page_prec }}"><div id="precedent" class="change_page"><</div></a>
+	<a href="/news/{{ page_suiv }}"><div id="suivant" class="change_page">></div></a>
 </div>
 <div id="content">
 	<div id="gauche_accueil">

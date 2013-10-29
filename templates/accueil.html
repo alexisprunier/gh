@@ -10,6 +10,7 @@ $(window).bind('focus', function() {
 	    }
 	}).done(function(msg){
 	    $("#articles").html(msg);
+	    $(document).skylo('set',30);
 	})
 	$.ajax({
 	    type: "POST",
@@ -19,6 +20,7 @@ $(window).bind('focus', function() {
 	    }
 	}).done(function(msg){
 	    $("#publications").html(msg);
+	    $(document).skylo('set',60);
 	})
 	$.ajax({
 	    type: "POST",
@@ -27,7 +29,9 @@ $(window).bind('focus', function() {
 	    	static_url: "{{ STATIC_URL }}"		  
 	    }
 	}).done(function(msg){
+		$(document).skylo('set',90);
 	    $("#publications_tw").html(msg);
+	    $(document).skylo('end');
 	})
 });
 </script>
@@ -45,14 +49,15 @@ $(window).bind('focus', function() {
 			<a href="{{article.lien}}" target="_blank">	        	
 	        	<div id="article">
 	        		<object id="img_art" type="image/jpeg" data="{{ article.image }}">
-	        			<object id="img_art2" type="image/jpeg" data="{{ STATIC_URL }}image/empty_image.png"></object>
+	        			<object id="img_art2" type="image/jpeg" data="{{ STATIC_URL }}empty_image.png"></object>
 	        		</object>
 	        		<div id="info_art">
 	        			<div id="titre_date">
 			        		<div id="titre_art">{{ article.titre }}</div>
 			        		<div id="date_art">{{ article.date }}</div>
 		        		</div>
-		        		<div id="origine_art"><img id="favicon" src='{{ STATIC_URL }}favicon/{{ article.origine }}.png' align="bottom"></img><div id="text_article">{{ article.origine }}</div></div>
+		        		<div id="origine_art"><img id="favicon" src='{{ STATIC_URL }}/{{ article.origine }}.png' align="bottom"></img><div id="text_article">{{ article.origine }}</div></div>
+	        			<div id='visites_art'>{{ article.visites }}</div>
 	        		</div>
 	        	</div>
 	        </a>
@@ -68,7 +73,8 @@ $(window).bind('focus', function() {
 	            <div id="fb_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
 	            <div id="fb_contenu">{% autoescape off %}{{ article.contenu }}{% endautoescape %}</div>
 	            <div id="fb_date">{% autoescape off %}{{ article.date|date:"H:i d-m-Y" }}{% endautoescape %}</div>
-	          </p></div>
+	          	<div id='fb_visites'>{{ article.visites }}</div>
+	          </div>
 	        </a>
 		    {% endfor %}
 		    </div>
