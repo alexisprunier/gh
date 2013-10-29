@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os, sys
 
-sys.path.append('/home/alexis/Desktop/git/GeekHub')
+sys.path.append('/root/git/gh/')
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
 
 
@@ -12,6 +12,7 @@ from Hardware import Hardware
 from Gizmodo import Gizmodo
 from ComptoirDuHardware import ComptoirDuHardware
 from ZeroUnnet import ZeroUnnet
+from Facebook import Facebook
 
 GLOBAL_nb_infos = 10
 
@@ -23,3 +24,16 @@ o_hardware = Hardware(nb_infos=GLOBAL_nb_infos)
 o_gizmodo = Gizmodo(nb_infos=GLOBAL_nb_infos)
 o_comptoir = ComptoirDuHardware(nb_infos=GLOBAL_nb_infos)
 o_01net = ZeroUnnet(nb_infos=GLOBAL_nb_infos)
+
+
+#FB
+sources = {"Materiel.net":320776853364, 
+          "LDLC":121548574526465, 
+          "Rue du Commerce":119794289202,
+          "Top Achat":123427650425,
+          "GrosBill": 312422015254,
+          }
+for source,id in sources.items() :
+    o_facebook = Facebook("http://www.facebook.com/feeds/page.php?format=rss20&id="+str(id), source, GLOBAL_nb_infos)
+  
+    
