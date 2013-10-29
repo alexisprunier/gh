@@ -11,7 +11,7 @@ class Proxy():
     def get_most_visited_site(self):
         
         site_visites = {}
-        date = datetime.datetime.now() - datetime.timedelta(7)
+        date = datetime.datetime.now() - datetime.timedelta(20)
         articles = Article.objects.filter(date__gt=date).all()
         
         for article in articles:
@@ -28,7 +28,7 @@ class Proxy():
     
     def get_most_visited_article(self):
         
-        date = datetime.datetime.now() - datetime.timedelta(7)
+        date = datetime.datetime.now() - datetime.timedelta(20)
         articles = Article.objects.filter(date__gt=date).order_by('-visites')
         
         return articles[0]

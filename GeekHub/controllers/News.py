@@ -28,7 +28,7 @@ def refresh(request):
     
     for article in selected_articles:
         content += "\
-                <a href='" + unicode(article.lien) + "'>\
+                <a href='" + unicode(article.lien) + "' target='_blank'>\
                 <div id='article'>\
                     <object id='img_art' type='image/jpeg' data='" + unicode(article.image) + "'>\
                         <object id='img_art2' type='image/jpeg' data='" + unicode(request.POST.get('static_url', False)) + "image/empty_image.png'></object>\
@@ -53,7 +53,17 @@ def get_targeted_articles(page_number):
 
     for i in range(30):
         if len(all_articles) > page_number*30+i:
-            print page_number*30+i
             selected_articles.append(all_articles[page_number*30+i])
     
     return selected_articles
+
+@csrf_exempt
+def add_visite(request):
+    
+    article = Article.objects.get(id=(int(request.POST.get('id', False))))
+    article.visites += 1
+    article.save()
+    
+    
+    
+    

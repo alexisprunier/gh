@@ -29,12 +29,14 @@ def refresh(request):
     
     for article in selected_articles:
         content += "\
+            <a href='' target='_blank'>\
               <div id='publication'>\
                 <div id='fb_origine'>" + article.origine + "</div>\
                 <div id='fb_contenu'>" + article.contenu + "</div>\
                 <div id='fb_date'>" + str(article.date.strftime("%H:%M %d-%m-%Y")) + "</div>\
-                <div id='fb_visites'>" + article.visites + "</div>\
-              </div>"
+                <div id='fb_visites'>" + unicode(article.visites) + "</div>\
+              </div>\
+            </a>"
 
     return HttpResponse(content)
 
@@ -43,9 +45,9 @@ def get_targeted_articles(page_number):
 
     all_articles = Facebook.objects.all().order_by("id")
     selected_articles = []
-    page_number -= 1
 
     for i in range(10):
-        selected_articles.append(all_articles[page_number*10+i])
+        if len(all_articles) > page_number*10+i:
+            selected_articles.append(all_articles[page_number*10+i])
     
     return selected_articles
