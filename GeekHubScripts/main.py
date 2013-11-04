@@ -14,7 +14,7 @@ from ComptoirDuHardware import ComptoirDuHardware
 from ZeroUnnet import ZeroUnnet
 from Facebook import Facebook
 
-GLOBAL_nb_infos = 10
+GLOBAL_nb_infos = 2
 
 
 o_lesnums = LesNumeriques(nb_infos=GLOBAL_nb_infos)
@@ -34,6 +34,8 @@ sources = {"Materiel.net":320776853364,
           "GrosBill": 312422015254,
           }
 for source,id in sources.items() :
+    print id
+    print source
     o_facebook = Facebook("http://www.facebook.com/feeds/page.php?format=rss20&id="+str(id), source, GLOBAL_nb_infos)
   
     
