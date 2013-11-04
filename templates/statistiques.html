@@ -32,17 +32,17 @@
 			<div id="class_sites">
 				<table id="tab_facebook">
 				<tr class="tab_header">
-					<td class="cell_header" style="width: 350px;">Publicateur Facebook</td>
+					<td class="cell_header center_text" style="width: 340px;">Publicateur Facebook</td>
 					<td class="cell_header center_text" style="width: 150px;">Visites</td>
 					<td class="cell_header center_text" style="width: 150px;">Publications</td>
 					<td class="cell_header center_text" style="width: 150px;">Moyenne</td>
 				</tr>
 				{% for article in tabs_class_fb %}	
 				<tr class="line_tab">
-					<td class="source_text">{{ forloop.counter }}. {{ article.0 }}</td>
-					<td class="center_text">{{ article.2 }}</td>
-					<td class="center_text">{{ article.3 }}</td>
-					<td class="center_text">{{ article.4 }}</td>
+					<td class="cell_normal source_text">{{ forloop.counter }}. {{ article.0 }}</td>
+					<td class="cell_normal center_text cell_red">{{ article.2 }}</td>
+					<td class="cell_normal center_text cell_red">{{ article.3 }}</td>
+					<td class="cell_normal center_text cell_red">{{ article.4 }}</td>
 				</tr>
 				{% endfor %}
 				</table>
@@ -53,17 +53,17 @@
 			<div id="class_sites">
 				<table id="tab_twitter">
 				<tr class="tab_header">
-					<td class="cell_header" style="width: 350px;">Publicateur Twitter</td>
+					<td class="cell_header center_text" style="width: 340px;">Publicateur Twitter</td>
 					<td class="cell_header center_text" style="width: 150px;">Visites</td>
 					<td class="cell_header center_text" style="width: 150px;">Tweets</td>
 					<td class="cell_header center_text" style="width: 150px;">Moyenne</td>
 				</tr>
 				{% for article in tabs_class_tw %}
 				<tr class="line_tab">
-					<td class="source_text">{{ forloop.counter }}. {{ article.0 }}</td>
-					<td class="center_text">{{ article.1 }}</td>
-					<td class="center_text">{{ article.2 }}</td>
-					<td class="center_text">{{ article.3 }}</td>
+					<td class="cell_normal source_text">{{ forloop.counter }}. {{ article.0 }}</td>
+					<td class="cell_normal center_text cell_red">{{ article.1 }}</td>
+					<td class="cell_normal center_text cell_red">{{ article.2 }}</td>
+					<td class="cell_normal center_text cell_red">{{ article.3 }}</td>
 				</tr>
 				{% endfor %}
 				</table>

@@ -7,7 +7,7 @@ import urllib
 class ComptoirDuHardware :
     def __init__(self,nb_infos):
         self.url = 'http://www.comptoir-hardware.com/home.xml'
-        self.source = "Le Comptoir du Harware"
+        self.source = "Le Comptoir du Hardware"
         self.get_infos(nb_infos)
 
         

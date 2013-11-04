@@ -45,6 +45,7 @@ def statistiques(request):
     
     tabs_class_fb = [fb_infos[key] for key in fb_infos.keys()]
     tabs_class_fb.sort(key=lambda x: x[2])
+    tabs_class_fb.reverse()
     
     for tab in tabs_class_fb:
         tab.append(tab[2] / tab[3])
@@ -66,6 +67,7 @@ def statistiques(request):
     
     tabs_class_tw = [tw_infos[key] for key in tw_infos.keys()]
     tabs_class_tw.sort(key=lambda x: x[1])
+    tabs_class_tw.reverse()
     
     for tab in tabs_class_tw:
         tab.append(tab[1] / tab[2])
