@@ -403,8 +403,8 @@ div#tw_visites{
  	position: absolute;
 	color: white;
 	font-size: 45px;
-	top: 90px;
-	left: -63px;
+	top: 230px;
+	left: 272px;
 	transform:rotate(270deg); 
 	-ms-transform:rotate(270deg);
 	-moz-transform:rotate(270deg);
@@ -490,8 +490,22 @@ tr.tab_site_result td{
 #titre_statistiques_fb{
 	background-color: #000010; 
 	width: 60px; 
+	height: 300px; 
 	float:left; 
 	overflow:auto;
+}
+#text_statistiques_fb{
+	font-family: "font_GH_bold";
+ 	position: absolute;
+	color: white;
+	font-size: 45px;
+	top: 230px;
+	left: 272px;
+	transform:rotate(270deg); 
+	-ms-transform:rotate(270deg);
+	-moz-transform:rotate(270deg);
+	-webkit-transform:rotate(270deg);
+	-o-transform:rotate(270deg);
 }
 .tab_header{
 	font-weight: bold;
@@ -499,6 +513,9 @@ tr.tab_site_result td{
 .cell_header{
 	margin-top: 5px;
 	margin-bottom: 5px;
+	padding: 10px 0 10px 0;
+	background-color: white;
+	border: 1px solid #888;
 }
 .center_text{
 	text-align: center;
@@ -511,8 +528,37 @@ tr.tab_site_result td{
 #titre_statistiques_tw{
 	background-color: #000010; 
 	width: 60px; 
+	height: 300px; 
 	float:left; 
 	overflow:auto;
+}
+#text_statistiques_tw{
+	font-family: "font_GH_bold";
+ 	position: absolute;
+	color: white;
+	font-size: 45px;
+	top: 230px;
+	left: 272px;
+	transform:rotate(270deg); 
+	-ms-transform:rotate(270deg);
+	-moz-transform:rotate(270deg);
+	-webkit-transform:rotate(270deg);
+	-o-transform:rotate(270deg);
+}
+.cell_normal{
+	border-bottom: white 1px solid;
+	padding: 10px 0 10px 5px;
+	font-weight: bold;
+	font-size: 14px;
+}
+.cell_red{
+	color: #800409;
+}
+#tab_twitter{
+	margin: 10px 7px 0 7px;
+}
+#tab_facebook{
+	margin: 10px 7px 0 7px;
 }
 
 
