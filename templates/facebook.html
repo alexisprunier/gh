@@ -16,6 +16,16 @@ $(window).bind('focus', function() {
 	})
 	
 });
+
+function add_visite(id){
+	$.ajax({
+	    type: "POST",
+	    url: '/facebook/add_visite/',
+	    data: {
+	    	id: id,
+	    }
+	})
+}
 </script>
 
 <div style="visibility:hidden">
@@ -33,7 +43,7 @@ $(window).bind('focus', function() {
 	 	<div id="titre_face"><div id="text_titre_fb">FACEBOOK</div></div>
 	 	<div id="publications">
 	  	{% for article in selected_articles %}  
-	  		<a href="" target="_blank">
+	  		<a href="" target="_blank" onclick="add_visite({{article.id}})">
 	          <div id="publication">
 	            <div id="fb_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
 	            <div id="fb_contenu">{% autoescape off %}{{ article.contenu }}{% endautoescape %}</div>

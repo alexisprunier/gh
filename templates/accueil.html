@@ -34,6 +34,36 @@ $(window).bind('focus', function() {
 	    $(document).skylo('end');
 	})
 });
+
+function add_visite(id){
+	$.ajax({
+	    type: "POST",
+	    url: '/news/add_visite/',
+	    data: {
+	    	id: id,
+	    }
+	})
+}
+
+function add_visite_fb(id){
+	$.ajax({
+	    type: "POST",
+	    url: '/facebook/add_visite/',
+	    data: {
+	    	id: id,
+	    }
+	})
+}
+
+function add_visite_tw(id){
+	$.ajax({
+	    type: "POST",
+	    url: '/twitter/add_visite/',
+	    data: {
+	    	id: id,
+	    }
+	})
+}
 </script>
 
 <div style="visibility:hidden">
@@ -46,7 +76,7 @@ $(window).bind('focus', function() {
 			<div id="titre_news_acc"></div><div id="text_titre_news">NEWS</div>
 			<div id="articles">
 			{% for article in last_articles %}
-			<a href="{{article.lien}}" target="_blank">	        	
+			<a href="{{article.lien}}" target="_blank" onclick="add_visite({{article.id}})">	        	
 	        	<div id="article">
 	        		<object id="img_art" type="image/jpeg" data="{{ article.image }}">
 	        			<object id="img_art2" type="image/jpeg" data="{{ STATIC_URL }}empty_image.png"></object>
@@ -68,7 +98,7 @@ $(window).bind('focus', function() {
 			<div id="titre_face_acc"></div><div id="text_titre_fb">FACEBOOK</div>
 			<div id="publications">
 		  	{% for article in last_facebook %}
-		  	<a href="" target="_blank">        
+		  	<a href="" target="_blank" onclick="add_visite_fb({{article.id}})">        
 	          <div id="publication">
 	            <div id="fb_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
 	            <div id="fb_contenu">{% autoescape off %}{{ article.contenu }}{% endautoescape %}</div>
@@ -83,10 +113,11 @@ $(window).bind('focus', function() {
 			<div id="titre_twit_acc"></div><div id="text_titre_tw">TWITTER</div>
 			<div id="publications_tw">
 		  	{% for article in last_twitter %}            
-	          <a href="https://twitter.com/{{article.origine}}" target="_blank"><div id="publication_tw">
+	          <a href="https://twitter.com/{{article.origine}}" target="_blank" onclick="add_visite_tw({{article.id}})"><div id="publication_tw">
 	            <div id="tw_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
 	            <div id="tw_contenu">{% autoescape off %}{{ article.titre }}{% endautoescape %}</div>
 	            <div id="tw_date">{% autoescape off %}{{ article.date|date:"H:i d-m-Y" }}{% endautoescape %}</div>
+	          	<div id="tw_visites">{{ article.visites }}</div>
 	          </div></a>  
 		    {% endfor %}
 		    </div>

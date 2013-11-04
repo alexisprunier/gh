@@ -28,10 +28,11 @@ def refresh(request):
     
     for article in selected_articles:
         content += "\
-                  <a href='https://twitter.com/"+ article.origine +"' target='_blank'><div id='publication_tw'>\
+                  <a href='https://twitter.com/"+ article.origine +"' target='_blank' onclick='add_visite("+ unicode(article.id) +")'><div id='publication_tw'>\
                     <div id='tw_origine'>"+ article.origine +"</div>\
                     <div id='tw_contenu'>"+ article.titre +"</div>\
                     <div id='tw_date'>"+ str(article.date.strftime("%H:%M %d-%m-%Y")) +"</div>\
+                    <div id='tw_visites'>"+ unicode(article.visites) +"</div>\
                   </div></a>"
 
     return HttpResponse(content)
@@ -40,10 +41,18 @@ def refresh(request):
 def get_targeted_articles(page_number):
 
     all_articles = Twitter.objects.all().order_by("id")
+    all_articles = all_articles.reverse()
     selected_articles = []
 
     for i in range(20):
         if len(all_articles) > page_number*20+i:
             selected_articles.append(all_articles[page_number*20+i])
-    
+
     return selected_articles
+
+@csrf_exempt
+def add_visite(request):
+
+    article = Twitter.objects.get(id=(int(request.POST.get('id', False))))
+    article.visites += 1
+    article.save()

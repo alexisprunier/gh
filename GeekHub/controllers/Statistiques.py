@@ -23,6 +23,7 @@ def statistiques(request):
     
     tabs_class = [site_infos[key] for key in site_infos.keys()]
     tabs_class.sort(key=lambda x: x[2])
+    tabs_class.reverse()
     
     for tab in tabs_class:
         tab.append(tab[2] / tab[3])

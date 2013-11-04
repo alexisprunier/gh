@@ -12,6 +12,7 @@ def accueil(request):
     last_articles = reversed(last_articles)
     last_facebook = Facebook.objects.all().order_by("id")[Facebook.objects.all().order_by("id").count()-1:]
     last_twitter = Twitter.objects.all().order_by("id")[Twitter.objects.all().order_by("id").count()-3:]
+    last_twitter = reversed(last_twitter)
     
     proxy = Proxy()
     best_article = proxy.get_most_visited_article()
@@ -29,7 +30,7 @@ def refresh_nw(request):
     
     for article in last_articles:
         content += "\
-                <a href='" + unicode(article.lien) + "' target='_blank'>\
+                <a href='" + unicode(article.lien) + "' target='_blank' onclick='add_visite("+ unicode(article.id) +")'>\
                 <div id='article'>\
                     <object id='img_art' type='image/jpeg' data='" + unicode(article.image) + "'>\
                         <object id='img_art2' type='image/jpeg' data='" + unicode(request.POST.get('static_url', False)) + "image/empty_image.png'></object>\
@@ -51,15 +52,17 @@ def refresh_nw(request):
 def refresh_tw(request):
     
     last_twitter = Twitter.objects.all().order_by("id")[Twitter.objects.all().order_by("id").count()-3:]
-
+    last_twitter = reversed(last_twitter)
+    
     content = ""
     
     for article in last_twitter:
         content += "\
-                  <a href='https://twitter.com/"+ article.origine +"' target='_blank'><div id='publication_tw'>\
+                  <a href='https://twitter.com/"+ article.origine +"' target='_blank' onclick='add_visite_tw("+ unicode(article.id) +")'><div id='publication_tw'>\
                     <div id='tw_origine'>"+ article.origine +"</div>\
                     <div id='tw_contenu'>"+ article.titre +"</div>\
                     <div id='tw_date'>"+ str(article.date.strftime("%H:%M %d-%m-%Y")) +"</div>\
+                    <div id='tw_visites'>"+ unicode(article.visites) +"</div>\
                   </div></a>"
 
     return HttpResponse(content)
@@ -68,13 +71,13 @@ def refresh_tw(request):
 def refresh_fb(request):
     
     last_facebook = Facebook.objects.all().order_by("id")[Facebook.objects.all().order_by("id").count()-1:]
-         
+
     content = ""
     
     for article in last_facebook:
         content += "\
             <a href='' target='_blank'>\
-              <div id='publication' target='_blank'>\
+              <div id='publication' target='_blank' onclick='add_visite_fb("+ unicode(article.id) +")'>\
                 <div id='fb_origine'>" + article.origine + "</div>\
                 <div id='fb_contenu'>" + article.contenu + "</div>\
                 <div id='fb_date'>" + str(article.date.strftime("%H:%M %d-%m-%Y")) + "</div>\

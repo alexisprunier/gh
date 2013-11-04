@@ -365,66 +365,23 @@ div#text_titre_tw{
 	-o-transform:rotate(270deg);
 }
 div#publications_tw{padding: 10px 0 10px 0;}
-div#publication_tw{border:1px solid #8ec1da; display: inline-block; width: 768px; height: 80px; background-color: white; float: top; margin: 5px 0 5px 11px;}
+div#publication_tw{border:1px solid #8ec1da; display: inline-block; width: 768px; height: 80px; background-color: white; float: top; margin: 1px 0 1px 11px;}
 img.img_twit{margin: 20px 0 0 5px;}
 div#tw_origine{font-weight: bold; font-size: 19px; margin: 10px 0 0 15px; color: black;}
 div#tw_contenu{margin-left: 15px; font-size: 14px; color: black;}
 div#tw_date{font-size: 11px; color: #888; margin: 0 0 10px 15px;}
 div#publications_tw a{text-decoration:none;}
-
-
-/*************SOURCES***************************/
-
-div#sources{
-	background-color: #CCC;
-	margin-bottom: 20px;
-	overflow: auto;
-}
-div#titre_src{background-color: #000010; width: 60px; height: 460px; float:left; overflow:auto;}
-div#source_titre{font-size: 23px; color: #800409; font-weight: bold; text-align: center; margin-top: 10px; margin-bottom: 30px;}
-div#text_titre_src{
+div#tw_visites{
 	font-family: "font_GH_bold";
-	color: white;
-	font-size: 45px;
-	margin-top: 170px;
-	transform:rotate(270deg); 
-	-ms-transform:rotate(270deg);
-	-moz-transform:rotate(270deg);
-	-webkit-transform:rotate(270deg);
-	-o-transform:rotate(270deg);
-}
-div#source_name{padding: 0 0 0 20px; padding-top: 10px; color: black;}
-div#source_name:hover{background-color: #ddd;}
-a.lien_source{text-decoration: none;}
-div#sources_news{
-	width: 28%;
-	float: left;
-	background-color: #fff;
-	margin-left: 2%;
-	margin-top: 15px;
-	height: 400px;
-	font-size: 18px;
-	border:1px solid #999;
-}
-div#sources_fb{
-	width: 28%;
-	float: left;
-	background-color: #fff;
-	margin-left: 2%;
-	margin-top: 15px;
-	height: 400px;
-	font-size: 18px;
-	border:1px solid #999;
-}
-div#sources_twit{
-	width: 28%;
-	float: left;
-	background-color: #fff;
-	margin-left: 2%;
-	margin-top: 15px;
-	height: 400px;
-	font-size: 18px;
-	border:1px solid #999;
+	position: relative;
+	bottom: 25px;
+	right: -710px;
+	width: 50px;
+	height: 0px;
+	text-align: right;
+	color: #CEE3F6;
+	font-size: 25px;
+	font-weight: bold;
 }
 
 /*************STATISTIQUES***************************/
@@ -434,7 +391,7 @@ div#sources_twit{
 	margin-bottom: 20px;
 	overflow: auto;
 }
-#titre_statistiques{
+#titre_statistiques_news{
 	background-color: #000010; 
 	width: 60px; 
 	height: 450px; 
@@ -525,6 +482,39 @@ tr.tab_site_result td{
 	font-size: 18px;
 	margin: 3px 0 0 4px;
 }
+#stats_fb{
+	background-color: #CCC;
+	margin-bottom: 20px;
+	overflow: auto;
+}
+#titre_statistiques_fb{
+	background-color: #000010; 
+	width: 60px; 
+	float:left; 
+	overflow:auto;
+}
+.tab_header{
+	font-weight: bold;
+}
+.cell_header{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.center_text{
+	text-align: center;
+}
+#stats_tw{
+	background-color: #CCC;
+	margin-bottom: 20px;
+	overflow: auto;
+}
+#titre_statistiques_tw{
+	background-color: #000010; 
+	width: 60px; 
+	float:left; 
+	overflow:auto;
+}
+
 
 /************************************************************
 **************    FOOTER         ****************************
@@ -541,7 +531,7 @@ footer{
 	box-shadow: 0 0px 12px #000017;
 }
 div#footer_links{
-	margin: auto; width: 900px; margin-top: 40px;
+	margin: auto; width: 900px; margin-top: 70px;
 	height: 90px;
 	font-family: "font_GH_bold";
 	font-size: 12px;
