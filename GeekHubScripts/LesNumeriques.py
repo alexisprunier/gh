@@ -17,8 +17,9 @@ class LesNumeriques:
         #print page_web.prettify() #Affichage source complete
         
         list_art = page_web.find_all("entry", limit=nb_infos)
+        #print list_art #Affichage source complete #Affichege debug
         for article in list_art :    
-            if  (article.find("content")) != None : #if not breves
+            if  article.find("link") != None : #if not breves
                 #link
                 link = (article.find("link")).get("href")
                 #title
