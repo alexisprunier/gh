@@ -29,7 +29,7 @@ def refresh(request):
     
     for article in selected_articles:
         content += "\
-            <a href='' target='_blank'>\
+            <a href='' target='_blank' onclick='add_visite("+ unicode(article.id) +")'>\
               <div id='publication'>\
                 <div id='fb_origine'>" + article.origine + "</div>\
                 <div id='fb_contenu'>" + article.contenu + "</div>\
@@ -44,6 +44,7 @@ def refresh(request):
 def get_targeted_articles(page_number):
 
     all_articles = Facebook.objects.all().order_by("id")
+    all_articles = all_articles.reverse()
     selected_articles = []
 
     for i in range(10):
@@ -51,3 +52,10 @@ def get_targeted_articles(page_number):
             selected_articles.append(all_articles[page_number*10+i])
     
     return selected_articles
+
+@csrf_exempt
+def add_visite(request):
+
+    article = Facebook.objects.get(id=(int(request.POST.get('id', False))))
+    article.visites += 1
+    article.save()

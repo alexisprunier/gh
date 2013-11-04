@@ -5,7 +5,7 @@
 <div id="content">
 	<div id="gauche_accueil">
 		<div id="stats_art">
-	 		<div id="titre_statistiques"><div id="text_statistiques_news">CLASS. SITES</div></div>
+	 		<div id="titre_statistiques_news"><div id="text_statistiques_news">CLASS. SITES</div></div>
 			<div id="class_sites">
 				{% for article in tabs_class %}	
 					<div id="stats_site_{{ forloop.counter }}">
@@ -28,14 +28,14 @@
 			</div>
 	 	</div> 
 	 	<div id="stats_fb">
-	 		<div id="titre_statistiques"><div id="text_statistiques_fb">STAT. FB</div></div>
+	 		<div id="titre_statistiques_fb"><div id="text_statistiques_fb">STAT. FB</div></div>
 			<div id="class_sites">
 				<table id="tab_facebook">
 				<tr class="tab_header">
-					<td class="cell_header" style="width: 53%;">Publicateur Facebook</td>
-					<td class="cell_header" style="width: 15%;">Nb visites</td>
-					<td class="cell_header" style="width: 15%;">Nb publications</td>
-					<td class="cell_header" style="width: 15%;">Moyenne</td>
+					<td class="cell_header" style="width: 350px;">Publicateur Facebook</td>
+					<td class="cell_header center_text" style="width: 150px;">Visites</td>
+					<td class="cell_header center_text" style="width: 150px;">Publications</td>
+					<td class="cell_header center_text" style="width: 150px;">Moyenne</td>
 				</tr>
 				{% for article in tabs_class_fb %}	
 				<tr class="line_tab">
@@ -49,14 +49,14 @@
 			</div>
 	 	</div>
 	 	<div id="stats_tw">
-	 		<div id="titre_statistiques"><div id="text_statistiques_tw">STAT. TWITTER</div></div>
+	 		<div id="titre_statistiques_tw"><div id="text_statistiques_tw">STAT. TWITTER</div></div>
 			<div id="class_sites">
 				<table id="tab_twitter">
 				<tr class="tab_header">
-					<td class="cell_header" style="width: 53%;">Publicateur Twitter</td>
-					<td class="cell_header" style="width: 15%;">Nb visites</td>
-					<td class="cell_header" style="width: 15%;">Nb tweets</td>
-					<td class="cell_header" style="width: 15%;">Moyenne</td>
+					<td class="cell_header" style="width: 350px;">Publicateur Twitter</td>
+					<td class="cell_header center_text" style="width: 150px;">Visites</td>
+					<td class="cell_header center_text" style="width: 150px;">Tweets</td>
+					<td class="cell_header center_text" style="width: 150px;">Moyenne</td>
 				</tr>
 				{% for article in tabs_class_tw %}
 				<tr class="line_tab">

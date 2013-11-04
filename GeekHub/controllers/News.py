@@ -28,7 +28,7 @@ def refresh(request):
     
     for article in selected_articles:
         content += "\
-                <a href='" + unicode(article.lien) + "' target='_blank'>\
+                <a href='" + unicode(article.lien) + "' target='_blank' onclick='add_visite("+ unicode(article.id) +")'>\
                 <div id='article'>\
                     <object id='img_art' type='image/jpeg' data='" + unicode(article.image) + "'>\
                         <object id='img_art2' type='image/jpeg' data='" + unicode(request.POST.get('static_url', False)) + "image/empty_image.png'></object>\
@@ -49,6 +49,7 @@ def refresh(request):
 def get_targeted_articles(page_number):
 
     all_articles = Article.objects.all().order_by("id")
+    all_articles = all_articles.reverse()
     selected_articles = []
 
     for i in range(30):
@@ -59,7 +60,7 @@ def get_targeted_articles(page_number):
 
 @csrf_exempt
 def add_visite(request):
-    
+
     article = Article.objects.get(id=(int(request.POST.get('id', False))))
     article.visites += 1
     article.save()

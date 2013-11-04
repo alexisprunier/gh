@@ -16,6 +16,16 @@ $(window).bind('focus', function() {
 	})
 	
 });
+
+function add_visite(id){
+	$.ajax({
+	    type: "POST",
+	    url: '/twitter/add_visite/',
+	    data: {
+	    	id: id,
+	    }
+	})
+}
 </script>
 
 <div style="visibility:hidden">
@@ -32,11 +42,12 @@ $(window).bind('focus', function() {
 	 <div id="twitter">
 	 	<div id="titre_twit_acc"><div id="text_titre_tw">TWITTER</div></div>
 	 	<div id="publications_tw">
-		  {% for article in selected_article %}
-		          <a href="https://twitter.com/{{article.origine}}" target="_blank"><div id="publication_tw">
+		  {% for article in selected_articles %}
+		          <a href="https://twitter.com/{{article.origine}}" target="_blank" onclick="add_visite({{article.id}})"><div id="publication_tw">
 		            <div id="tw_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
 		            <div id="tw_contenu">{% autoescape off %}{{ article.titre }}{% endautoescape %}</div>
 		            <div id="tw_date">{% autoescape off %}{{ article.date|date:"H:i d-m-Y" }}{% endautoescape %}</div>
+		            <div id="tw_visites">{{ article.visites }}</div>
 		          </div></a>
 		  {% endfor %}
 		</div>
