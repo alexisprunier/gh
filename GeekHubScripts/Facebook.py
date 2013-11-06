@@ -16,6 +16,8 @@ class Facebook:
                 
         list_art = page_web.find_all("item", limit=nb_infos)
         for article in list_art:
+            content = title = news_link = None  
+
             try:       
                 #link (wall or news ...)
                 news_link = article.find("link").text

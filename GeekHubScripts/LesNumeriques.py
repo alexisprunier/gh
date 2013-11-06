@@ -20,6 +20,7 @@ class LesNumeriques:
         #print list_art #Affichage source complete #Affichege debug
         for article in list_art :    
             if  article.find("link") != None : #if not breves
+                link = title = photo = None 
                 #link
                 link = (article.find("link")).get("href")
                 #title
