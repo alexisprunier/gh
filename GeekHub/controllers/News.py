@@ -5,8 +5,10 @@ from GeekHub.controllers.Proxy import Proxy
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 import datetime
+from django.template.loader import render_to_string
+from settings import STATIC_URL
 
-
+GLOBAL_nb_news = 24
 def news(request, page_number):
     
     day = str(datetime.date.today().day)
@@ -25,39 +27,19 @@ def news(request, page_number):
 @csrf_exempt
 def refresh(request):
 
-    selected_articles = get_targeted_articles(int(request.POST.get('page', False)))
-    content = ""
-    
-    for article in selected_articles:
-        content += "\
-                <a href='" + unicode(article.lien) + "' target='_blank' onclick='add_visite("+ unicode(article.id) +")'>\
-                <div id='article'>\
-                    <object id='img_art' type='image/jpeg' data='" + unicode(article.image) + "'>\
-                        <object id='img_art2' type='image/jpeg' data='" + unicode(request.POST.get('static_url', False)) + "image/empty_image.png'></object>\
-                    </object>\
-                    <div id='info_art'>\
-                        <div id='titre_date'>\
-                            <div id='titre_art'>" + unicode(article.titre) + "</div>\
-                            <div id='date_art'>" + unicode(article.date.strftime("%H:%M %d-%m-%Y")) + "</div>\
-                        </div>\
-                        <div id='origine_art'><img id='favicon' src='" + str(request.POST.get('static_url', False)) + unicode(article.origine) + ".png' align='bottom' alt='" + unicode(request.POST.get('static_url', False)) + "image/empty_image.png'></img><div id='text_article'>" + unicode(article.origine) + "</div></div>\
-                        <div id='visites_art'>" + unicode(article.visites) + "</div>\
-                    </div>\
-                </div>\
-                </a>"
+    selected_articles = get_targeted_articles(int(request.POST.get('page', False)))    
+    html = render_to_string('ajax_content/ajax_news.html', {'selected_articles':selected_articles, 'STATIC_URL':STATIC_URL})
+    return HttpResponse(html)
+@csrf_exempt
+def next_news(request):
 
-    return HttpResponse(content)
-
+    selected_articles = get_targeted_articles(int(request.POST.get('page', False)))    
+    html = render_to_string('ajax_content/ajax_news.html', {'selected_articles':selected_articles, 'STATIC_URL':STATIC_URL})
+    return HttpResponse(html)
 def get_targeted_articles(page_number):
 
-    all_articles = Article.objects.all().order_by("id")
-    all_articles = all_articles.reverse()
-    selected_articles = []
-
-    for i in range(24):
-        if len(all_articles) > page_number*24+i:
-            selected_articles.append(all_articles[page_number*24+i])
-    
+    selected_articles = Article.objects.all()[(page_number)*24:GLOBAL_nb_news + GLOBAL_nb_news * page_number]
+   
     return selected_articles
 
 @csrf_exempt

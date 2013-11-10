@@ -14,7 +14,7 @@ from ComptoirDuHardware import ComptoirDuHardware
 from ZeroUnnet import ZeroUnnet
 from Facebook import Facebook
 
-GLOBAL_nb_infos = 2
+GLOBAL_nb_infos = 30
 
 print "DEBUT Article"
 o_lesnums = LesNumeriques(nb_infos=GLOBAL_nb_infos)

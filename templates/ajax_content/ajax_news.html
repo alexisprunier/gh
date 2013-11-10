@@ -1,0 +1,31 @@
+{% for article in selected_articles %}	
+	<div id="container_article">
+		<div id="article" class="_{% for word in article.origine.split %}{{word}}{% if not forloop.last %}_{% endif %}{% endfor %}">
+			{% if article.image != None %}
+				<div id="img_art" style = "background: #fff url('{{ article.image }}') no-repeat 50% 50%; background-size:100%; "></div>
+			{% else %} 
+				<div id="img_art" style = "background: #f00 url('{{ article.image }}') no-repeat 50% 50%; "></div>
+			{% endif %}
+			
+				
+			<div id="info_art">
+				<div id="titre_date">
+	        		<div id="titre_art">{{ article.titre }}</div>
+	        		
+	    		</div>
+	    		<div id="origine_art">
+	    			<img id="favicon" src='{{ STATIC_URL }}{{ article.origine }}.png' align="bottom" alt='{{ STATIC_URL }}empty_image.png'></img>
+	    			<div id="origine_article">{{ article.origine }}</div>
+				</div>
+				{% if day == article.date|date:"d" %}
+	    			<div id="date_art">{{ article.date|date:"H:i" }}</div>
+	    		{% else %}
+	    			<div id="date_art_long">{{ article.date|date:"H:i d-m-Y" }}</div>
+	    		{% endif %}
+	    	</div>
+			
+			
+		</div> 
+	</div>   
+       	
+{% endfor %}
