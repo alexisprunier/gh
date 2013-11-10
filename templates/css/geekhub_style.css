@@ -6,9 +6,16 @@
 @font-face{
 	font-family: "font_GH"; 	
 	src: url('./Neou-thin.ttf');
-} 
+}
+@font-face{
+	font-family: "New_font_GH"; 	
+	src: url('./Champagne & Limousines.ttf');
+}
+
 /*REINITIALISATION DU BODY*/
-body{margin : 0; padding: 0; background-attachment:fixed; min-width: 320px; background-color: #F5F5F5; font-family: Lucida grande, Sans-serif;}
+body{margin : 0; padding: 0;  min-width: 320px;background:#e1e1e1;
+
+font-family: Lucida grande, Sans-serif;   }
 /*************************************************************
 *****************    SCROLL BARRE  ***************************
 **************************************************************/
@@ -76,9 +83,11 @@ li:active{
 /***********************************************************
 **********************   DROITE CONTENT   ******************
 ************************************************************/
-div#content{
-	margin : 45px auto 30px auto;
-	width : 1140px;
+div#content{width: 88%;margin : 10px auto;font-family: New_font_GH;}
+div#news{	
+	
+	text-align : center;
+	background : rgba(255,255,255,1);	
 }
 div#gauche_accueil{
 	display : inline-block;
@@ -195,106 +204,103 @@ img#best_article_img{
 
 
 /*************NEWS***************************/
-
-div#news{
-	display: table;
-	margin-bottom: 20px;
-	position: relative;
-	background-color: #CCC;
-}
-div#titre_news_acc{
-	display: table-cell;
-	background-color: #000010;
-    width: 60px !important;
-}
-div#text_titre_news{
-	font-family: "font_GH_bold";
- 	position: absolute;
-	color: white;
-	font-size: 45px;
-	top: 55px;
-	left: -27px;
-	transform:rotate(270deg); 
-	-ms-transform:rotate(270deg);
-	-moz-transform:rotate(270deg);
-	-webkit-transform:rotate(270deg);
-	-o-transform:rotate(270deg);
-}
 div#titre_news{
-	display: table-cell;
-	background-color: #000010;
-    width: 60px !important;
+	background: rgba(228, 9, 9, 0.5);
+	font-size: 70px;
+	border-bottom: 1px solid #333;
+	padding-left: 5%;
 }
-div#articles{
-	display: table-cell;
-	width: 780px;
-	height: 100%;
-	padding: 10px 0 10px 11px;
+div#container_article{
+	display: inline-block;
+	border-top: 1px solid #555;
+	margin: 10px 15px;
 }
-img.img_news{
-	margin: 20px 0 0 5px;
+div#container_article:last-child{
+	display: inline-block;
+	padding-right: 20px;
+	padding-left: 20px;
+	margin: 10px -2px;
+	border : none;
 }
 div#article{
 	display: inline-block;
-	width: 380px;
-	height: 100px;
-	background-color: white;
-	float: top;
-	border:1px solid #999;
+	width : 350px;
+	height : 150px;
+	vertical-align: top;
+	background : rgba(255,255,255,0.3);
+	border-bottom: 10px solid;
+	border-radius : 1px;
+	text-align: inherit;
+	z-index : 100;	
+	
 }
-object#img_art{
-	display: block;
-	position: absolute;
-	float: left;
-	width: 120px;
-	height: 90px;
-	margin-top: 5px;
-	margin-left: 5px;
-	background-image:url('{{ STATIC_URL }}image/empty_image.png');
-}
-object#img_art2{
-	display: block;
-	position: absolute;
-	float: left;
-	width: 120px;
-	height: 90px;
-	background-image:url('{{ STATIC_URL }}image/empty_image.png');
+div#article:hover{
+	
+	
+	cursor : pointer;
+	
 }
 div#info_art{
-	position: absolute;
-	margin-left: 130px;
-	width: 240px;
+	display: inline-block;
+	height : 150px;
+	width : 70%;
+	float : right;
+}
+	
+div#img_art{
+	height : 150px;
+	width : 28%;
+	display: inline-block;
+	float : left;
+}
+div#titre_art{
+	text-align: left;
+	padding: 5px;
 	height: 120px;
 }
-div#titre_art{font-weight: bold; font-size: 14px; color: #000021; padding: 6px 2px 2px 2px;}
-div#titre_date{height: 78px;}
-div#date_art{font-size: 11px; color: #888;}
-div#origine_art{ font-size: 14px;}
-div#text_article{display: inline; padding-left: 8px;}
-div#switch_page{position: fixed; top: 200px;}
-div.change_page{
-	width: 35px;
-	height: 45px;
-	background-color: #000021;
-	margin-bottom: 10px;
-	color: white;
-	border: 1px solid #800409;
-	border-left: 0px;
-	font-size: 35px;
-	padding: 7px 0 0 15px;
-}
-div#visites_art{
-	font-family: "font_GH_bold";
-	color: #CCC;
-	font-weight: bold;
+div#origine_art{display: inline-block; float:left;font-size: 13px;line-height: 20px;}
+div#date_art{
+	display: inline-block;
+	vertical-align: top;
+	float: right;
 	font-size: 25px;
-	position: relative;
-	top: -22px;
-	left: 190px;
-	text-align: right;
-	width: 50px;
-	height: 0px;
+	line-height: 16px;
+	color: rgba(0,0,0,0.2);
 }
+div#date_art_long{
+	display: inline-block;
+	vertical-align: top;
+	float: right;
+	font-size: 12px;
+	line-height : 20px;
+	color: rgba(0,0,0,0.5);
+	padding-right: 3px;
+}
+}
+img#favicon{
+	display: inline-block;
+	width : 18px;
+}
+div#origine_article{
+	display: inline-block;
+	vertical-align: top;
+}
+/*Gizmodo*/
+._Gizmodo{border-bottom-color : #03839E!important;}
+/*Tom's Guide*/
+._Tom_s_Guide{border-bottom-color : #13a6d2!important;}
+/*Presse citron*/
+._Presse_Citron{border-bottom-color : #9fb600!important;}
+/*Les numérique*/
+._Les_Numériques{border-bottom-color : #2c2c2c!important;}
+/*Le Comptoir du Hardware*/
+._Le_Comptoir_du_Hardware{border-bottom-color : #eb1865!important;}
+/*01net*/
+._01net{border-bottom-color : #bb0000!important;}
+
+@media only screen and (max-width: 740px){
+			div#article{ width : 80%;}
+		}
 
 /*************FACEBOOK***************************/
 
