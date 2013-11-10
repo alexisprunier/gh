@@ -4,10 +4,12 @@ from GeekHub.models import Article
 from GeekHub.controllers.Proxy import Proxy
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+import datetime
 
 
 def news(request, page_number):
     
+    day = str(datetime.date.today().day)
     page_number = int(page_number.encode('ascii'))
     selected_articles = get_targeted_articles(page_number)
             
@@ -52,9 +54,9 @@ def get_targeted_articles(page_number):
     all_articles = all_articles.reverse()
     selected_articles = []
 
-    for i in range(30):
-        if len(all_articles) > page_number*30+i:
-            selected_articles.append(all_articles[page_number*30+i])
+    for i in range(24):
+        if len(all_articles) > page_number*24+i:
+            selected_articles.append(all_articles[page_number*24+i])
     
     return selected_articles
 

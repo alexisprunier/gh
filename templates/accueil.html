@@ -71,57 +71,56 @@ function add_visite_tw(id){
 </div>
 	
 <div id="content">
-	<div id="gauche_accueil">
-		<div id="news">
-			<div id="titre_news_acc"></div><div id="text_titre_news">NEWS</div>
-			<div id="articles">
-			{% for article in last_articles %}
-			<a href="{{article.lien}}" target="_blank" onclick="add_visite({{article.id}})">	        	
-	        	<div id="article">
-	        		<object id="img_art" type="image/jpeg" data="{{ article.image }}">
-	        			<object id="img_art2" type="image/jpeg" data="{{ STATIC_URL }}empty_image.png"></object>
-	        		</object>
-	        		<div id="info_art">
-	        			<div id="titre_date">
-			        		<div id="titre_art">{{ article.titre }}</div>
-			        		<div id="date_art">{{ article.date }}</div>
-		        		</div>
-		        		<div id="origine_art"><img id="favicon" src='{{ STATIC_URL }}/{{ article.origine }}.png' align="bottom"></img><div id="text_article">{{ article.origine }}</div></div>
-	        			<div id='visites_art'>{{ article.visites }}</div>
+	<div id="news">
+		<div id="titre_news_acc"></div><div id="text_titre_news">NEWS</div>
+		<div id="articles">
+		{% for article in last_articles %}
+		<a href="{{article.lien}}" target="_blank" onclick="add_visite({{article.id}})">	        	
+        	<div id="article">
+        		<object id="img_art" type="image/jpeg" data="{{ article.image }}">
+        			<object id="img_art2" type="image/jpeg" data="{{ STATIC_URL }}empty_image.png"></object>
+        		</object>
+        		<div id="info_art">
+        			<div id="titre_date">
+		        		<div id="titre_art">{{ article.titre }}</div>
+		        		<div id="date_art">{{ article.date }}</div>
 	        		</div>
-	        	</div>
-	        </a>
-        	{% endfor %}
+	        		<div id="origine_art"><img id="favicon" src='{{ STATIC_URL }}/{{ article.origine }}.png' align="bottom"></img><div id="text_article">{{ article.origine }}</div></div>
+        			<div id='visites_art'>{{ article.visites }}</div>
+        		</div>
         	</div>
-		</div>
-		<div id="facebook">
-			<div id="titre_face_acc"></div><div id="text_titre_fb">FACEBOOK</div>
-			<div id="publications">
-		  	{% for article in last_facebook %}
-		  	<a href="" target="_blank" onclick="add_visite_fb({{article.id}})">        
-	          <div id="publication">
-	            <div id="fb_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
-	            <div id="fb_contenu">{% autoescape off %}{{ article.contenu }}{% endautoescape %}</div>
-	            <div id="fb_date">{% autoescape off %}{{ article.date|date:"H:i d-m-Y" }}{% endautoescape %}</div>
-	          	<div id='fb_visites'>{{ article.visites }}</div>
-	          </div>
-	        </a>
-		    {% endfor %}
-		    </div>
-		</div>
-		<div id="twitter">
-			<div id="titre_twit_acc"></div><div id="text_titre_tw">TWITTER</div>
-			<div id="publications_tw">
-		  	{% for article in last_twitter %}            
-	          <a href="https://twitter.com/{{article.origine}}" target="_blank" onclick="add_visite_tw({{article.id}})"><div id="publication_tw">
-	            <div id="tw_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
-	            <div id="tw_contenu">{% autoescape off %}{{ article.titre }}{% endautoescape %}</div>
-	            <div id="tw_date">{% autoescape off %}{{ article.date|date:"H:i d-m-Y" }}{% endautoescape %}</div>
-	          	<div id="tw_visites">{{ article.visites }}</div>
-	          </div></a>  
-		    {% endfor %}
-		    </div>
-		</div>
+        </a>
+       	{% endfor %}
+       	</div>
 	</div>
+	<div id="facebook">
+		<div id="titre_face_acc"></div><div id="text_titre_fb">FACEBOOK</div>
+		<div id="publications">
+	  	{% for article in last_facebook %}
+	  	<a href="" target="_blank" onclick="add_visite_fb({{article.id}})">        
+          <div id="publication">
+            <div id="fb_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
+            <div id="fb_contenu">{% autoescape off %}{{ article.contenu }}{% endautoescape %}</div>
+            <div id="fb_date">{% autoescape off %}{{ article.date|date:"H:i d-m-Y" }}{% endautoescape %}</div>
+          	<div id='fb_visites'>{{ article.visites }}</div>
+          </div>
+        </a>
+	    {% endfor %}
+	    </div>
+	</div>
+	<div id="twitter">
+		<div id="titre_twit_acc"></div><div id="text_titre_tw">TWITTER</div>
+		<div id="publications_tw">
+	  	{% for article in last_twitter %}            
+          <a href="https://twitter.com/{{article.origine}}" target="_blank" onclick="add_visite_tw({{article.id}})"><div id="publication_tw">
+            <div id="tw_origine">{% autoescape off %}{{ article.origine }}{% endautoescape %}</div>
+            <div id="tw_contenu">{% autoescape off %}{{ article.titre }}{% endautoescape %}</div>
+            <div id="tw_date">{% autoescape off %}{{ article.date|date:"H:i d-m-Y" }}{% endautoescape %}</div>
+          	<div id="tw_visites">{{ article.visites }}</div>
+          </div></a>  
+	    {% endfor %}
+	    </div>
+	</div>
+</div>
 
 {% include "theme/footer.html" %}
