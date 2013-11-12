@@ -11,10 +11,12 @@ from TomsGuide import TomsGuide
 from Hardware import Hardware
 from Gizmodo import Gizmodo
 from ComptoirDuHardware import ComptoirDuHardware
+from JournalDuGeek import JournalDuGeek
 from ZeroUnnet import ZeroUnnet
 from Facebook import Facebook
 
-GLOBAL_nb_infos = 30
+
+GLOBAL_nb_infos = 10
 
 print "DEBUT Article"
 o_lesnums = LesNumeriques(nb_infos=GLOBAL_nb_infos)
@@ -24,7 +26,7 @@ o_hardware = Hardware(nb_infos=GLOBAL_nb_infos)
 o_gizmodo = Gizmodo(nb_infos=GLOBAL_nb_infos)
 o_comptoir = ComptoirDuHardware(nb_infos=GLOBAL_nb_infos)
 o_01net = ZeroUnnet(nb_infos=GLOBAL_nb_infos)
-
+o_jdg = JournalDuGeek(nb_infos=GLOBAL_nb_infos)
 
 #FB
 print "DEBUT Facebook"
@@ -37,5 +39,5 @@ sources = {"Materiel.net":320776853364,
 for source,id in sources.items() :
     print "Facebook: "+source
     o_facebook = Facebook("http://www.facebook.com/feeds/page.php?format=rss20&id="+str(id), source, GLOBAL_nb_infos)
-  
+
     
