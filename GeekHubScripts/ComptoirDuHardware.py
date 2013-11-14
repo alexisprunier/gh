@@ -2,7 +2,6 @@
 from bs4 import BeautifulSoup
 from GeekHub.models import Article
 import urllib
-from compiler.pycodegen import EXCEPT
 
  
 class ComptoirDuHardware :
@@ -27,9 +26,7 @@ class ComptoirDuHardware :
             #title
             title = (article.find("title")).text        
             #photo
-            try :
-                photo = article.find("enclosure").get("url")
-            except : pass
+            photo = article.find("enclosure").get("url")
             #BDD
             bdd_article = Article(titre = title, lien = link, origine = self.source, image = photo )
             try :
