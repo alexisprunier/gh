@@ -12,9 +12,9 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'gh',                      # Or path to database file if using sqlite3.
+        'NAME': 'geekhub_db',                      # Or path to database file if using sqlite3.
         'USER': 'root',                      # Not used with sqlite3.
-        'PASSWORD': 'anthony',                  # Not used with sqlite3.
+        'PASSWORD': 'm2il3iia',                  # Not used with sqlite3.
         'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '3306',                      # Set to empty string for default. Not used with sqlite3.
     }
@@ -60,7 +60,7 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = '/root/git/gh/static'
+STATIC_ROOT = '/home/alexis/Desktop/git/GeekHub/static/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -68,12 +68,12 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    '/root/git/gh/templates/css',
-    '/root/git/gh/templates/font',
-    '/root/git/gh/templates/favicon',
-    '/root/git/gh/templates/theme',
-    '/root/git/gh/templates/image',
-    '/root/git/gh/templates/jquery',
+    '/home/alexis/Desktop/git/GeekHub/templates/css',
+    '/home/alexis/Desktop/git/GeekHub/templates/font',
+    '/home/alexis/Desktop/git/GeekHub/templates/favicon',
+    '/home/alexis/Desktop/git/GeekHub/templates/theme',
+    '/home/alexis/Desktop/git/GeekHub/templates/image',
+    '/home/alexis/Desktop/git/GeekHub/templates/jquery',
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -113,7 +113,7 @@ ROOT_URLCONF = 'urls'
 WSGI_APPLICATION = 'wsgi.application'
 
 TEMPLATE_DIRS = (
-    '/root/git/gh/templates'
+    '/home/alexis/Desktop/git/GeekHub/templates'
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
