@@ -18,7 +18,6 @@ class ZeroUnnet :
         
         list_art = page_web.find_all("div",{"class":"Actu_Box"}, limit=nb_infos)
         for article in list_art :    
-            link = title = photo = None 
             #link
             link = (article.find("h2")).find("a").get("href") 
             #title

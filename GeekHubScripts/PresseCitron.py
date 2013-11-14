@@ -17,8 +17,7 @@ class PresseCitron :
         
         page_web = page_web.find("div", {"class":"posts posts-index"}) #Nettoyage, selection de la div des posts
         list_art = page_web.find_all("div",{"class":"hentry"}, limit=nb_infos)
-        for article in list_art :   
-            link = title = photo = None  
+        for article in list_art :    
             #link
             link = (article.find("h2", {"class":"post-title"})).find("a").get("href")  
             #title
