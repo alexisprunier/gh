@@ -6,7 +6,7 @@ import urllib
 class TomsGuide :
     def __init__(self,nb_infos):
         self.url = 'http://www.tomsguide.fr/feeds/rss2/tom-s-guide-fr,20-0.xml'
-        self.source = "Tom s Guide"
+        self.source = "Tom's Guide"
         self.get_infos(nb_infos)
 
         
@@ -18,7 +18,8 @@ class TomsGuide :
         #print page_web.prettify() #Affichage source complete
         
         list_art = page_web.find_all("item", limit=nb_infos)
-        for article in list_art :    
+
+        for article in list_art :  
                 #link
                 link = (article.find("guid")).text
                 #title
@@ -26,7 +27,7 @@ class TomsGuide :
                 #photo
                 photo = article.find("enclosure").get("url")
                 #BDD
-                bdd_article = Article(titre = title, lien = link, origine = self.source, image = photo )
+                bdd_article = Article(titre = title, lien = link, origine = self.source, image = photo)
                 try :
                     bdd_article.save()
                 except : pass

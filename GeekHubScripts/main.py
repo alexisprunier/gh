@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os, sys
 
-sys.path.append('/home/alexis/Desktop/git/GeekHub/')
+sys.path.append('/root/git/gh/')
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
 
 
@@ -12,17 +12,27 @@ from Hardware import Hardware
 from Gizmodo import Gizmodo
 from ComptoirDuHardware import ComptoirDuHardware
 from ZeroUnnet import ZeroUnnet
+from JournalDuGeek import JournalDuGeek
 from Facebook import Facebook
 
-GLOBAL_nb_infos = 2
+GLOBAL_nb_infos = 10
 
 print "DEBUT Article"
+print "Les Nums"
 o_lesnums = LesNumeriques(nb_infos=GLOBAL_nb_infos)
+print "Presse Citron"
 o_pressecitron = PresseCitron(nb_infos=GLOBAL_nb_infos)
+print "Tom's Guide"
 o_TomsGuide = TomsGuide(nb_infos=GLOBAL_nb_infos)
+print "Hardware"
 o_hardware = Hardware(nb_infos=GLOBAL_nb_infos)
+print "Gizmodo"
 o_gizmodo = Gizmodo(nb_infos=GLOBAL_nb_infos)
+print "Comptoir du hardware"
 o_comptoir = ComptoirDuHardware(nb_infos=GLOBAL_nb_infos)
+print "JDG"
+o_jdg = JournalDuGeek(nb_infos=GLOBAL_nb_infos)
+print "01net"
 o_01net = ZeroUnnet(nb_infos=GLOBAL_nb_infos)
 
 
