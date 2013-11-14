@@ -28,7 +28,7 @@ class Hardware :
                     photo = article.find("enclosure").get("url")
                 except : photo = ""
                 #BDD
-                bdd_article = Article(titre = title, lien = link, origine = self.source, image = photo )
+                bdd_article = Article(titre = title, lien = link, origine = self.source, image = photo)
                 try :
                     bdd_article.save()
                 except : pass               

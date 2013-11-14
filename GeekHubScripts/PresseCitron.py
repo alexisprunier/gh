@@ -17,14 +17,15 @@ class PresseCitron :
         
         page_web = page_web.find("div", {"class":"posts posts-index"}) #Nettoyage, selection de la div des posts
         list_art = page_web.find_all("div",{"class":"hentry"}, limit=nb_infos)
-        for article in list_art :    
+        for article in list_art :
+            link = title = photo = date = None
             #link
             link = (article.find("h2", {"class":"post-title"})).find("a").get("href")  
             #title
-            title =  (article.find("h2", {"class":"post-title"})).find("a").text  
+            title =  (article.find("h2", {"class":"post-title"})).find("a").text
+            title = title.replace('&apos;',"'")  
             #photo
             photo = (article.find("p",{"class":"post-thumbnail"})).find("img").get("src")
-
             #BDD
             bdd_article = Article(titre = title, lien = link, origine = self.source, image = photo )
             try :

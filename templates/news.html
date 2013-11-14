@@ -42,24 +42,7 @@ function add_visite(id){
 	<div id="news">
 		<div id="titre_news"><div id="text_titre_news">NEWS</div></div>
 			<div id="articles">
-			{% for article in selected_articles %}	
-				<a href="{{article.lien}}" target="_blank" onclick="add_visite({{article.id}})">		        	
-	        	<div id="article">
-	        		<object id="img_art" type="image/jpeg" data="{{ article.image }}">
-	        			<object id="img_art2" type="image/jpeg" data="{{ STATIC_URL }}empty_image.png"></object>
-	        		</object>	        		
-	        		<div id="info_art">
-	        			<div id="titre_date">
-			        		<div id="titre_art">{{ article.titre }}</div>
-			        		<div id="date_art">{{ article.date|date:"H:i d-m-Y" }}</div>
-		        		</div>
-		        		<div id="origine_art"><img id="favicon" src='{{ STATIC_URL }}{{ article.origine }}.png' align="bottom" alt='{{ STATIC_URL }}empty_image.png'></img><div id="text_article">{{ article.origine }}</div></div>
-	        			<div id="visites_art">{{ article.visites }}</div>
-	        		</div>
-	        		
-	        	</div>    
-	        	</a>	
-        	{% endfor %}
+			{% include "ajax_template/ajax_news.html" %}
         	</div>
 		</div>
 	</div>	
