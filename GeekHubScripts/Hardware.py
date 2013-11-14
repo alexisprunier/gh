@@ -18,8 +18,7 @@ class Hardware :
         #print page_web.prettify() #Affichage source complete
         
         list_art = page_web.find_all("item", limit=nb_infos)
-        for article in list_art : 
-                link = title = photo = None    
+        for article in list_art :    
                 #link
                 link = (article.find("guid")).text
                 #title
@@ -27,7 +26,7 @@ class Hardware :
                 #photo
                 try :
                     photo = article.find("enclosure").get("url")
-                except : pass
+                except : photo = ""
                 #BDD
                 bdd_article = Article(titre = title, lien = link, origine = self.source, image = photo )
                 try :

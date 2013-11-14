@@ -19,8 +19,7 @@ class ComptoirDuHardware :
         #print page_web.prettify() #Affichage source complete
 
         list_art = page_web.find_all("item", limit=10)
-        for article in list_art :  
-            link = title = photo = None  
+        for article in list_art :    
             #link
             link = (article.find("guid")).text
             #title

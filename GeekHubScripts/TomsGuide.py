@@ -19,7 +19,6 @@ class TomsGuide :
         
         list_art = page_web.find_all("item", limit=nb_infos)
         for article in list_art :    
-                link = title = photo = None 
                 #link
                 link = (article.find("guid")).text
                 #title
