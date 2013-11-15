@@ -23,7 +23,7 @@ class ComptoirDuHardware :
             link = (article.find("guid")).text
             #title
             title = (article.find("title")).text   
-            title = title.replace("&apos;", "'")     
+            title = title.encode('utf-8')
             #photo
             try :
                 photo = article.find("enclosure").get("url")

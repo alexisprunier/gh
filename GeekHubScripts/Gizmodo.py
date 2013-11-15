@@ -24,7 +24,7 @@ class Gizmodo :
                 #link
                 link = (article.find("link")).text
                 #title
-                title = (article.find("title")).text        
+                title = ((article.find("title")).text).encode('utf-8')
                 #photo
                 try :
                     photo = article.find("media:content").get("url")
