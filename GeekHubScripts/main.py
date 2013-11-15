@@ -13,11 +13,14 @@ from Gizmodo import Gizmodo
 from ComptoirDuHardware import ComptoirDuHardware
 from ZeroUnnet import ZeroUnnet
 from JournalDuGeek import JournalDuGeek
+from Korben import Korben
 from Facebook import Facebook
 
 GLOBAL_nb_infos = 10
 
 print "DEBUT Article"
+print "Korben"
+o_korben = Korben(nb_infos=GLOBAL_nb_infos)
 print "Les Nums"
 o_lesnums = LesNumeriques(nb_infos=GLOBAL_nb_infos)
 print "Presse Citron"
@@ -34,6 +37,7 @@ print "JDG"
 o_jdg = JournalDuGeek(nb_infos=GLOBAL_nb_infos)
 print "01net"
 o_01net = ZeroUnnet(nb_infos=GLOBAL_nb_infos)
+
 
 
 #FB
