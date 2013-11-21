@@ -17,7 +17,7 @@
 			</div>
 			<a id="best_article_link" href="{{ best_article.lien }}" target="_blank">
 			<div id="best_article" target="_blank">
-				<div id="best_article_img"><img id="best_site_img" src='{{ best_article.image }}.png'></img></div>
+				<div id="best_article_img"><img id="best_site_img" src='{{ best_article.image }}'></img></div>
 				<div id="best_article_titre">{{ best_article.titre }}</div>
 				<div id="best_article_date">{{ best_article.date|date:"H:i d-m-Y" }}</div>
 		        <div id="best_article_ori"><img id="favicon" src='{{ STATIC_URL }}{{ best_article.origine }}.png' align="bottom"></img><div id="best_site_orig">{{ best_article.origine }}</div></div>			

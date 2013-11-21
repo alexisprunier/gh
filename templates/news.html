@@ -34,8 +34,16 @@ function add_visite(id){
 
 <div id="switch_page">
 	<div id="page" class="change_page">{{ page_number }}</div>
-	<a href="/news/{{ page_prec }}"><div id="precedent" class="change_page"><</div></a>
-	<a href="/news/{{ page_suiv }}"><div id="suivant" class="change_page">></div></a>
+	<a href="/news/{{ page_prec }}">
+		<div id="precedent" class="change_page">
+			<div id="prev" class="triangle"></div>
+		</div>
+	</a>
+	<a href="/news/{{ page_suiv }}">
+		<div id="suivant" class="change_page">
+			<div id="next" class="triangle"></div>
+		</div>
+	</a>
 </div>
 <div id="content">
 	<div id="gauche_accueil">

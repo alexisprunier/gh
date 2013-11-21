@@ -84,7 +84,7 @@ function add_visite_tw(id){
 	        		<div id="info_art">
 	        			<div id="titre_date">
 			        		<div id="titre_art">{{ article.titre }}</div>
-			        		<div id="date_art">{{ article.date }}</div>
+			        		<div id="date_art">{{ article.date|date:"H:i d-m-Y" }}</div>
 		        		</div>
 		        		<div id="origine_art"><img id="favicon" src='{{ STATIC_URL }}/{{ article.origine }}.png' align="bottom"></img><div id="text_article">{{ article.origine }}</div></div>
 	        			<div id='visites_art'>{{ article.visites }}</div>
