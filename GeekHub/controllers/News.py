@@ -32,7 +32,7 @@ def refresh(request):
 
 def get_targeted_articles(page_number):
     nb_news = 30
-    all_articles = Article.objects.all().order_by("date", "id")[nb_news*page_number:nb_news*(page_number+1)]
+    all_articles = Article.objects.all().order_by("date")[nb_news*page_number:nb_news*(page_number+1)]
     all_articles = all_articles.reverse()
 
     

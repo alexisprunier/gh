@@ -5,7 +5,7 @@ class Article(models.Model):
     titre = models.CharField(max_length=150, unique=True)
     origine = models.CharField(max_length=42)
     lien = models.TextField(null=True)
-    date = models.DateTimeField(auto_now=True, verbose_name="Date de parution")
+    date = models.DateTimeField(auto_now_add=True, verbose_name="Date de parution")
     image = models.CharField(max_length=200)
     visites = models.IntegerField(null=True, default=0)
     
@@ -21,7 +21,7 @@ class Facebook(models.Model):
     origine = models.CharField(max_length=42)
     contenu = models.TextField(null=True)
     lien = models.TextField(null=True)
-    date = models.DateTimeField(auto_now=True, verbose_name="Date de parution")
+    date = models.DateTimeField(auto_now_add=True, verbose_name="Date de parution")
     visites = models.IntegerField(null=True, default=0)
     
     def __unicode__(self):
@@ -34,7 +34,7 @@ class FacebookAdmin(admin.ModelAdmin):
 class Twitter(models.Model):
     titre = models.CharField(max_length=150, unique=True)
     origine = models.CharField(max_length=42)
-    date = models.DateTimeField(auto_now=True, verbose_name="Date de parution")
+    date = models.DateTimeField(auto_now_add=True, verbose_name="Date de parution")
     visites = models.IntegerField(null=True, default=0)
     
     def __unicode__(self):
