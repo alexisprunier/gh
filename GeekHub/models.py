@@ -6,7 +6,7 @@ class Article(models.Model):
     origine = models.CharField(max_length=42)
     lien = models.TextField(null=True)
     date = models.DateTimeField(auto_now_add=True, verbose_name="Date de parution")
-    image = models.CharField(max_length=200)
+    image = models.CharField(max_length=200, null=True)
     visites = models.IntegerField(null=True, default=0)
     
     def __unicode__(self):

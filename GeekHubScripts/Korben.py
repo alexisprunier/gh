@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from GeekHub.models import Article
 import urllib
 
-
+list_extension = ["png","jpeg", "jpg", "gif"]
 class Korben :
     def __init__(self,nb_infos):
         self.url = 'http://feeds.feedburner.com/KorbensBlog-UpgradeYourMind?format=xml'
@@ -30,7 +30,9 @@ class Korben :
                 content= article.find('content:encoded').text
                 content_html = BeautifulSoup(content)
                 photo = content_html.find('img').get("src")
-            
+                type_fic = photo.split('.')[-1]
+                if type_fic not in list_extension :
+                    photo = None
                 #BDD
                 bdd_article = Article(titre = title, lien = link, origine = self.source, image = photo)
                 try :
