@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 from GeekHub.models import Article
 import urllib
 
+list_extension = ["png","jpeg", "jpg", "gif"]
 class JournalDuGeek:
     def __init__(self,nb_infos):
         self.url = 'http://feeds2.feedburner.com/LeJournalduGeek'
@@ -28,6 +29,9 @@ class JournalDuGeek:
                 content = BeautifulSoup((article.find("content:encoded")).text)
                 try :
                     photo = content.find("img").get("src")
+                    type_fic = photo.split('.')[-1]
+                    if type_fic not in list_extension :
+                        photo = None 
                 except : pass
                 #BDD
                 bdd_article = Article(titre = title, lien = link, origine = self.source, image = photo)
