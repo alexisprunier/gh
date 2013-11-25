@@ -15,29 +15,51 @@ from ZeroUnnet import ZeroUnnet
 from JournalDuGeek import JournalDuGeek
 from Korben import Korben
 from Facebook import Facebook
+from FrAndroid import FrAndroid
 
 GLOBAL_nb_infos = 10
 
 print "DEBUT Article"
 print "Korben"
-o_korben = Korben(nb_infos=GLOBAL_nb_infos)
+try :
+    o_korben = Korben(nb_infos=GLOBAL_nb_infos)
+except : pass
 print "Les Nums"
-o_lesnums = LesNumeriques(nb_infos=GLOBAL_nb_infos)
+try :
+    o_lesnums = LesNumeriques(nb_infos=GLOBAL_nb_infos)
+except : pass
 print "Presse Citron"
-o_pressecitron = PresseCitron(nb_infos=GLOBAL_nb_infos)
+try :
+    o_pressecitron = PresseCitron(nb_infos=GLOBAL_nb_infos)
+except : pass
 print "Tom's Guide"
-o_TomsGuide = TomsGuide(nb_infos=GLOBAL_nb_infos)
+try :
+    o_TomsGuide = TomsGuide(nb_infos=GLOBAL_nb_infos)
+except : pass
 print "Hardware"
-o_hardware = Hardware(nb_infos=GLOBAL_nb_infos)
+try :
+    o_hardware = Hardware(nb_infos=GLOBAL_nb_infos)
+except : pass
 print "Gizmodo"
-o_gizmodo = Gizmodo(nb_infos=GLOBAL_nb_infos)
+try :
+    o_gizmodo = Gizmodo(nb_infos=GLOBAL_nb_infos)
+except : pass
 print "Comptoir du hardware"
-o_comptoir = ComptoirDuHardware(nb_infos=GLOBAL_nb_infos)
+try :
+    o_comptoir = ComptoirDuHardware(nb_infos=GLOBAL_nb_infos)
+except : pass
 print "JDG"
-o_jdg = JournalDuGeek(nb_infos=GLOBAL_nb_infos)
+try :
+    o_jdg = JournalDuGeek(nb_infos=GLOBAL_nb_infos)
+except : pass
 print "01net"
-o_01net = ZeroUnnet(nb_infos=GLOBAL_nb_infos)
-
+try :
+    o_01net = ZeroUnnet(nb_infos=GLOBAL_nb_infos)
+except : pass
+print "FrAndroid"
+try :
+    o_frandroid = FrAndroid(nb_infos=GLOBAL_nb_infos)
+except : pass
 
 
 #FB

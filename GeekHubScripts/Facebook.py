@@ -7,7 +7,9 @@ class Facebook:
     def __init__(self,url,source,nb_infos):
         self.url = url
         self.source = source
-        self.get_infos(nb_infos)
+        try:
+            self.get_infos(nb_infos)
+        except : pass
         
     def get_infos(self, nb_infos):
         
