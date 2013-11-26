@@ -276,7 +276,7 @@ div#switch_page{position: fixed; top: 200px;}
 div.change_page{
 	width: 35px;
 	height: 45px;
-	background-color: #000021;
+	background-color: #000010;
 	margin-bottom: 10px;
 	color: white;
 	border: 1px solid #800409;
@@ -509,6 +509,7 @@ tr.tab_site_result td{
 	background-color: #CCC;
 	margin-bottom: 20px;
 	overflow: auto;
+	position: relative;
 }
 #titre_statistiques_fb{
 	background-color: #000010; 
@@ -522,8 +523,8 @@ tr.tab_site_result td{
  	position: absolute;
 	color: white;
 	font-size: 45px;
-	top: 230px;
-	left: 272px;
+	top: 80px;
+	left: -60px;
 	transform:rotate(270deg); 
 	-ms-transform:rotate(270deg);
 	-moz-transform:rotate(270deg);
@@ -547,11 +548,12 @@ tr.tab_site_result td{
 	background-color: #CCC;
 	margin-bottom: 20px;
 	overflow: auto;
+	position: relative;
 }
 #titre_statistiques_tw{
 	background-color: #000010; 
 	width: 60px; 
-	height: 300px; 
+	min-height: 370px; 
 	float:left; 
 	overflow:auto;
 }
@@ -560,8 +562,8 @@ tr.tab_site_result td{
  	position: absolute;
 	color: white;
 	font-size: 45px;
-	top: 230px;
-	left: 272px;
+	top: 150px;
+	left: -132px;
 	transform:rotate(270deg); 
 	-ms-transform:rotate(270deg);
 	-moz-transform:rotate(270deg);
@@ -597,7 +599,7 @@ footer{
 	width: 100%;
 	background: url(./footer_GH.png) repeat-x;
 	border-top: 2px solid #800409;
-	box-shadow: 0 0px 12px #000017;
+	box-shadow: 0 0px 12px #000010;
 }
 div#footer_links{
 	margin: auto; width: 900px; margin-top: 70px;
