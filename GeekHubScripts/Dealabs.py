@@ -16,22 +16,20 @@ class Dealabs :
         
         #print page_web.prettify() #Affichage source complete
         
-        list_art = page_web.find_all("article",{"class":"contenar"}, limit=5)
-        print list_art.count()
-        for article in list_art :    
+        list_art = page_web.find_all("article",{"class":"contenar"}, limit=nb_infos)
+        print list_art
+        for article in list_art :  
+            print article  
             #link
             link = article.find("a", {"class":"voirledeal"}).get("href") 
             #title
-            title =  article.find("p",{"style":";"}).text
-            title = title.split
-            final_title=None
-            for i in range(0,title.length) :
-                print title[i]
+            title =  article.find("p").text
+            print title.split(" ")
                 
             #photo
             photo = (article.find("img",{"class":"image_defaut"})).get("src")
             #BDD
-            print final_title
+            print title
            
             '''bdd_article = Article(titre = title, lien = link, origine = self.source, image = photo )
             try :

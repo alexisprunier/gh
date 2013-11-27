@@ -21,7 +21,7 @@ from MacGeneration import MacGeneration
 
 GLOBAL_nb_infos = 10
 
-print "DEBUT Article"
+'''print "DEBUT Article"
 print "Korben"
 try :
     o_korben = Korben(nb_infos=GLOBAL_nb_infos)
@@ -62,16 +62,16 @@ print "FrAndroid"
 try :
     o_frandroid = FrAndroid(nb_infos=GLOBAL_nb_infos)
 except : pass
+print "MacGeneration"
+try :
+    o_macg = MacGeneration(nb_infos=GLOBAL_nb_infos)
+except : pass'''
 print "Dealabs"
 try :
     o_dealabs = Dealabs(nb_infos=GLOBAL_nb_infos)
 except : pass
-print "MacGeneration"
-try :
-    o_macg = MacGeneration(nb_infos=GLOBAL_nb_infos)
-except : pass
 
-
+'''
 #FB
 print "DEBUT Facebook"
 sources = {"Materiel.net":320776853364, 
@@ -82,6 +82,6 @@ sources = {"Materiel.net":320776853364,
           }
 for source,id in sources.items() :
     print "Facebook: "+source
-    o_facebook = Facebook("http://www.facebook.com/feeds/page.php?format=rss20&id="+str(id), source, GLOBAL_nb_infos)
+    o_facebook = Facebook("http://www.facebook.com/feeds/page.php?format=rss20&id="+str(id), source, GLOBAL_nb_infos)'''
 
     
