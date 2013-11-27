@@ -24,6 +24,7 @@ class ComptoirDuHardware :
             #title
             title = (article.find("title")).text   
             title = title.encode('utf-8')
+            title = title.replaca("&apos", "'")
             #photo
             try :
                 photo = article.find("enclosure").get("url")

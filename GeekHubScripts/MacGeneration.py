@@ -34,11 +34,8 @@ class MacGeneration :
                     if type_fic not in list_extension :
                         photo = None 
                 except : pass  
-                print title
-                print photo
-                print link
                 #BDD
-                '''bdd_article = Article(titre = title, lien = link, origine = self.source, image = photo)
+                bdd_article = Article(titre = title, lien = link, origine = self.source, image = photo)
                 try :
                     bdd_article.save()
-                except : pass    '''       
+                except : pass   
