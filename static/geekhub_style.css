@@ -9,6 +9,7 @@
 } 
 /*REINITIALISATION DU BODY*/
 body{margin : 0; padding: 0; background-attachment:fixed; min-width: 320px; background-color: #F5F5F5; font-family: Lucida grande, Sans-serif;}
+a{text-decoration : none;}
 /*************************************************************
 *****************    SCROLL BARRE  ***************************
 **************************************************************/
@@ -89,7 +90,7 @@ div#gauche_accueil{
 }
 div#droite_accueil{
 	display : inline-block;
-	width : 20%;
+	width : 230px;
 	vertical-align : top;
 	margin-top: 30px;
 }
@@ -283,13 +284,31 @@ div.change_page{
 	font-size: 35px;
 	padding: 7px 0 0 15px;
 }
+div#prev{
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-right: 15px solid #d1d1d1;
+	margin-top: 10px;
+}
+div#prev:hover{	border-right: 15px solid #a1a1a1;}
+div#next{
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-left: 15px solid #d1d1d1;
+	margin-top: 10px;
+}
+div#next:hover{	border-left: 15px solid #a1a1a1;}
 div#visites_art{
 	font-family: "font_GH_bold";
 	color: #CCC;
 	font-weight: bold;
 	font-size: 25px;
 	position: relative;
-	top: -22px;
+	top: -26px;
 	left: 190px;
 	text-align: right;
 	width: 50px;
@@ -344,7 +363,7 @@ div#publications a{
 
 /*************TWITTER***************************/
 
-div#twitter{display: table; background-color: #CEF6EC; margin-bottom: 20px; position: relative;}
+div#twitter{display: table; background-color: #CEF6EC; margin-bottom: 20px; position: relative; min-height: 250px;}
 div#titre_twit_acc{display: table-cell;
 	background-color: #000010;
     width: 60px !important;}
@@ -365,66 +384,23 @@ div#text_titre_tw{
 	-o-transform:rotate(270deg);
 }
 div#publications_tw{padding: 10px 0 10px 0;}
-div#publication_tw{border:1px solid #8ec1da; display: inline-block; width: 768px; height: 80px; background-color: white; float: top; margin: 5px 0 5px 11px;}
+div#publication_tw{border:1px solid #8ec1da; display: inline-block; width: 768px; height: 80px; background-color: white; float: top; margin: 1px 0 1px 11px;}
 img.img_twit{margin: 20px 0 0 5px;}
 div#tw_origine{font-weight: bold; font-size: 19px; margin: 10px 0 0 15px; color: black;}
 div#tw_contenu{margin-left: 15px; font-size: 14px; color: black;}
 div#tw_date{font-size: 11px; color: #888; margin: 0 0 10px 15px;}
 div#publications_tw a{text-decoration:none;}
-
-
-/*************SOURCES***************************/
-
-div#sources{
-	background-color: #CCC;
-	margin-bottom: 20px;
-	overflow: auto;
-}
-div#titre_src{background-color: #000010; width: 60px; height: 460px; float:left; overflow:auto;}
-div#source_titre{font-size: 23px; color: #800409; font-weight: bold; text-align: center; margin-top: 10px; margin-bottom: 30px;}
-div#text_titre_src{
+div#tw_visites{
 	font-family: "font_GH_bold";
-	color: white;
-	font-size: 45px;
-	margin-top: 170px;
-	transform:rotate(270deg); 
-	-ms-transform:rotate(270deg);
-	-moz-transform:rotate(270deg);
-	-webkit-transform:rotate(270deg);
-	-o-transform:rotate(270deg);
-}
-div#source_name{padding: 0 0 0 20px; padding-top: 10px; color: black;}
-div#source_name:hover{background-color: #ddd;}
-a.lien_source{text-decoration: none;}
-div#sources_news{
-	width: 28%;
-	float: left;
-	background-color: #fff;
-	margin-left: 2%;
-	margin-top: 15px;
-	height: 400px;
-	font-size: 18px;
-	border:1px solid #999;
-}
-div#sources_fb{
-	width: 28%;
-	float: left;
-	background-color: #fff;
-	margin-left: 2%;
-	margin-top: 15px;
-	height: 400px;
-	font-size: 18px;
-	border:1px solid #999;
-}
-div#sources_twit{
-	width: 28%;
-	float: left;
-	background-color: #fff;
-	margin-left: 2%;
-	margin-top: 15px;
-	height: 400px;
-	font-size: 18px;
-	border:1px solid #999;
+	position: relative;
+	bottom: 25px;
+	right: -710px;
+	width: 50px;
+	height: 0px;
+	text-align: right;
+	color: #CEE3F6;
+	font-size: 25px;
+	font-weight: bold;
 }
 
 /*************STATISTIQUES***************************/
@@ -434,10 +410,10 @@ div#sources_twit{
 	margin-bottom: 20px;
 	overflow: auto;
 }
-#titre_statistiques{
+#titre_statistiques_news{
 	background-color: #000010; 
 	width: 60px; 
-	height: 450px; 
+	height: 630px; 
 	float:left; 
 	overflow:auto;
 }
@@ -446,8 +422,8 @@ div#sources_twit{
  	position: absolute;
 	color: white;
 	font-size: 45px;
-	top: 90px;
-	left: -63px;
+	top: 230px;
+	left: 272px;
 	transform:rotate(270deg); 
 	-ms-transform:rotate(270deg);
 	-moz-transform:rotate(270deg);
@@ -466,7 +442,7 @@ div#sources_twit{
 	margin-left: 5px;
 	border: #888 solid 1px;
 }
-#stats_site_4, #stats_site_5, #stats_site_6, #stats_site_7{
+#stats_site_4, #stats_site_5, #stats_site_6, #stats_site_7, #stats_site_8, #stats_site_9, #stats_site_10{
 	width: 186px;
 	height: 170px;
 	background-color: white;
@@ -480,7 +456,8 @@ div#sources_twit{
 	font-weight: bold;
 	font-size: 16px;
 }
-#stats_site_4 tr.tab_site_title, #stats_site_5 tr.tab_site_title, #stats_site_6 tr.tab_site_title, #stats_site_7 tr.tab_site_title{
+#stats_site_4 tr.tab_site_title, #stats_site_5 tr.tab_site_title, #stats_site_6 tr.tab_site_title, #stats_site_7 tr.tab_site_title,
+ #stats_site_8 tr.tab_site_title, #stats_site_9 tr.tab_site_title, #stats_site_10 tr.tab_site_title{
 	color: black;
 	font-weight: bold;
 	font-size: 12px;
@@ -494,7 +471,8 @@ tr.tab_site_title td{
 	font-weight: bold;
 	font-size: 16px;
 }
-#stats_site_4 tr.tab_site_result, #stats_site_5 tr.tab_site_result, #stats_site_6 tr.tab_site_result, #stats_site_7 tr.tab_site_result{
+#stats_site_4 tr.tab_site_result, #stats_site_5 tr.tab_site_result, #stats_site_6 tr.tab_site_result, #stats_site_7 tr.tab_site_result,
+#stats_site_8 tr.tab_site_result, #stats_site_9 tr.tab_site_result, #stats_site_10 tr.tab_site_result{
 	color: #800409;
 	font-weight: bold;
 	font-size: 12px;
@@ -509,7 +487,8 @@ tr.tab_site_result td{
 	height: 120px;
 	margin: 10px auto 15px auto;
 }
-#stats_site_4 .stats_site_img, #stats_site_5 .stats_site_img, #stats_site_6 .stats_site_img, #stats_site_7 .stats_site_img{
+#stats_site_4 .stats_site_img, #stats_site_5 .stats_site_img, #stats_site_6 .stats_site_img, #stats_site_7 .stats_site_img,
+#stats_site_8 .stats_site_img, #stats_site_9 .stats_site_img, #stats_site_10 .stats_site_img{
 	display: block; 
 	width: 100px;
 	height: 80px;
@@ -520,11 +499,91 @@ tr.tab_site_result td{
 	font-size: 22px;
 	margin: 3px 0 0 4px;
 }
-#stats_site_4 .stats_pos, #stats_site_5 .stats_pos, #stats_site_6 .stats_pos, #stats_site_7 .stats_pos{
+#stats_site_4 .stats_pos, #stats_site_5 .stats_pos, #stats_site_6 .stats_pos, #stats_site_7 .stats_pos,
+#stats_site_8 .stats_pos, #stats_site_9 .stats_pos, #stats_site_10{
 	font-weight: bold;
 	font-size: 18px;
 	margin: 3px 0 0 4px;
 }
+#stats_fb{
+	background-color: #CCC;
+	margin-bottom: 20px;
+	overflow: auto;
+}
+#titre_statistiques_fb{
+	background-color: #000010; 
+	width: 60px; 
+	height: 300px; 
+	float:left; 
+	overflow:auto;
+}
+#text_statistiques_fb{
+	font-family: "font_GH_bold";
+ 	position: absolute;
+	color: white;
+	font-size: 45px;
+	top: 230px;
+	left: 272px;
+	transform:rotate(270deg); 
+	-ms-transform:rotate(270deg);
+	-moz-transform:rotate(270deg);
+	-webkit-transform:rotate(270deg);
+	-o-transform:rotate(270deg);
+}
+.tab_header{
+	font-weight: bold;
+}
+.cell_header{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 10px 0 10px 0;
+	background-color: white;
+	border: 1px solid #888;
+}
+.center_text{
+	text-align: center;
+}
+#stats_tw{
+	background-color: #CCC;
+	margin-bottom: 20px;
+	overflow: auto;
+}
+#titre_statistiques_tw{
+	background-color: #000010; 
+	width: 60px; 
+	height: 300px; 
+	float:left; 
+	overflow:auto;
+}
+#text_statistiques_tw{
+	font-family: "font_GH_bold";
+ 	position: absolute;
+	color: white;
+	font-size: 45px;
+	top: 230px;
+	left: 272px;
+	transform:rotate(270deg); 
+	-ms-transform:rotate(270deg);
+	-moz-transform:rotate(270deg);
+	-webkit-transform:rotate(270deg);
+	-o-transform:rotate(270deg);
+}
+.cell_normal{
+	border-bottom: white 1px solid;
+	padding: 10px 0 10px 5px;
+	font-weight: bold;
+	font-size: 14px;
+}
+.cell_red{
+	color: #800409;
+}
+#tab_twitter{
+	margin: 10px 7px 0 7px;
+}
+#tab_facebook{
+	margin: 10px 7px 0 7px;
+}
+
 
 /************************************************************
 **************    FOOTER         ****************************
@@ -541,7 +600,7 @@ footer{
 	box-shadow: 0 0px 12px #000017;
 }
 div#footer_links{
-	margin: auto; width: 900px; margin-top: 40px;
+	margin: auto; width: 900px; margin-top: 70px;
 	height: 90px;
 	font-family: "font_GH_bold";
 	font-size: 12px;

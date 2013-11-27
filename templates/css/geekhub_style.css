@@ -276,7 +276,7 @@ div#switch_page{position: fixed; top: 200px;}
 div.change_page{
 	width: 35px;
 	height: 45px;
-	background-color: #000021;
+	background-color: #000010;
 	margin-bottom: 10px;
 	color: white;
 	border: 1px solid #800409;
@@ -308,7 +308,7 @@ div#visites_art{
 	font-weight: bold;
 	font-size: 25px;
 	position: relative;
-	top: -22px;
+	top: -26px;
 	left: 190px;
 	text-align: right;
 	width: 50px;
@@ -363,7 +363,7 @@ div#publications a{
 
 /*************TWITTER***************************/
 
-div#twitter{display: table; background-color: #CEF6EC; margin-bottom: 20px; position: relative;}
+div#twitter{display: table; background-color: #CEF6EC; margin-bottom: 20px; position: relative; min-height: 250px;}
 div#titre_twit_acc{display: table-cell;
 	background-color: #000010;
     width: 60px !important;}
@@ -413,7 +413,7 @@ div#tw_visites{
 #titre_statistiques_news{
 	background-color: #000010; 
 	width: 60px; 
-	height: 450px; 
+	height: 630px; 
 	float:left; 
 	overflow:auto;
 }
@@ -442,7 +442,7 @@ div#tw_visites{
 	margin-left: 5px;
 	border: #888 solid 1px;
 }
-#stats_site_4, #stats_site_5, #stats_site_6, #stats_site_7{
+#stats_site_4, #stats_site_5, #stats_site_6, #stats_site_7, #stats_site_8, #stats_site_9, #stats_site_10{
 	width: 186px;
 	height: 170px;
 	background-color: white;
@@ -456,7 +456,8 @@ div#tw_visites{
 	font-weight: bold;
 	font-size: 16px;
 }
-#stats_site_4 tr.tab_site_title, #stats_site_5 tr.tab_site_title, #stats_site_6 tr.tab_site_title, #stats_site_7 tr.tab_site_title{
+#stats_site_4 tr.tab_site_title, #stats_site_5 tr.tab_site_title, #stats_site_6 tr.tab_site_title, #stats_site_7 tr.tab_site_title,
+ #stats_site_8 tr.tab_site_title, #stats_site_9 tr.tab_site_title, #stats_site_10 tr.tab_site_title{
 	color: black;
 	font-weight: bold;
 	font-size: 12px;
@@ -470,7 +471,8 @@ tr.tab_site_title td{
 	font-weight: bold;
 	font-size: 16px;
 }
-#stats_site_4 tr.tab_site_result, #stats_site_5 tr.tab_site_result, #stats_site_6 tr.tab_site_result, #stats_site_7 tr.tab_site_result{
+#stats_site_4 tr.tab_site_result, #stats_site_5 tr.tab_site_result, #stats_site_6 tr.tab_site_result, #stats_site_7 tr.tab_site_result,
+#stats_site_8 tr.tab_site_result, #stats_site_9 tr.tab_site_result, #stats_site_10 tr.tab_site_result{
 	color: #800409;
 	font-weight: bold;
 	font-size: 12px;
@@ -485,7 +487,8 @@ tr.tab_site_result td{
 	height: 120px;
 	margin: 10px auto 15px auto;
 }
-#stats_site_4 .stats_site_img, #stats_site_5 .stats_site_img, #stats_site_6 .stats_site_img, #stats_site_7 .stats_site_img{
+#stats_site_4 .stats_site_img, #stats_site_5 .stats_site_img, #stats_site_6 .stats_site_img, #stats_site_7 .stats_site_img,
+#stats_site_8 .stats_site_img, #stats_site_9 .stats_site_img, #stats_site_10 .stats_site_img{
 	display: block; 
 	width: 100px;
 	height: 80px;
@@ -496,7 +499,8 @@ tr.tab_site_result td{
 	font-size: 22px;
 	margin: 3px 0 0 4px;
 }
-#stats_site_4 .stats_pos, #stats_site_5 .stats_pos, #stats_site_6 .stats_pos, #stats_site_7 .stats_pos{
+#stats_site_4 .stats_pos, #stats_site_5 .stats_pos, #stats_site_6 .stats_pos, #stats_site_7 .stats_pos,
+#stats_site_8 .stats_pos, #stats_site_9 .stats_pos, #stats_site_10{
 	font-weight: bold;
 	font-size: 18px;
 	margin: 3px 0 0 4px;
@@ -505,6 +509,7 @@ tr.tab_site_result td{
 	background-color: #CCC;
 	margin-bottom: 20px;
 	overflow: auto;
+	position: relative;
 }
 #titre_statistiques_fb{
 	background-color: #000010; 
@@ -518,8 +523,8 @@ tr.tab_site_result td{
  	position: absolute;
 	color: white;
 	font-size: 45px;
-	top: 230px;
-	left: 272px;
+	top: 80px;
+	left: -60px;
 	transform:rotate(270deg); 
 	-ms-transform:rotate(270deg);
 	-moz-transform:rotate(270deg);
@@ -543,11 +548,12 @@ tr.tab_site_result td{
 	background-color: #CCC;
 	margin-bottom: 20px;
 	overflow: auto;
+	position: relative;
 }
 #titre_statistiques_tw{
 	background-color: #000010; 
 	width: 60px; 
-	height: 300px; 
+	min-height: 370px; 
 	float:left; 
 	overflow:auto;
 }
@@ -556,8 +562,8 @@ tr.tab_site_result td{
  	position: absolute;
 	color: white;
 	font-size: 45px;
-	top: 230px;
-	left: 272px;
+	top: 150px;
+	left: -132px;
 	transform:rotate(270deg); 
 	-ms-transform:rotate(270deg);
 	-moz-transform:rotate(270deg);
@@ -593,7 +599,7 @@ footer{
 	width: 100%;
 	background: url(./footer_GH.png) repeat-x;
 	border-top: 2px solid #800409;
-	box-shadow: 0 0px 12px #000017;
+	box-shadow: 0 0px 12px #000010;
 }
 div#footer_links{
 	margin: auto; width: 900px; margin-top: 70px;
