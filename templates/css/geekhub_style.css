@@ -240,7 +240,7 @@ div#article{
 	width: 380px;
 	height: 100px;
 	background-color: white;
-	float: top;
+	margin : 5px 0;
 	border:1px solid #999;
 }
 object#img_art{
@@ -267,11 +267,24 @@ div#info_art{
 	width: 240px;
 	height: 120px;
 }
-div#titre_art{font-weight: bold; font-size: 14px; color: #000021; padding: 6px 2px 2px 2px;}
+div#titre_art a{text-decoration: none;
+color: #131313;
+font-weight: 100;
+font-size: 15px;}
+
 div#titre_date{height: 78px;}
 div#date_art{font-size: 11px; color: #888;}
 div#origine_art{ font-size: 14px;}
-div#text_article{display: inline; padding-left: 8px;}
+div#text_article{display: inline-block;
+padding-left: 8px;
+max-width: 145px;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+vertical-align: top;
+font-size: 11px;
+margin-top: 5px;
+}
 div#switch_page{position: fixed; top: 200px;}
 div.change_page{
 	width: 35px;
@@ -313,6 +326,13 @@ div#visites_art{
 	text-align: right;
 	width: 50px;
 	height: 0px;
+}
+div#social{
+width: auto;
+float: right;
+position: relative;
+top: 57px;
+margin: 2px;
 }
 
 /*************FACEBOOK***************************/

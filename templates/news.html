@@ -25,6 +25,12 @@ function add_visite(id){
 	    }
 	})
 }
+$(document).ajaxComplete(function(){
+	twttr.widgets.load()
+    try{
+        FB.XFBML.parse(); 
+    }catch(ex){}
+});
 
 </script>
 
