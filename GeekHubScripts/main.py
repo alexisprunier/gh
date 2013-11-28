@@ -21,7 +21,7 @@ from MacGeneration import MacGeneration
 
 GLOBAL_nb_infos = 10
 
-'''print "DEBUT Article"
+print "DEBUT Article"
 print "Korben"
 try :
     o_korben = Korben(nb_infos=GLOBAL_nb_infos)
@@ -65,7 +65,7 @@ except : pass
 print "MacGeneration"
 try :
     o_macg = MacGeneration(nb_infos=GLOBAL_nb_infos)
-except : pass'''
+except : pass
 print "Dealabs"
 try :
     o_dealabs = Dealabs(nb_infos=GLOBAL_nb_infos)

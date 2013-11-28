@@ -1,4 +1,4 @@
-{% for article in selected_articles %}		        	
+{% for article in selected_articles %}   	
  	<div id="article">
       	<a href="{{article.lien}}" target="_blank" onclick="add_visite({{article.id}})">	
       		<object id="img_art" type="image/jpeg" data="{{ article.image }}">
@@ -15,11 +15,17 @@
       	    
    	
 	   	<div id="social">
-	   		<div id="fb_share">
-	   			<div class="fb-share-button" data-href="{{article.lien}}" data-type="button"></div>
+	   		<div id="fb_share" class="link_share">
+				<a href="https://www.facebook.com/sharer.php?u={{ article.lien }}&t={{ article.titre }}" target="_blank"
+				onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;">
+					<img class="share_art" src="{{ STATIC_URL }}fb_share.png" alt="Icône partage Facebook">
+				</a>
 	   		</div>
-	   		<div id="tw_share">
-				<a href="{{article.lien}}" class="twitter-share-button" data-via="GeekHub2k13" data-count="none" data-lang="fr" data-dnt="true">Tweeter</a>
+	   		<div id="tw_share" class="link_share">
+				<a href="https://twitter.com/share?url={{ article.lien }}&text={{ article.titre }}&via=GeekHub2k13" target="_blank" 
+				onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;">
+					<img class="share_art" src="{{ STATIC_URL }}tw_share.png" alt="Icône partage Facebook">
+				</a>
 			</div>
 		</div>		
 	</div>
