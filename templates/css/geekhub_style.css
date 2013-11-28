@@ -476,7 +476,7 @@ div#tw_visites{
 	margin-left: 5px;
 	border: #888 solid 1px;
 }
-#stats_site_4, #stats_site_5, #stats_site_6, #stats_site_7, #stats_site_8, #stats_site_9, #stats_site_10{
+#stats_site_4, #stats_site_5, #stats_site_6, #stats_site_7, #stats_site_8, #stats_site_9, #stats_site_10, #stats_site_11{
 	width: 186px;
 	height: 170px;
 	background-color: white;
@@ -491,7 +491,7 @@ div#tw_visites{
 	font-size: 16px;
 }
 #stats_site_4 tr.tab_site_title, #stats_site_5 tr.tab_site_title, #stats_site_6 tr.tab_site_title, #stats_site_7 tr.tab_site_title,
- #stats_site_8 tr.tab_site_title, #stats_site_9 tr.tab_site_title, #stats_site_10 tr.tab_site_title{
+ #stats_site_8 tr.tab_site_title, #stats_site_9 tr.tab_site_title, #stats_site_10 tr.tab_site_title, #stats_site_11 tr.tab_site_title{
 	color: black;
 	font-weight: bold;
 	font-size: 12px;
@@ -506,7 +506,7 @@ tr.tab_site_title td{
 	font-size: 16px;
 }
 #stats_site_4 tr.tab_site_result, #stats_site_5 tr.tab_site_result, #stats_site_6 tr.tab_site_result, #stats_site_7 tr.tab_site_result,
-#stats_site_8 tr.tab_site_result, #stats_site_9 tr.tab_site_result, #stats_site_10 tr.tab_site_result{
+#stats_site_8 tr.tab_site_result, #stats_site_9 tr.tab_site_result, #stats_site_10 tr.tab_site_result, #stats_site_11 tr.tab_site_result{
 	color: #800409;
 	font-weight: bold;
 	font-size: 12px;
@@ -522,7 +522,7 @@ tr.tab_site_result td{
 	margin: 10px auto 15px auto;
 }
 #stats_site_4 .stats_site_img, #stats_site_5 .stats_site_img, #stats_site_6 .stats_site_img, #stats_site_7 .stats_site_img,
-#stats_site_8 .stats_site_img, #stats_site_9 .stats_site_img, #stats_site_10 .stats_site_img{
+#stats_site_8 .stats_site_img, #stats_site_9 .stats_site_img, #stats_site_10 .stats_site_img, #stats_site_11 .stats_site_img{
 	display: block; 
 	width: 100px;
 	height: 80px;
@@ -534,7 +534,7 @@ tr.tab_site_result td{
 	margin: 3px 0 0 4px;
 }
 #stats_site_4 .stats_pos, #stats_site_5 .stats_pos, #stats_site_6 .stats_pos, #stats_site_7 .stats_pos,
-#stats_site_8 .stats_pos, #stats_site_9 .stats_pos, #stats_site_10{
+#stats_site_8 .stats_pos, #stats_site_9 .stats_pos, #stats_site_10, #stats_site_11 .stats_pos{
 	font-weight: bold;
 	font-size: 18px;
 	margin: 3px 0 0 4px;

@@ -4,12 +4,14 @@ from GeekHub.models import Article, Facebook, Twitter
 from GeekHub.controllers.Proxy import Proxy
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
+from django.template.loader import render_to_string
+from settings import STATIC_URL
+
 
 
 def accueil(request):
     
-    last_articles = list(Article.objects.all().order_by("id")[Article.objects.all().count()-4:])
-    selected_articles = reversed(last_articles)
+    selected_articles = Article.objects.all().order_by("date")[:4].reverse()
     last_facebook = Facebook.objects.all().order_by("id")[Facebook.objects.all().order_by("id").count()-1:]
     '''last_twitter = Twitter.objects.all().order_by("id")[Twitter.objects.all().order_by("id").count()-3:]
     last_twitter = reversed(last_twitter)'''
@@ -23,30 +25,10 @@ def accueil(request):
 @csrf_exempt
 def refresh_nw(request):
     
-    last_articles = list(Article.objects.all().order_by("id")[Article.objects.all().count()-4:])
-    last_articles = reversed(last_articles)
-
-    content = ""
+    selected_articles = Article.objects.all().order_by("date")[:4].reverse()
     
-    for article in last_articles:
-        content += "\
-                <a href='" + unicode(article.lien) + "' target='_blank' onclick='add_visite("+ unicode(article.id) +")'>\
-                <div id='article'>\
-                    <object id='img_art' type='image/jpeg' data='" + unicode(article.image) + "'>\
-                        <object id='img_art2' type='image/jpeg' data='" + unicode(request.POST.get('static_url', False)) + "image/empty_image.png'></object>\
-                    </object>\
-                    <div id='info_art'>\
-                        <div id='titre_date'>\
-                            <div id='titre_art'>" + unicode(article.titre) + "</div>\
-                            <div id='date_art'>" + unicode(article.date.strftime("%H:%M %d-%m-%Y")) + "</div>\
-                        </div>\
-                        <div id='origine_art'><img id='favicon' src='" + str(request.POST.get('static_url', False)) + unicode(article.origine) + ".png' align='bottom' alt='" + unicode(request.POST.get('static_url', False)) + "image/empty_image.png'></img><div id='text_article'>" + unicode(article.origine) + "</div></div>\
-                        <div id='visites_art'>" + unicode(article.visites) + "</div>\
-                    </div>\
-                </div>\
-                </a>"
-
-    return HttpResponse(content)
+    html = render_to_string('ajax_template/ajax_news.html', {'selected_articles':selected_articles, 'STATIC_URL':STATIC_URL, "ajax":True})
+    return HttpResponse(html)
 
 @csrf_exempt
 def refresh_tw(request):
