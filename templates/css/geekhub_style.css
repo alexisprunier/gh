@@ -240,8 +240,15 @@ div#article{
 	width: 380px;
 	height: 100px;
 	background-color: white;
-	margin : 5px 0;
-	border:1px solid #999;
+	margin : 2px 1px;
+	/*border:1px solid #aaa;*/
+	box-shadow : rgb(180, 180, 180) 1px 1px,
+	rgb(180, 180, 180) 2px 2px,
+	rgb(180, 180, 180) 3px 3px,
+	rgb(180, 180, 180) 4px 4px;
+	
+	
+	
 }
 object#img_art{
 	display: block;
@@ -269,6 +276,10 @@ div#info_art{
 }
 div#titre_art a{text-decoration: none;
 color: #131313;
+font-weight: 100;
+font-size: 15px;}
+div#titre_art a:visited{text-decoration: none;
+color: #555;
 font-weight: 100;
 font-size: 15px;}
 
@@ -331,9 +342,12 @@ div#social{
 width: auto;
 float: right;
 position: relative;
-top: 57px;
+top: 74px;
 margin: 2px;
 }
+div.link_share{display : inline-block;}
+img.share_art{width : 22px;}
+img.share_art:hover{border-radius : 3px;}
 
 /*************FACEBOOK***************************/
 

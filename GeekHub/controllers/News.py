@@ -26,8 +26,8 @@ def news(request, page_number):
 def refresh(request):
 
     selected_articles = get_targeted_articles(int(request.POST.get('page', False)))
-       
-    html = render_to_string('ajax_template/ajax_news.html', {'selected_articles':selected_articles, 'STATIC_URL':STATIC_URL})
+    
+    html = render_to_string('ajax_template/ajax_news.html', {'selected_articles':selected_articles, 'STATIC_URL':STATIC_URL, "ajax":True})
     return HttpResponse(html)
 
 def get_targeted_articles(page_number):
