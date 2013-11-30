@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from bs4 import BeautifulSoup
 from GeekHub import models
-import urllib
+import urllib2
 
 class Facebook:
     def __init__(self,url,source,nb_infos):
@@ -13,7 +13,13 @@ class Facebook:
         
     def get_infos(self, nb_infos):
         
-        html = urllib.urlopen(self.url).read()
+        while True:
+            try:
+                page = urllib2.urlopen(self.url, timeout=10)
+            except:
+                continue
+            break
+        html = page.read()
         page_web = BeautifulSoup(html)
                 
         list_art = page_web.find_all("item", limit=nb_infos)
@@ -33,3 +39,4 @@ class Facebook:
                 bdd_article.save()
             except:
                 pass
+        page.close()
