@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
 import os, sys
 
+
+
 sys.path.append('/root/git/gh/')
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
 
-
+from GeekHub import bitly
+from GeekHub.models import Article
 from LesNumeriques import LesNumeriques
 from PresseCitron import PresseCitron
 from TomsGuide import TomsGuide
@@ -20,58 +23,38 @@ from Dealabs import Dealabs
 from MacGeneration import MacGeneration
 
 GLOBAL_nb_infos = 10
+GLOBAL_bit_login="geekhub2k13"
+GLOBAL_bit_apikey="R_f72dc24a911b6865b8cf2b4b9c8531b1"
 
 print "DEBUT Article"
 print "Korben"
-try :
-    o_korben = Korben(nb_infos=GLOBAL_nb_infos)
-except : pass
+o_korben = Korben(nb_infos=GLOBAL_nb_infos, bit_login=GLOBAL_bit_login, bit_apikey=GLOBAL_bit_apikey)
 print "Les Nums"
-try :
-    o_lesnums = LesNumeriques(nb_infos=GLOBAL_nb_infos)
-except : pass
+o_lesnums = LesNumeriques(nb_infos=GLOBAL_nb_infos, bit_login=GLOBAL_bit_login, bit_apikey=GLOBAL_bit_apikey)
 print "Presse Citron"
-try :
-    o_pressecitron = PresseCitron(nb_infos=GLOBAL_nb_infos)
-except : pass
+o_pressecitron = PresseCitron(nb_infos=GLOBAL_nb_infos, bit_login=GLOBAL_bit_login, bit_apikey=GLOBAL_bit_apikey)
 print "Tom's Guide"
-try :
-    o_TomsGuide = TomsGuide(nb_infos=GLOBAL_nb_infos)
-except : pass
+o_TomsGuide = TomsGuide(nb_infos=GLOBAL_nb_infos, bit_login=GLOBAL_bit_login, bit_apikey=GLOBAL_bit_apikey)
 print "Hardware"
-try :
-    o_hardware = Hardware(nb_infos=GLOBAL_nb_infos)
-except : pass
+o_hardware = Hardware(nb_infos=GLOBAL_nb_infos, bit_login=GLOBAL_bit_login, bit_apikey=GLOBAL_bit_apikey)
 print "Gizmodo"
-try :
-    o_gizmodo = Gizmodo(nb_infos=GLOBAL_nb_infos)
-except : pass
+o_gizmodo = Gizmodo(nb_infos=GLOBAL_nb_infos, bit_login=GLOBAL_bit_login, bit_apikey=GLOBAL_bit_apikey)
 print "Comptoir du hardware"
-try :
-    o_comptoir = ComptoirDuHardware(nb_infos=GLOBAL_nb_infos)
-except : pass
+o_comptoir = ComptoirDuHardware(nb_infos=GLOBAL_nb_infos, bit_login=GLOBAL_bit_login, bit_apikey=GLOBAL_bit_apikey)
 print "JDG"
-try :
-    o_jdg = JournalDuGeek(nb_infos=GLOBAL_nb_infos)
-except : pass
+o_jdg = JournalDuGeek(nb_infos=GLOBAL_nb_infos, bit_login=GLOBAL_bit_login, bit_apikey=GLOBAL_bit_apikey)
 print "01net"
-try :
-    o_01net = ZeroUnnet(nb_infos=GLOBAL_nb_infos)
-except : pass
+o_01net = ZeroUnnet(nb_infos=GLOBAL_nb_infos, bit_login=GLOBAL_bit_login, bit_apikey=GLOBAL_bit_apikey)
 print "FrAndroid"
-try :
-    o_frandroid = FrAndroid(nb_infos=GLOBAL_nb_infos)
-except : pass
+o_frandroid = FrAndroid(nb_infos=GLOBAL_nb_infos, bit_login=GLOBAL_bit_login, bit_apikey=GLOBAL_bit_apikey)
 print "MacGeneration"
-try :
-    o_macg = MacGeneration(nb_infos=GLOBAL_nb_infos)
-except : pass
-print "Dealabs"
-try :
-    o_dealabs = Dealabs(nb_infos=GLOBAL_nb_infos)
-except : pass
-
+o_macg = MacGeneration(nb_infos=GLOBAL_nb_infos, bit_login=GLOBAL_bit_login, bit_apikey=GLOBAL_bit_apikey)
 '''
+print "Dealabs"
+o_dealabs = Dealabs(nb_infos=GLOBAL_nb_infos, bit_login=GLOBAL_bit_login, bit_apikey=GLOBAL_bit_apikey)
+'''
+
+
 #FB
 print "DEBUT Facebook"
 sources = {"Materiel.net":320776853364, 
@@ -82,6 +65,6 @@ sources = {"Materiel.net":320776853364,
           }
 for source,id in sources.items() :
     print "Facebook: "+source
-    o_facebook = Facebook("http://www.facebook.com/feeds/page.php?format=rss20&id="+str(id), source, GLOBAL_nb_infos)'''
+    o_facebook = Facebook("http://www.facebook.com/feeds/page.php?format=rss20&id="+str(id), source, GLOBAL_nb_infos)
 
     
