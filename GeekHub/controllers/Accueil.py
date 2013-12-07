@@ -13,8 +13,8 @@ def accueil(request):
     
     selected_articles = Article.objects.all().order_by("date")[:4].reverse()
     last_facebook = Facebook.objects.all().order_by("id")[Facebook.objects.all().order_by("id").count()-1:]
-    last_twitter = Twitter.objects.all().order_by("id")[Twitter.objects.all().order_by("id").count()-3:]
-    last_twitter = reversed(last_twitter)
+    '''last_twitter = Twitter.objects.all().order_by("id")[Twitter.objects.all().order_by("id").count()-3:]
+    last_twitter = reversed(last_twitter)'''
     proxy = Proxy()
     best_article = proxy.get_most_visited_article()
     best_site = proxy.get_most_visited_site()

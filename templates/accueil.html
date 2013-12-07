@@ -73,13 +73,13 @@ function add_visite_tw(id){
 <div id="content">
 	<div id="gauche_accueil">
 		<div id="news">
-			<div id="titre_news_acc"></div><div id="text_titre_news">NEWS</div>
+			<div id="titre_news_acc"></div><div onclick="location.href='/news/0';" id="text_titre_news">NEWS</div>
 			<div id="articles">
 				{% include "ajax_template/ajax_news.html" %}
         	</div>
 		</div>
 		<div id="facebook">
-			<div id="titre_face_acc"></div><div id="text_titre_fb">FACEBOOK</div>
+			<div id="titre_face_acc"></div><div onclick="location.href='/facebook/0';" id="text_titre_fb">FACEBOOK</div>
 			<div id="publications">
 		  	{% for article in last_facebook %}
 		  	<a href="" target="_blank" onclick="add_visite_fb({{article.id}})">        
@@ -94,7 +94,7 @@ function add_visite_tw(id){
 		    </div>
 		</div>
 		<div id="twitter">
-			<div id="titre_twit_acc"></div><div id="text_titre_tw">TWITTER</div>
+			<div id="titre_twit_acc"></div><div onclick="location.href='/twitter/0';" id="text_titre_tw">TWITTER</div>
 			<div id="publications_tw">
 		  	{% for article in last_twitter %}            
 	          <a href="https://twitter.com/{{article.origine}}" target="_blank" onclick="add_visite_tw({{article.id}})"><div id="publication_tw">
