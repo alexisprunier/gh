@@ -38,6 +38,12 @@ body ::-webkit-scrollbar {
 header{height: 55px; width: 100%; background : url(./header_GH.png) repeat-x; box-shadow: 0 0px 12px #000017; border-bottom: 2px solid #800409;}
 div#logo{color : #e5dfdf; margin-left: 10px; height : 55px;}
 
+div#text_titre_news:hover,
+div#text_titre_fb:hover,
+div#text_titre_tw:hover{
+	cursor : pointer;	
+}
+
 /*****************************************************
 ******************    NAVIGATION   *******************
 ******************************************************/
@@ -226,6 +232,7 @@ div#titre_news{
 	background-color: #000010;
     width: 60px !important;
 }
+
 div#articles{
 	display: table-cell;
 	width: 780px;
@@ -279,7 +286,7 @@ color: #131313;
 font-weight: 100;
 font-size: 15px;}
 div#titre_art a:visited{text-decoration: none;
-color: #555;
+color: #888;
 font-weight: 100;
 font-size: 15px;}
 

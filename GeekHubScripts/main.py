@@ -21,6 +21,7 @@ from Facebook import Facebook
 from FrAndroid import FrAndroid
 from Dealabs import Dealabs
 from MacGeneration import MacGeneration
+from Twitter import Twitter
 
 GLOBAL_nb_infos = 10
 GLOBAL_bit_login="geekhub2k13"
@@ -66,5 +67,6 @@ sources = {"Materiel.net":320776853364,
 for source,id in sources.items() :
     print "Facebook: "+source
     o_facebook = Facebook("http://www.facebook.com/feeds/page.php?format=rss20&id="+str(id), source, GLOBAL_nb_infos)
-
+#Twitter
+#o_twitter = Twitter("GeekHub2k13",GLOBAL_nb_infos)
     

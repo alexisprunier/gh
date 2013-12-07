@@ -12,10 +12,12 @@ class PresseCitron :
         
     def get_infos(self, nb_infos, bit_login, bit_apikey):
     
-        while True:
+        i = 0
+        while i<10:
             try:
                 page = urllib2.urlopen(self.url, timeout=10)
             except:
+                i += 1
                 continue
             break
         html = page.read()
@@ -34,10 +36,12 @@ class PresseCitron :
             photo = (article.find("p",{"class":"post-thumbnail"})).find("img").get("src")
             #Bitly
             api = bitly.Api(login=bit_login, apikey=bit_apikey)
-            while True :
+            i = 0 
+            while i<10 :
                 try:
                     bit_link = api.shorten(link)
                 except:
+                    i += 1
                     continue
                 break
             #BDD
