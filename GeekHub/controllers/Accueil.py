@@ -16,8 +16,8 @@ def accueil(request):
     '''last_twitter = Twitter.objects.all().order_by("id")[Twitter.objects.all().order_by("id").count()-3:]
     last_twitter = reversed(last_twitter)'''
     proxy = Proxy()
-    best_article = proxy.get_most_visited_article()
-    best_site = proxy.get_most_visited_site()
+    #best_article = proxy.get_most_visited_article()
+    #best_site = proxy.get_most_visited_site()
     
     return render(request, 'accueil.html', locals())
 

@@ -11,6 +11,8 @@ urlpatterns = patterns('GeekHub.controllers',
     url(r'^refresh_tw/?$', 'Accueil.refresh_tw'),
     url(r'^news/(\d{1})/?$', 'News.news'),
     url(r'^news/refresh/?$', 'News.refresh'),
+    url(r'^news/get_articles/?$', 'News.get_articles'),
+
     url(r'^news/add_visite/?$', 'News.add_visite'),
     url(r'^facebook/(\d{1})/?$', 'Facebook.facebook'),
     url(r'^facebook/refresh/?$', 'Facebook.refresh'),
