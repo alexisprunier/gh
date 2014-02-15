@@ -16,9 +16,7 @@ def news(request, page_number):
     page_prec = page_number-1 if page_number > 0 else page_number
     page_suiv = page_number+1 if page_number < 9 else page_number
     
-    proxy = Proxy()
-    best_article = proxy.get_most_visited_article()
-    best_site = proxy.get_most_visited_site()
+    
     
     return render(request, 'news.html', locals())
 
@@ -45,6 +43,13 @@ def add_visite(request):
     article = Article.objects.get(id=(int(request.POST.get('id', False))))
     article.visites += 1
     article.save()
+    
+@csrf_exempt
+def get_articles(request):
+    keyword = str(request.POST["text"])
+    articles = Article.objects.filter(titre__icontains = keyword ).order_by("date")
+    html = render_to_string('ajax_template/ajax_news.html', {'selected_articles':articles, 'STATIC_URL':STATIC_URL, "ajax":True})
+    return HttpResponse(html)
     
     
     

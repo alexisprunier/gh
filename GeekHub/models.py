@@ -2,10 +2,10 @@ from django.db import models
 from django.contrib import admin
 
 class Article(models.Model):
-    titre = models.CharField(max_length=150, unique=True)
+    titre = models.CharField(max_length=150, unique=True, null=True)
     origine = models.CharField(max_length=42)
-    lien = models.TextField(null=True)
-    short_link = models.TextField(null=True)
+    lien = models.TextField()
+    short_link = models.TextField()
     date = models.DateTimeField(auto_now_add=True, verbose_name="Date de parution")
     image = models.CharField(max_length=200, null=True)
     visites = models.IntegerField(null=True, default=0)

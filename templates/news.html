@@ -32,12 +32,34 @@ $(document).ajaxComplete(function(){
     }catch(ex){}
 });
 
+$(document).ready(function(){
+	var timer;
+	var req;
+	$("input").keyup(function(){
+		clearInterval(timer);
+		timer = setTimeout(function(){
+			req = $.ajax({
+			    type: "POST",
+			    url: '/news/get_articles/',
+			    data: { 
+			    	text: $("input").val(),
+			    },
+				success: function(html){
+					$("div#articles").html(html);
+				}
+			})
+		},350)
+		
+	});
+});
+
+
 </script>
 
 <div style="visibility:hidden">
 {{csrf_token}}
 </div>
-
+<input type="text" placeholder="search"/>
 <div id="switch_page">
 	<div id="page" class="change_page">{{ page_number }}</div>
 	<a href="/news/{{ page_prec }}">
